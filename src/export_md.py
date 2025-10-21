@@ -20,9 +20,8 @@ def render_md_item(q:Dict[str,Any], img_rel:str, latex:str=None)->str:
     - Markdown 文本片段（字符串）。
     """
     title=q.get("number") or "题目"; body=q.get("text") or ""
-    # 移除题干中的 Markdown 图片，避免引用两次
-    if body:
-        body = re.sub(r"!\[[^\]]*\]\([^)]+\)", "", body)
+    # 不再移除题干中的 Markdown 图片；
+    # 由上游保证图片链接已被重写为可用的相对路径。
     s=[f"### {title}\n", body, "\n"]
     if latex: s.append(f"**LaTeX 公式（OCR）**: `{latex}`\n")
     if q.get("options"):

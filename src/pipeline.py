@@ -139,7 +139,27 @@ def main():
                             final_img = dst_in_db
                     except Exception:
                         pass
-                q=parse_question(text); qs.append(q); ltx.append(None); imgs.append(final_img)
+                # 将题干内的 Markdown 图片链接改写为指向仓库根的 qs_image_DB，确保渲染全部图片
+                try:
+                    def _repl(md: re.Match) -> str:
+                        alt = md.group(1)
+                        relp = (md.group(2) or "").strip()
+                        if relp.startswith("./"):
+                            relp = relp[2:]
+                        new_url = relp
+                        try:
+                            mineru_root = (out_dir/"_mineru_tmp").resolve()
+                            p = (auto_dir/relp).resolve()
+                            rel_from_mineru = p.relative_to(mineru_root)
+                            target = (qs_image_db/rel_from_mineru).resolve()
+                            new_url = ("../" + target.relative_to(repo_root.resolve()).as_posix())
+                        except Exception:
+                            pass
+                        return f"![{alt}]({new_url})"
+                    text = re.sub(r"!\[([^\]]*)\]\(([^)]+)\)", _repl, text)
+                except Exception:
+                    pass
+                q=parse_question(text); qs.append(q); ltx.append(None); imgs.append(None)
         if args.format in ("md","both"):
             md=export_markdown(qs, imgs, ltx, out_dir); print("[OK] 导出 Markdown:", md)
         if args.format in ("tex","both"):
