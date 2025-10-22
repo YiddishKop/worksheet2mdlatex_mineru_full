@@ -1,73 +1,80 @@
-﻿@echo off
+@echo off
+setlocal
 chcp 65001 >nul
-title worksheet2mdlatex - MinerU 鑷慨澶嶈繍琛屽櫒
+title worksheet2mdlatex - MinerU (auto run)
+
+REM Always run from repo root
 cd /d "%~dp0.."
 echo ======================================================
-echo [ worksheet2mdlatex MinerU 鑷姩杩愯鑴氭湰 ]
+echo [ worksheet2mdlatex MinerU AUTO RUN ]
 echo ======================================================
 
-REM Step 1: 妫€鏌?Python 鏄惁瀛樺湪
-echo.
+REM Step 1: Check Python
 where python >nul 2>nul
 if %errorlevel% neq 0 (
-    echo 鉂?鏈娴嬪埌 Python锛岃鍏堝畨瑁?Python 3.10 鎴栨洿楂樼増鏈€?
-    echo 鍙粠 https://www.python.org/downloads/release/python-31011/ 涓嬭浇銆?
+    echo Python not found. Please install Python 3.10+:
+    echo https://www.python.org/downloads/release/python-31011/
     pause
-    exit /b
+    exit /b 1
 )
 
-REM Step 2: 妫€鏌ヨ櫄鎷熺幆澧冩槸鍚﹀瓨鍦?
+REM Step 2: Ensure venv exists
 if not exist venv310 (
-    echo 鈿狅笍  鏈壘鍒?venv310 铏氭嫙鐜锛屾鍦ㄨ嚜鍔ㄥ垱寤?..
+    echo [INFO] venv310 missing. Creating via scripts\setup_env.bat ...
     if exist scripts\setup_env.bat (
-        call scripts\setup_env.bat
+        call scripts\setup_env.bat || goto :fail
     ) else (
-        echo 鉂?缂哄皯 setup_env.bat锛岃纭椤圭洰瀹屾暣銆?
+        echo [ERROR] Missing scripts\setup_env.bat. Project incomplete.
         pause
-        exit /b
+        exit /b 2
     )
 )
 
-REM Step 3: 婵€娲昏櫄鎷熺幆澧?
+REM Step 3: Activate venv
 call venv310\Scripts\activate
 if %errorlevel% neq 0 (
-    echo 鉂?鏃犳硶婵€娲?venv310 鐜锛岃妫€鏌ヨ矾寰勩€?
+    echo [ERROR] Failed to activate venv310. Check path.
     pause
-    exit /b
+    exit /b 3
 )
 
-REM Step 4: 妫€鏌?mineru 鍛戒护鏄惁鍙敤
+REM Step 4: Ensure mineru CLI
 where mineru >nul 2>nul
 if %errorlevel% neq 0 (
-    echo 鈿狅笍 MinerU 鍛戒护涓嶅彲鐢紝灏濊瘯閲嶆柊瀹夎...
-    pip install mineru doclayout-yolo paddlenlp pypdfium2 onnx==1.16.0
+    echo [INFO] Installing MinerU dependencies ...
+    pip install mineru doclayout-yolo paddlenlp pypdfium2 onnx==1.16.0 || goto :fail
 )
 
-REM Step 5: 纭繚杈撳嚭鐩綍瀛樺湪
+REM Step 5: Ensure outputs dir
 if not exist outputs mkdir outputs
 
-REM Step 6: 鎵ц MinerU 绠￠亾
-echo.
-echo [INFO] 鍚姩 MinerU 瑙ｆ瀽娴佺▼...
-python -m src.pipeline --images_dir images --out_dir outputs --format both --use_mineru
-
-if %ERRORLEVEL% neq 0 (
-    echo ------------------------------------------------------
-    echo 鉂?MinerU 杩愯澶辫触锛岃妫€鏌ヤ笂鏂归敊璇俊鎭€?
-    echo 寤鸿鎵ц锛歴cripts\check_env.bat 鏌ョ湅鐜鐘舵€併€?
-    echo ------------------------------------------------------
-    pause
-    exit /b %ERRORLEVEL%
-)
+REM Step 6: Run MinerU pipeline
+echo [INFO] Running MinerU pipeline ...
+python -m src.pipeline --images_dir images --out_dir outputs --format both --use_mineru || goto :fail
 
 REM Step 7: Sync image DB and fix links
-echo.
-echo [INFO] Syncing images to qs_image_DB and fixing links...
-python -m scripts.sync_qs_image_db_and_fix_links
+echo [INFO] Sync images to qs_image_DB and fix links ...
+python -m scripts.sync_qs_image_db_and_fix_links || goto :fail
+
+REM Step 8: Regenerate Pandoc TeX/PDF after link fix
+echo [INFO] Regenerating Pandoc TeX/PDF from corrected worksheet.md ...
+call scripts\pandoc_export.bat
 
 echo ------------------------------------------------------
-echo Done. Outputs are in outputs\ :
+echo Done. Files under outputs\ :
 echo   outputs\worksheet.md
-echo   outputs\worksheet.tex
+if exist outputs\worksheet.tex echo   outputs\worksheet.tex
+echo   outputs\worksheet_pandoc.tex
+if exist outputs\worksheet_pandoc.pdf echo   outputs\worksheet_pandoc.pdf
 echo ------------------------------------------------------
 pause
+exit /b 0
+
+:fail
+echo ------------------------------------------------------
+echo [ERROR] Pipeline failed. See messages above.
+echo To diagnose, run: scripts\check_env.bat
+echo ------------------------------------------------------
+pause
+exit /b 10
+

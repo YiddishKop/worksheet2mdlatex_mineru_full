@@ -1,5 +1,6 @@
 from pathlib import Path
 import re
+import subprocess
 import shutil
 import time, atexit
 from typing import List, Dict, Any, Tuple
@@ -20,6 +21,46 @@ def __print_total_elapsed():
     except Exception:
         pass
 atexit.register(__print_total_elapsed)
+
+
+def md_to_pandoc_tex(md_path: Path, out_tex: Path) -> Path:
+    """将现有 Markdown 通过 Pandoc 转为 LaTeX，并清理 pandoc 自带的 \pandocbounded 包裹。
+
+    - 需要本机已安装 pandoc。
+    - 输出到 out_tex；若失败则抛出异常或返回 None。
+    """
+    try:
+        # 调用 pandoc 生成 tex（使用 article + 2cm 边距；字体交给用户的 xelatex 配置）
+        subprocess.check_call([
+            "pandoc",
+            str(md_path),
+            "-o",
+            str(out_tex),
+            "-f",
+            "gfm",
+            "-t",
+            "latex",
+            "--standalone",
+            "-V",
+            "documentclass=article",
+            "-V",
+            "geometry:margin=2cm",
+        ])
+    except FileNotFoundError:
+        print("[WARN] 未找到 pandoc，可安装后再启用 Markdown→LaTeX 转换。")
+        return None
+    except subprocess.CalledProcessError as e:
+        print("[WARN] pandoc 转换 LaTeX 失败：", e)
+        return None
+
+    try:
+        # 移除 pandoc 的 \pandocbounded{...} 包裹，避免图片不显示
+        tex = out_tex.read_text(encoding="utf-8", errors="ignore")
+        tex = re.sub(r"\\pandocbounded\{([\s\S]*?)\}", r"\1", tex)
+        out_tex.write_text(tex, encoding="utf-8")
+    except Exception as e:
+        print("[WARN] 清理 pandocbounded 时出错：", e)
+    return out_tex
 
 def process_images(images_dir: Path, tmp_dir: Path) -> List[Path]:
     """对 `images_dir` 下的图片进行题块切分并输出到 `tmp_dir`。
@@ -162,6 +203,9 @@ def main():
                 q=parse_question(text); qs.append(q); ltx.append(None); imgs.append(None)
         if args.format in ("md","both"):
             md=export_markdown(qs, imgs, ltx, out_dir); print("[OK] 导出 Markdown:", md)
+            # 额外：将 Markdown 转成 LaTeX（pandoc），写入 worksheet_pandoc.tex
+            pandoc_tex = md_to_pandoc_tex(md, out_dir/"worksheet_pandoc.tex")
+            if pandoc_tex: print("[OK] Pandoc LaTeX:", pandoc_tex)
         if args.format in ("tex","both"):
             tex=export_latex(qs, imgs, ltx, out_dir); print("[OK] 导出 LaTeX:", tex)
         return
@@ -171,6 +215,8 @@ def main():
     qs,ltx=ocr_and_structure(crops, args.use_pix2tex)
     if args.format in ("md","both"):
         md=export_markdown(qs, crops, ltx, out_dir); print("[OK] 导出 Markdown:", md)
+        pandoc_tex = md_to_pandoc_tex(md, out_dir/"worksheet_pandoc.tex")
+        if pandoc_tex: print("[OK] Pandoc LaTeX:", pandoc_tex)
     if args.format in ("tex","both"):
         tex=export_latex(qs, crops, ltx, out_dir); print("[OK] 导出 LaTeX:", tex)
 
