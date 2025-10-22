@@ -10,7 +10,7 @@ mineru_helper.py
 
 from pathlib import Path
 from typing import Dict, Any, Optional, List
-import subprocess, json, re
+import subprocess, json, re, sys
 
 # ----------------------------------------------------------
 # 兼容 PyTorch 2.6+ 模型反序列化安全机制
@@ -49,12 +49,13 @@ class MinerUHelper:
         """
         if cls._cached_version:
             return cls._cached_version
+        # Prefer the current interpreter (venv) to ensure consistency
         try:
-            output = subprocess.check_output(["mineru", "--version"], text=True, stderr=subprocess.STDOUT)
+            output = subprocess.check_output([sys.executable, "-m", "mineru", "--version"], text=True, stderr=subprocess.STDOUT)
             cls._cached_version = output.strip()
         except Exception:
             try:
-                output = subprocess.check_output(["python", "-m", "mineru", "--version"], text=True, stderr=subprocess.STDOUT)
+                output = subprocess.check_output(["mineru", "--version"], text=True, stderr=subprocess.STDOUT)
                 cls._cached_version = output.strip()
             except Exception:
                 cls._cached_version = "unknown"
@@ -104,13 +105,13 @@ class MinerUHelper:
         cmds: List[List[str]]
         if is_new:
             cmds = [
+                [sys.executable, "-m", "mineru", "parse", "-p", str(input_path), "--output", str(output_dir)],
                 ["mineru", "parse", "-p", str(input_path), "--output", str(output_dir)],
-                ["python", "-m", "mineru", "parse", "-p", str(input_path), "--output", str(output_dir)],
             ]
         else:
             cmds = [
+                [sys.executable, "-m", "mineru", "parse", str(input_path), "--output", str(output_dir)],
                 ["mineru", "parse", str(input_path), "--output", str(output_dir)],
-                ["python", "-m", "mineru", "parse", str(input_path), "--output", str(output_dir)],
             ]
 
         last_err: Optional[Exception] = None

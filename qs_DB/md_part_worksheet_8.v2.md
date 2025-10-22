@@ -1,5 +1,0 @@
-15. 如图7， $\angle B = \angle C = 90 ^ { \circ }$ , $A E$ 平分 $\angle B A D$ , $D E$ 平分 $\angle A D C$ ，若 $S _ { \_ C D E } : S _ { \_ , A B E } = 2 : 3$ ，则
-
-$$
-S _ { \Delta A D E } : S _ { \Delta D C E } = 5 : 3
-$$

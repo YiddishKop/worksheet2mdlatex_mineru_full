@@ -1,0 +1,8 @@
+解析：（1） $\overrightarrow { A E }$ 与 $\overrightarrow { A F }$ 共起点，且中线、底边易求，符合极化恒等式的使用场景，先取中点，如图，取 $E F$ 中点 $G$ ，连接 $_ { A G }$ ，因为 $\left| { \overrightarrow { D E } } \right| = \left| { \overrightarrow { B F } } \right|$ ，所以 $G$ 也是 $B D$ 的中点，由极化恒等式， $\overrightarrow { A E } \cdot \overrightarrow { A F } = \left| \overrightarrow { A G } \right| ^ { 2 } - \left| \overrightarrow { E G } \right| ^ { 2 } \textcircled { 1 }$ ，因为 $G$ 是 $B D$ 的中点，所以 $\left| { \overline { { A G } } } \right| = { \frac { 1 } { 2 } } { \overline { { B D } } } \left| = { \frac { \sqrt { 2 } } { 2 } } \right.$ 又 $\left| { \overrightarrow { B D } } \right| = 4 { \left| { \overrightarrow { D E } } \right| }$ ，所以 $\left| { \overrightarrow { E G } } \right| = { \frac { 1 } { 4 } } { \left| { \overrightarrow { B D } } \right| } = { \frac { \sqrt { 2 } } { 4 } }$ 代入 $\textcircled{1}$ 得 $\overrightarrow { A E } \cdot \overrightarrow { A F } = ( \frac { \sqrt { 2 } } { 2 } ) ^ { 2 } - ( \frac { \sqrt { 2 } } { 4 } ) ^ { 2 } = \frac { 3 } { 8 }$
+
+
+(2)
+
+$E , \ F$ 变成了动点，但中线、底边易求，仍满足极化恒等式的使用场景，由极化恒等式， ${ \overrightarrow { A E } } \cdot { \overrightarrow { A F } } = \left| { \overrightarrow { A G } } \right| ^ { 2 } - \left| { \overrightarrow { E G } } \right| ^ { 2 } = ( { \frac { \sqrt { 2 } } { 2 } } ) ^ { 2 } - \left| { \overrightarrow { E G } } \right| ^ { 2 } = { \frac { 1 } { 2 } } - \left| { \overrightarrow { E G } } \right| ^ { 2 } ,$ 由图可知$O\leqE\leq$，所以$0\leq-E$^$\leq$，$E.\piF$的取值范是$1.\div].$答案：(1) $\frac { 3 } { 8 }$ (2) $[ 0 , \frac 12 ]$
+
+\includegraphics[keepaspectratio]{<../../qs_image_DB/第2节 数量积的常见几何方法：方法册+练习册/1b04fabaf218adbcae254e5d40381065ffa5c4a528a1c25552dd752e8c731fa0.jpg>}

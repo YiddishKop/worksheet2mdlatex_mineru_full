@@ -40,8 +40,44 @@ def clean_math_content(content):
     
     # 3. (可选) 移除 \boldsymbol 之类的 Pandoc 特有命令
     content = content.replace(r'\boldsymbol { E }', 'E') # 简化
+
+    # --- 这是您要求的修改 ---
+    # 4. 为特定命令后的多个连续字母添加大括号
+    #    例如： \triangleABC -> \triangle{ABC}
+    #    但 \angleA 不会变成 \angle{A} (因为它只匹配2个或更多字母)
+    
+    # 匹配 (\triangle, \angle, \parallel, \perp) 
+    # 后面必须跟着 ([a-zA-Z]{2,}) 两个或更多连续的字母
+    brace_regex = re.compile(r'(\\triangle|\\angle|\\parallel|\\perp)([a-zA-Z]{1,})')
+    content = brace_regex.sub(r'\1{\2}', content)
     
     return content
+
+
+def convert_images_to_latex(content):
+    """
+    使用正则表达式查找 Markdown 图像语法 ![](path)
+    并将其替换为 \includegraphics{path}
+    """
+    
+    # 正则表达式：
+    # \!\[        # 匹配 `![`
+    # [^\]]* # 匹配方括号内的任何 alt-text (我们不关心它)
+    # \]          # 匹配 `]`
+    # \(          # 匹配 `(`
+    # (.*?)       # 捕获组 1: 路径 (非贪婪)
+    # \)          # 匹配 `)`
+    
+    # 我们将保留图像的原始宽高比
+    image_regex = re.compile(r'!\[[^\]]*\]\((.*?)\)')
+    
+    # 替换：使用 \includegraphics[keepaspectratio]{...}
+    # \1 代表捕获到的路径
+    # 我们需要用 \\ 来转义 Python 字符串中的 \
+    replacement = r'\\includegraphics[keepaspectratio]{\1}'
+    
+    return image_regex.sub(replacement, content)
+
 
 def replacer_callback(match):
     """
@@ -89,6 +125,7 @@ def main():
         
         # 使用 re.sub 和回调函数一次性替换所有
         final_content = math_regex.sub(replacer_callback, content)
+        final_content = convert_images_to_latex(final_content)
         
         with open(output_filename, 'w', encoding='utf-8') as f:
             f.write(final_content)

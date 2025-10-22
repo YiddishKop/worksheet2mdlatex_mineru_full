@@ -107,11 +107,15 @@ def build_filename_index(db_root: Path) -> dict[str, Path]:
 
 def rewrite_links_in_text(text: str, name_to_path: dict[str, Path], base_dir: Path, repo_root: Path) -> str:
     # Rewrite any markdown image link whose basename is known in DB to the DB-relative path
-    pattern = re.compile(r"!\[[^\]]*\]\(([^)\s]+)\)")
+    # Allow spaces in the URL inside parentheses (common in doc names) and rebuild with
+    # angle brackets around URL when it contains spaces or non-ASCII for broader preview support.
+    # Note: this simple pattern does not parse optional titles.
+    pattern = re.compile(r"!\[([^\]]*)\]\(([^)]+)\)")
     exts = {".jpg", ".jpeg", ".png", ".bmp"}
 
     def repl(m: re.Match) -> str:
-        old_path = m.group(1)
+        alt = m.group(1)
+        old_path = m.group(2)
         fname = os.path.basename(old_path)
         if os.path.splitext(fname)[1].lower() not in exts:
             return m.group(0)
@@ -119,7 +123,10 @@ def rewrite_links_in_text(text: str, name_to_path: dict[str, Path], base_dir: Pa
         if not p:
             return m.group(0)
         rel = os.path.relpath(str(p), str(base_dir)).replace("\\", "/")
-        return m.group(0).replace(old_path, rel)
+        # If URL has spaces or non-ASCII, wrap in angle brackets to satisfy strict renderers
+        needs_brackets = any(ord(ch) > 127 for ch in rel) or (" " in rel)
+        url_part = f"(<{rel}>)" if needs_brackets else f"({rel})"
+        return f"![{alt}]{url_part}"
 
     return pattern.sub(repl, text)
 

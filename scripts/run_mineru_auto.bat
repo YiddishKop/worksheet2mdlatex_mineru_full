@@ -38,23 +38,48 @@ if %errorlevel% neq 0 (
     exit /b 3
 )
 
-REM Step 4: Ensure mineru CLI
-where mineru >nul 2>nul
+REM Step 4: Ensure MinerU package in current venv (CLI comes from venv)
+echo [INFO] Ensuring MinerU is installed in this venv ...
+python -c "import mineru" >nul 2>nul
 if %errorlevel% neq 0 (
-    echo [INFO] Installing MinerU dependencies ...
+    echo [INFO] Installing MinerU + deps into venv ...
     pip install mineru doclayout-yolo paddlenlp pypdfium2 onnx==1.16.0 || goto :fail
 )
 
 REM Step 5: Ensure outputs dir
 if not exist outputs mkdir outputs
 
-REM Step 6: Run MinerU pipeline
+REM Step 6: Run MinerU pipeline (robust)
 echo [INFO] Running MinerU pipeline ...
-python -m src.pipeline --images_dir images --out_dir outputs --format both --use_mineru || goto :fail
+python -m src.pipeline --images_dir images --out_dir outputs --format both --use_mineru
+if %errorlevel% neq 0 (
+    if exist outputs\worksheet.md (
+        echo [WARN] MinerU pipeline returned rc=%errorlevel%, continuing with existing outputs\worksheet.md
+    ) else (
+        echo [ERROR] MinerU pipeline failed and no outputs\worksheet.md present.
+        goto :fail
+    )
+)
+
+REM Step 6.5: Normalize question titles (merge number + stem into one line)
+echo [INFO] Normalizing question titles in outputs\worksheet.md ...
+python -m scripts.normalize_md_question_titles || goto :fail
+
+REM Step 6.6: Insert linebreaks before '??:' / '??<n>:'
+echo [INFO] Inserting linebreaks before ??/??<n> ...
+python -m scripts.insert_linebreaks_before_solutions || goto :fail
 
 REM Step 7: Sync image DB and fix links
 echo [INFO] Sync images to qs_image_DB and fix links ...
 python -m scripts.sync_qs_image_db_and_fix_links || goto :fail
+
+REM Step 7.5: Split worksheet.md into parts for later processing
+echo [INFO] Splitting worksheet.md into qs_DB parts ...
+python -m scripts.split_md_to_parts || goto :fail
+
+REM Step 7.6: Run v1 + v2 on qs_DB/*.md to produce .latex per question
+echo [INFO] Converting qs_DB/*.md to .latex via v1+v2 ...
+python -m scripts.batch_v1_v2_to_latex || goto :fail
 
 REM Step 8: Regenerate Pandoc TeX/PDF after link fix
 echo [INFO] Regenerating Pandoc TeX/PDF from corrected worksheet.md ...
@@ -77,4 +102,5 @@ echo To diagnose, run: scripts\check_env.bat
 echo ------------------------------------------------------
 pause
 exit /b 10
+
 
