@@ -2,6 +2,7 @@ from pathlib import Path
 from typing import List, Dict, Any
 import json
 from PIL import Image
+import re
 
 
 def image_to_single_pdf(img_path: Path) -> Path:
@@ -144,7 +145,7 @@ def robust_question_blocks(mineru_struct: Dict[str, Any]) -> List[Dict[str, Any]
         return []
 
     head_pat = re.compile(
-        r"(?m)^\s*(?:>\s*)*(?:"
+        r"(?m)^\s*(?:>\s*)*(?:#+\s*)?(?:"
         r"【\s*(?:例|练习|题|变式)\s*\d*】|"
         r"第\s*\d+\s*题|"
         r"(?:例|练习)\s*\d+\s*[\.、．)]|"
@@ -196,4 +197,164 @@ def mineru_parse_to_questions(page_path: Path, tmp_dir: Path) -> List[Dict[str, 
     res = run_mineru_on_file(input_path, work_subdir)
     if not res:
         return []
+    # 回撤跨页合并：仅使用基于文本的稳健切分
     return robust_question_blocks(res)
+
+
+# ---------------------------
+# 跨页合并（基于 *_middle.json）
+# ---------------------------
+
+def _find_middle_json(work_dir: Path) -> Path | None:
+    try:
+        cands = sorted(work_dir.rglob("*_middle.json"))
+        return cands[0] if cands else None
+    except Exception:
+        return None
+
+
+def _extract_blocks_from_pdf_info(pdf_info: List[Dict[str, Any]]) -> tuple[list[dict], dict[int, float]]:
+    """从 middle.json 的 pdf_info 中抽取顺序块和每页高度。
+    返回：
+    - blocks: [{page_idx,x0,y0,x1,y1,text,type}]
+    - page_heights: {page_idx: height}
+    """
+    blocks: list[dict] = []
+    page_heights: dict[int, float] = {}
+
+    def _gather_text(blk: Dict[str, Any]) -> str:
+        tparts: list[str] = []
+        # 常见结构：lines -> spans -> content/html/image_path
+        for line in blk.get("lines", []) or []:
+            for sp in line.get("spans", []) or []:
+                if isinstance(sp, dict):
+                    if sp.get("type") == "table" and sp.get("image_path"):
+                        # 以图片形式插入表格快照
+                        tparts.append(f"![](images/{sp['image_path']})")
+                    elif "content" in sp and isinstance(sp["content"], str):
+                        tparts.append(sp["content"])
+        # table 块也可能通过 spans.html 提供 HTML，这里不做复杂解析
+        return "\n".join([p for p in tparts if str(p).strip()])
+
+    for page in pdf_info:
+        pidx = int(page.get("page_idx") or page.get("page_index") or 0)
+        ps = page.get("page_size") or [0, 0]
+        if isinstance(ps, (list, tuple)) and len(ps) >= 2:
+            page_heights[pidx] = float(ps[1])
+        else:
+            page_heights[pidx] = 1000.0
+
+        # 优先使用 para_blocks，其次 preproc_blocks
+        seq = page.get("para_blocks") or page.get("preproc_blocks") or []
+        for blk in seq:
+            bbox = blk.get("bbox") or [0, 0, 0, 0]
+            x0, y0, x1, y1 = [float(b) for b in bbox[:4]] if len(bbox) >= 4 else (0.0, 0.0, 0.0, 0.0)
+            text = _gather_text(blk)
+            btype = str(blk.get("type") or "text")
+            blocks.append({
+                "page_idx": pidx,
+                "x0": x0, "y0": y0, "x1": x1, "y1": y1,
+                "text": (text or "").strip(),
+                "type": btype,
+            })
+
+    # 排序：页、y、x
+    blocks.sort(key=lambda b: (b["page_idx"], b["y0"], b["x0"]))
+    return blocks, page_heights
+
+
+_HEAD_PAT = re.compile(
+    r"(?m)^\s*(?:>\s*)*(?:#+\s*)?(?:"
+    r"【\s*(?:例|练习|题|变式)\s*\d*】|"
+    r"第\s*\d+\s*题|"
+    r"(?:例|练习)\s*\d+\s*[\.、．)]|"
+    r"\d+\s*[\.、．)]\s+(?:如图|已知|设|第|题|证明|求|解|若|函数|计算|在)\S.*|"
+    r"[（(]\s*\d+\s*[）)]"
+    r")"
+)
+_SUBQ_PAT = re.compile(r"^\s*[（(]\s*\d+\s*[）)]")
+_SOLUTION_PAT = re.compile(r"^\s*(?:【?\s*(?:答案|解析|详解|参考答案)\s*】?|解法\s*(?:\d+|[一二三四五六七八九十]+)\s*[:：]?)")
+
+
+def _x_overlap_ratio(a: dict, b: dict) -> float:
+    a0, a1 = a["x0"], a["x1"]
+    b0, b1 = b["x0"], b["x1"]
+    left = max(a0, b0)
+    right = min(a1, b1)
+    inter = max(0.0, right - left)
+    aw, bw = max(1.0, a1 - a0), max(1.0, b1 - b0)
+    base = min(aw, bw)
+    return inter / base if base > 0 else 0.0
+
+
+def build_questions_from_middle_json(work_dir: Path) -> List[Dict[str, Any]]:
+    mid = _find_middle_json(work_dir)
+    if not mid or not mid.exists():
+        return []
+    data = json.loads(mid.read_text(encoding="utf-8", errors="ignore"))
+    pdf_info = data.get("pdf_info")
+    if not isinstance(pdf_info, list) or not pdf_info:
+        return []
+
+    blocks, page_heights = _extract_blocks_from_pdf_info(pdf_info)
+    if not blocks:
+        return []
+
+    BOTTOM_RATIO = 0.88
+    X_OVERLAP_REQ = 0.5
+
+    out: list[Dict[str, Any]] = []
+    buf: list[str] = []
+    buf_has_head = False
+    prev: dict | None = None
+
+    def flush():
+        nonlocal buf, buf_has_head
+        txt = "\n\n".join([t for t in buf if t.strip()]).strip()
+        if txt:
+            out.append({"type": "question_text", "text": txt})
+        buf = []
+        buf_has_head = False
+
+    for cur in blocks:
+        text = cur.get("text") or ""
+        if not text and cur.get("type") not in ("title",):
+            prev = cur
+            continue
+
+        is_head = (cur.get("type") == "title") or bool(_HEAD_PAT.match(text))
+        is_subq = bool(_SUBQ_PAT.match(text))
+        is_sol = bool(_SOLUTION_PAT.match(text))
+
+        if is_head:
+            # 强信号：起新题
+            flush()
+            buf.append(text)
+            buf_has_head = True
+            prev = cur
+            continue
+
+        if prev is None:
+            buf.append(text)
+            prev = cur
+            continue
+
+        # 跨页合并判断
+        should_merge = True
+        if cur["page_idx"] != prev["page_idx"]:
+            ph = page_heights.get(prev["page_idx"], 1000.0)
+            near_bottom = (prev["y1"] >= BOTTOM_RATIO * ph)
+            xol = _x_overlap_ratio(prev, cur)
+            # 跨页时：靠近页底 + 非标题，且水平重叠满足；或 小问延续且已有题头
+            should_merge = (near_bottom and (not is_head) and (xol >= X_OVERLAP_REQ)) or (is_subq and buf_has_head)
+
+        # 非跨页也允许合并，除非这是一个强标题（上面已处理）
+        if should_merge:
+            buf.append(text)
+        else:
+            flush()
+            buf.append(text)
+        prev = cur
+
+    flush()
+    return out

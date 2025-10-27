@@ -146,8 +146,9 @@ def main():
             for idx, b in enumerate(blocks):
                 text = b.get("text") or ""
                 img_paths = []
-                for m in re.finditer(r"!\[[^\]]*\]\(([^)]+)\)", text):
-                    relp = m.group(1).strip()
+                # Support both plain and angle-bracket URLs
+                for m in re.finditer(r"!\[[^\]]*\]\((?:<([^>]+)>|([^)]+))\)", text):
+                    relp = (m.group(1) or m.group(2) or "").strip()
                     # 仅处理相对路径 images/*
                     if relp.startswith("./"): relp = relp[2:]
                     p = (auto_dir/relp).resolve()
@@ -184,7 +185,7 @@ def main():
                 try:
                     def _repl(md: re.Match) -> str:
                         alt = md.group(1)
-                        relp = (md.group(2) or "").strip()
+                        relp = ((md.group(2) or md.group(3) or "")).strip()
                         if relp.startswith("./"):
                             relp = relp[2:]
                         new_url = relp
@@ -196,8 +197,12 @@ def main():
                             new_url = ("../" + target.relative_to(repo_root.resolve()).as_posix())
                         except Exception:
                             pass
+                        # Wrap in angle brackets if contains spaces or non-ASCII
+                        needs_brackets = any(ord(ch) > 127 for ch in new_url) or (" " in new_url)
+                        if needs_brackets:
+                            return f"![{alt}](<{new_url}>)"
                         return f"![{alt}]({new_url})"
-                    text = re.sub(r"!\[([^\]]*)\]\(([^)]+)\)", _repl, text)
+                    text = re.sub(r"!\[([^\]]*)\]\((?:<([^>]+)>|([^)]+))\)", _repl, text)
                 except Exception:
                     pass
                 q=parse_question(text); qs.append(q); ltx.append(None); imgs.append(None)

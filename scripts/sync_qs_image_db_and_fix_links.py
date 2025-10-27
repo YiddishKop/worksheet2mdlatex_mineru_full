@@ -110,12 +110,13 @@ def rewrite_links_in_text(text: str, name_to_path: dict[str, Path], base_dir: Pa
     # Allow spaces in the URL inside parentheses (common in doc names) and rebuild with
     # angle brackets around URL when it contains spaces or non-ASCII for broader preview support.
     # Note: this simple pattern does not parse optional titles.
-    pattern = re.compile(r"!\[([^\]]*)\]\(([^)]+)\)")
+    # Support both plain and angle-bracketed URLs. Angle-bracket form may contain ')'.
+    pattern = re.compile(r"!\[([^\]]*)\]\((?:<([^>]+)>|([^)]+))\)")
     exts = {".jpg", ".jpeg", ".png", ".bmp"}
 
     def repl(m: re.Match) -> str:
         alt = m.group(1)
-        old_path = m.group(2)
+        old_path = (m.group(2) or m.group(3) or "")
         fname = os.path.basename(old_path)
         if os.path.splitext(fname)[1].lower() not in exts:
             return m.group(0)
@@ -136,16 +137,64 @@ def strip_md_images(text: str) -> str:
     return re.sub(r"!\[[^\]]*\]\([^)]+\)", "", text)
 
 
+def ensure_flat_mineru_images(repo_root: Path) -> int:
+    """Ensure a flattened copy of MinerU images exists at:
+    outputs/_mineru_tmp/<doc_name>/images/<basename>
+    Returns number of files copied.
+    """
+    src_root = repo_root / "outputs" / "_mineru_tmp"
+    copied = 0
+    if not src_root.exists():
+        return 0
+    exts = {".jpg", ".jpeg", ".png", ".bmp"}
+    for images_dir in src_root.rglob("auto/images"):
+        if not images_dir.is_dir():
+            continue
+        try:
+            rel = images_dir.relative_to(src_root)
+            doc_name = rel.parts[0]
+        except Exception:
+            continue
+        flat_dir = src_root / doc_name / "images"
+        ensure_dir(flat_dir)
+        for src in images_dir.rglob("*"):
+            if src.is_file() and src.suffix.lower() in exts:
+                dst = flat_dir / src.name
+                if not dst.exists():
+                    try:
+                        shutil.copy2(src, dst)
+                        copied += 1
+                    except Exception:
+                        pass
+    return copied
+
+
+def build_flat_mineru_index(repo_root: Path) -> dict[str, Path]:
+    idx: dict[str, Path] = {}
+    base = repo_root / "outputs" / "_mineru_tmp"
+    exts = {".jpg", ".jpeg", ".png", ".bmp"}
+    if not base.exists():
+        return idx
+    for p in base.rglob("images/*"):
+        if p.is_file() and p.suffix.lower() in exts:
+            idx[p.name] = p
+    return idx
+
+
 def fix_outputs(repo_root: Path) -> dict:
     out_dir = repo_root / "outputs"
     db_root = repo_root / "qs_image_DB"
-    idx = build_filename_index(db_root)
+    db_idx = build_filename_index(db_root)
+    # Ensure flattened MinerU images and build its index
+    ensure_flat_mineru_images(repo_root)
+    mineru_idx = build_flat_mineru_index(repo_root)
     changed = {"md": False, "tex": False}
     # Fix worksheet.md
     md_path = out_dir / "worksheet.md"
     if md_path.exists():
         txt = md_path.read_text(encoding="utf-8")
-        new_txt = rewrite_links_in_text(txt, idx, md_path.parent, repo_root)
+        # Rewrite worksheet.md to point to outputs/_mineru_tmp/<doc>/images/<basename>
+        new_txt = rewrite_links_in_text(txt, mineru_idx, md_path.parent, repo_root)
         if new_txt != txt:
             md_path.write_text(new_txt, encoding="utf-8")
             changed["md"] = True
@@ -153,7 +202,7 @@ def fix_outputs(repo_root: Path) -> dict:
     tex_path = out_dir / "worksheet.tex"
     if tex_path.exists():
         txt = tex_path.read_text(encoding="utf-8")
-        new_txt = rewrite_links_in_text(txt, idx, tex_path.parent, repo_root)
+        new_txt = rewrite_links_in_text(txt, db_idx, tex_path.parent, repo_root)
         if new_txt != txt:
             tex_path.write_text(new_txt, encoding="utf-8")
             changed["tex"] = True

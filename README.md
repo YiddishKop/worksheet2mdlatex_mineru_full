@@ -169,3 +169,12 @@ ASCII 流程图（函数/脚本调用路线与最终产物）：
 欢迎根据你的教材/习题风格调整切分正则与清理规则。
 
 
+
+
+## 预处理与命名规范
+
+- 建议先运行：env310\\Scripts\\python -m scripts.rename_images_whitespace
+  - 将 images/ 下文件与目录名中的空格统一替换为 _
+  - 可避免路径转义、Markdown 链接与 Pandoc 渲染异常
+  - 自动批处理脚本已在 Step 5.5 执行相同步骤
+

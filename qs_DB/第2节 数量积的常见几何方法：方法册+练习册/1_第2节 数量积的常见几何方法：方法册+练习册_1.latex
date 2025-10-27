@@ -1,7 +1,0 @@
-1. 极化恒等式：如图1，设 $D$ 为 $B C$ 中点，则 ${ \overrightarrow { A B } } \cdot { \overrightarrow { A C } } = ( { \overrightarrow { A D } } + { \overrightarrow { D B } } ) \cdot ( { \overrightarrow { A D } } + { \overrightarrow { D C } } )$ ，因为 $\overrightarrow { D C } =$ $- \overrightarrow { D B }$ ，所以 ${ \overrightarrow { A B } } \cdot { \overrightarrow { A C } } = ( { \overrightarrow { A D } } + { \overrightarrow { D B } } ) \cdot ( { \overrightarrow { A D } } - { \overrightarrow { D B } } ) = \left| A D \right| ^ { 2 } - \left| B D \right| ^ { 2 }$ ，这一结论叫做极化恒等式，它常用于计算共起点、底边长已知的两个向量的数量积，其好处是把本来需要夹角才能计算的数量积转化成只需长度即可计算的量.
-
-\includegraphics[keepaspectratio]{<../../qs_image_DB/第2节 数量积的常见几何方法：方法册+练习册/6ff4108d18b660ece3d7b3418f99e5cf56c1c67e866968173977e1ce044175ea.jpg>}  
-图1
-
-\includegraphics[keepaspectratio]{<../../qs_image_DB/第2节 数量积的常见几何方法：方法册+练习册/908a64be51b4b55b657548beb8fc76b34a80da3ae399e3f547a1aea7c5e567cd.jpg>}  
-图2

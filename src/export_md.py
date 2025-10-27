@@ -28,8 +28,14 @@ def render_md_item(q: Dict[str, Any], img_rel: str, latex: str = None) -> str:
             body,
         )
 
-    # 不使用任何 Markdown 级别为题号加样式，只输出纯文本题号一行
-    s = ([f"{title}\n"] if title else []) + [body, "\n"]
+    # 将题号与正文输出在同一行，避免额外空行
+    s: list[str] = []
+    if title and body:
+        s.append(f"{title} {body}".rstrip())
+    elif title:
+        s.append(title.strip())
+    elif body:
+        s.append(body)
 
     if latex:
         s.append(f"**LaTeX 公式（OCR）**: `{latex}`\n")
@@ -41,10 +47,10 @@ def render_md_item(q: Dict[str, Any], img_rel: str, latex: str = None) -> str:
 
     if img_rel:
         alt = title or ""
-        s.append(f"![{alt}]({img_rel})\n")
+        s.append(f"![{alt}]({img_rel})")
 
     if q.get("answer"):
-        s.append(f"> 参考答案：{q['answer']}\n")
+        s.append(f"> 参考答案：{q['answer']}")
 
     return "\n".join(s)
 

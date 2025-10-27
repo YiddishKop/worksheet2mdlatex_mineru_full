@@ -49,6 +49,10 @@ if %errorlevel% neq 0 (
 REM Step 5: Ensure outputs dir
 if not exist outputs mkdir outputs
 
+REM Step 5.5: Preprocess image/file names (spaces -> underscores)
+echo [INFO] Normalizing image names in images\ (spaces -> underscores) ...
+python -m scripts.rename_images_whitespace || goto :fail
+
 REM Step 6: Run MinerU pipeline (robust)
 echo [INFO] Running MinerU pipeline ...
 python -m src.pipeline --images_dir images --out_dir outputs --format both --use_mineru
