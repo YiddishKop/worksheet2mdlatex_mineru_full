@@ -14,15 +14,18 @@ sentencepiece
 protobuf<=3.20.3
 rapidfuzz
 
+# PyTorch CPU stack (install wheels via setup_env.bat PyTorch index)
 torch==2.5.1
 torchvision==0.20.1
 torchaudio==2.5.1
 
+# Paddle stack
 paddleocr>=2.9.1
 paddlepaddle
-paddlenlp
+paddlenlp==2.6.1
 
-mineru==2.5.4
+# MinerU and related
+mineru==2.6.2
 doclayout-yolo
 ultralytics==8.0.200
 onnx==1.16.0
@@ -30,6 +33,7 @@ omegaconf
 shapely
 pyclipper
 pypdfium2
+dill==0.3.4
 
 pix2tex[gui]
 transformers
@@ -37,3 +41,4 @@ transformers
 huggingface_hub
 hf_xet
 rich
+certifi-win32

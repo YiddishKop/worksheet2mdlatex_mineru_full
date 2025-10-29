@@ -78,3 +78,27 @@ def export_markdown(
         lines.append(render_md_item(q, rel_str, latex))
     out_md.write_text("\n".join(lines), encoding="utf-8")
     return out_md
+
+
+def export_markdown_to_path(
+    questions: List[Dict[str, Any]],
+    img_paths: List[Path],
+    latex_list,
+    out_dir: Path,
+    out_path: Path,
+) -> Path:
+    """导出 Markdown 到指定路径 out_path（不固定写 outputs/worksheet.md）。"""
+    lines = [MD_HEADER]
+    out_dir_resolved = out_dir.resolve()
+    for (q, img, latex) in zip(questions, img_paths, latex_list):
+        rel_str = ""
+        if img:
+            try:
+                rel_path = Path(img).resolve().relative_to(out_dir_resolved)
+                rel_str = rel_path.as_posix()
+            except Exception:
+                rel_str = os.path.relpath(str(img), str(out_dir)).replace("\\", "/")
+        lines.append(render_md_item(q, rel_str, latex))
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text("\n".join(lines), encoding="utf-8")
+    return out_path

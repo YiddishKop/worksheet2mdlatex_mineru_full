@@ -1,0 +1,13 @@
+from __future__ import annotations
+import re
+import sys
+from pathlib import Path
+
+
+# 仅以顶层标签作为切分锚点：例/练习/变式/【…�?答案/解析等；不以 (n)/（n�?�?1)/1. 作为锚点
+LABEL_PATTERN = re.compile(
+    r"(?m)^\s*(?:>\s*)*(?:#+\s*)?"
+    r"("  # captured label text
+    r"(?:"
+    r"【例\d+】|【练习\d+】|【变式\d*-*\d*】|"  # 【例1�?【练�?�?【变�?-1�?    r"例\d+|练习\d+|变式\d+|"                 # �?/练习1/变式1
+    r"【答案】|�

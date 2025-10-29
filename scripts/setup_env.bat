@@ -28,8 +28,15 @@ REM 安装所有依赖
 echo 🧩 安装核心依赖中...
 pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
+REM 关键版本校准，避免依赖冲突（Torch CPU 2.5.1 + dill 0.3.4 + paddlenlp 2.6.1 + mineru 2.6.2）
+echo 🧩 对齐 PyTorch CPU 2.5.1 及相关依赖版本 ...
+pip uninstall -y torch torchaudio >nul 2>nul
+pip install --index-url https://download.pytorch.org/whl/cpu torch==2.5.1+cpu torchaudio==2.5.1+cpu
+pip install "dill==0.3.4"
+pip install "paddlenlp==2.6.1" "mineru==2.6.2"
+
 REM 核心依赖补充检查
-set packages=torch paddleocr mineru doclayout-yolo ultralytics pix2tex paddlenlp ftfy shapely pyclipper omegaconf onnx pypdfium2 transformers
+set packages=torch paddleocr mineru doclayout-yolo ultralytics pix2tex paddlenlp ftfy shapely pyclipper omegaconf onnx pypdfium2 transformers dill
 for %%p in (%packages%) do (
     python -c "import %%p" 2>nul
     if errorlevel 1 (

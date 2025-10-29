@@ -1,3 +1,4 @@
+from __future__ import annotations
 from pathlib import Path
 import re
 import subprocess
@@ -5,6 +6,7 @@ import shutil
 import time, atexit
 from typing import List, Dict, Any, Tuple
 import argparse
+
 from .split_questions import cut_questions
 from .ocr_extract import run_ocr
 from .structure_parser import parse_question_v2 as parse_question
@@ -17,20 +19,15 @@ __RUN_T0 = time.perf_counter()
 def __print_total_elapsed():
     try:
         elapsed = time.perf_counter() - __RUN_T0
-        print(f"[INFO] 总用时: {elapsed:.2f} 秒")
+        print(f"[INFO] 总耗时: {elapsed:.2f} s")
     except Exception:
         pass
 atexit.register(__print_total_elapsed)
 
 
-def md_to_pandoc_tex(md_path: Path, out_tex: Path) -> Path:
-    """将现有 Markdown 通过 Pandoc 转为 LaTeX，并清理 pandoc 自带的 \pandocbounded 包裹。
-
-    - 需要本机已安装 pandoc。
-    - 输出到 out_tex；若失败则抛出异常或返回 None。
-    """
+def md_to_pandoc_tex(md_path: Path, out_tex: Path) -> Path | None:
+    """Markdown -> LaTeX via Pandoc. Returns out_tex or None."""
     try:
-        # 调用 pandoc 生成 tex（使用 article + 2cm 边距；字体交给用户的 xelatex 配置）
         subprocess.check_call([
             "pandoc",
             str(md_path),
@@ -47,182 +44,159 @@ def md_to_pandoc_tex(md_path: Path, out_tex: Path) -> Path:
             "geometry:margin=2cm",
         ])
     except FileNotFoundError:
-        print("[WARN] 未找到 pandoc，可安装后再启用 Markdown→LaTeX 转换。")
+        print("[WARN] 未找到 pandoc，跳过 LaTeX 导出。")
         return None
     except subprocess.CalledProcessError as e:
-        print("[WARN] pandoc 转换 LaTeX 失败：", e)
+        print("[WARN] pandoc 转换失败:", e)
         return None
 
     try:
-        # 移除 pandoc 的 \pandocbounded{...} 包裹，避免图片不显示
         tex = out_tex.read_text(encoding="utf-8", errors="ignore")
         tex = re.sub(r"\\pandocbounded\{([\s\S]*?)\}", r"\1", tex)
         out_tex.write_text(tex, encoding="utf-8")
-    except Exception as e:
-        print("[WARN] 清理 pandocbounded 时出错：", e)
+    except Exception:
+        pass
     return out_tex
 
-def process_images(images_dir: Path, tmp_dir: Path) -> List[Path]:
-    """对 `images_dir` 下的图片进行题块切分并输出到 `tmp_dir`。
 
-    - 仅处理常见图片后缀（png/jpg/jpeg/bmp/tif/tiff），忽略其他文件。
-    - 调用 `cut_questions` 对每张图片做粗分割，返回所有切割后的图片路径列表。
-    """
-    ensure_dir(tmp_dir); outs=[]
+def process_images(images_dir: Path, tmp_dir: Path) -> List[Path]:
+    """Split input images into crops via cut_questions."""
+    ensure_dir(tmp_dir)
+    outs: list[Path] = []
     for p in sorted(images_dir.glob("*.*")):
-        if p.suffix.lower() not in [".png",".jpg",".jpeg",".bmp",".tif",".tiff"]: continue
+        if p.suffix.lower() not in [".png",".jpg",".jpeg",".bmp",".tif",".tiff"]:
+            continue
         outs.extend(cut_questions(p, tmp_dir))
     return outs
 
-def ocr_and_structure(crops: List[Path], use_pix2tex: bool) -> Tuple[List[Dict[str, Any]], List[str]]:
-    """对切分得到的小图执行 OCR，并解析题目结构。
 
-    返回：
-    - questions: 结构化题目列表（题号/题干/选项/答案等）。
-    - latex: 每张小图识别到的公式 LaTeX 字符串列表（可能含 None）。
-    """
-    qs=[]; ltx=[]
+def ocr_and_structure(crops: List[Path], use_pix2tex: bool) -> Tuple[List[Dict[str, Any]], List[str]]:
+    """Run OCR on crops and structure into question dicts."""
+    qs: list[dict] = []
+    ltx: list[str] = []
     for img in crops:
-        o=run_ocr(img, use_pix2tex=use_pix2tex)
-        q=parse_question(o.get("text") or ""); qs.append(q); ltx.append(o.get("latex"))
+        o = run_ocr(img, use_pix2tex=use_pix2tex)
+        q = parse_question(o.get("text") or "")
+        qs.append(q)
+        ltx.append(o.get("latex"))
     return qs, ltx
 
-def main():
-    """命令行入口：组合 MinerU/切图 + OCR + 导出为 Markdown/LaTeX。
 
-    关键参数：
-    - --images_dir: 输入目录（图片或 PDF）；
-    - --out_dir: 输出目录（会创建）；
-    - --format: md/tex/both；
-    - --use_pix2tex: 启用本地公式识别；
-    - --use_mineru: 使用 MinerU 解析 PDF/整页为题目文本块。
-    """
-    ap=argparse.ArgumentParser()
+def main() -> None:
+    ap = argparse.ArgumentParser()
     ap.add_argument("--images_dir", required=True)
     ap.add_argument("--out_dir", required=True)
     ap.add_argument("--format", choices=["md","tex","both"], default="both")
     ap.add_argument("--use_pix2tex", action="store_true")
     ap.add_argument("--use_mineru", action="store_true")
-    args=ap.parse_args()
-    images_dir=Path(args.images_dir); out_dir=Path(args.out_dir); ensure_dir(out_dir)
-    crops_dir=out_dir/"images"; ensure_dir(crops_dir)
-    # 全局题图资源库（项目根目录）
+    args = ap.parse_args()
+
+    images_dir = Path(args.images_dir)
+    out_dir = Path(args.out_dir)
+    ensure_dir(out_dir)
+    crops_dir = out_dir / "images"
+    ensure_dir(crops_dir)
+
     repo_root = Path(__file__).resolve().parents[1]
-    qs_image_db = repo_root/"qs_image_DB"; ensure_dir(qs_image_db)
-    # 运行总用时统计
-    import time, atexit
+    qs_image_db = repo_root / "qs_image_DB"
+    ensure_dir(qs_image_db)
+
+    # Minor elapsed print for this run
     t0 = time.perf_counter()
     def _print_elapsed():
         elapsed = time.perf_counter() - t0
-        print(f"[INFO] 总用时: {elapsed:.2f} 秒")
+        print(f"[INFO] 总耗时: {elapsed:.2f} s")
     atexit.register(_print_elapsed)
 
     if args.use_mineru:
-        qs=[]; ltx=[]; imgs=[]
-        pages=[p for p in sorted(images_dir.glob("*.*")) if p.suffix.lower() in [".png",".jpg",".jpeg",".bmp",".tif",".tiff",".pdf"]]
-        if not pages: print("未在 images_dir 中找到可处理文件（图片或 PDF）。"); return
-        for page in pages:
-            blocks=mineru_parse_to_questions(page, out_dir/"_mineru_tmp")
-            # 基于分段文本中的 Markdown 图片为每题挑选插图（若无，则不附图）
-            auto_dir = out_dir/"_mineru_tmp"/page.stem/"auto"
-            # 同步当前页面的 MinerU 产出目录到 qs_image_DB（保留原有层级）
-            try:
-                mineru_root = out_dir/"_mineru_tmp"
-                if auto_dir.exists():
-                    rel = auto_dir.resolve().relative_to(mineru_root.resolve())
-                    dst_auto = qs_image_db/rel
-                    ensure_dir(dst_auto)
-                    for src_path in auto_dir.rglob('*'):
-                        if src_path.is_file():
-                            dst_path = dst_auto/src_path.relative_to(auto_dir)
-                            ensure_dir(dst_path.parent)
-                            if not dst_path.exists():
-                                try:
-                                    shutil.copy2(src_path, dst_path)
-                                except Exception:
-                                    pass
-            except Exception:
-                pass
+        qs: list[dict] = []
+        ltx: list[str] = []
+        imgs: list[Path | None] = []
+        for page in sorted(images_dir.glob("*.*")):
+            blocks = mineru_parse_to_questions(page, out_dir / "_mineru_tmp")
+            auto_dir = out_dir / "_mineru_tmp" / page.stem / "auto"
+            # image handling and URL rewrite
             for idx, b in enumerate(blocks):
                 text = b.get("text") or ""
-                img_paths = []
-                # Support both plain and angle-bracket URLs
+                img_paths: list[Path] = []
                 for m in re.finditer(r"!\[[^\]]*\]\((?:<([^>]+)>|([^)]+))\)", text):
                     relp = (m.group(1) or m.group(2) or "").strip()
-                    # 仅处理相对路径 images/*
-                    if relp.startswith("./"): relp = relp[2:]
-                    p = (auto_dir/relp).resolve()
-                    if p.suffix.lower() in [".jpg",".jpeg",".png",".bmp"] and p.exists():
+                    if relp.startswith("./"):
+                        relp = relp[2:]
+                    p = (auto_dir / relp).resolve()
+                    if p.suffix.lower() in [".jpg", ".jpeg", ".png", ".bmp"] and p.exists():
                         img_paths.append(p)
-                final_img=None
                 if img_paths:
-                    # 取体积最大的作为代表图
                     img_paths.sort(key=lambda p: p.stat().st_size, reverse=True)
                     chosen = img_paths[0]
-                    dst_name=f"{page.stem}_{idx}_{chosen.name}"
-                    dst_path=crops_dir/dst_name
+                    dst_name = f"{page.stem}_{idx}_{chosen.name}"
+                    dst_path = crops_dir / dst_name
                     try:
                         if not dst_path.exists():
                             shutil.copy2(chosen, dst_path)
-                        final_img = dst_path if dst_path.exists() else None
-                    except Exception:
-                        final_img=None
-                # 将代表图复制/指向到全局图片库 qs_image_DB，并使用其路径作为最终引用
-                if img_paths:
-                    try:
-                        img_paths.sort(key=lambda p: p.stat().st_size, reverse=True)
-                        chosen2 = img_paths[0]
-                        rel_from_mineru = chosen2.resolve().relative_to((out_dir/"_mineru_tmp").resolve())
-                        dst_in_db = qs_image_db/rel_from_mineru
-                        ensure_dir(dst_in_db.parent)
-                        if not dst_in_db.exists():
-                            shutil.copy2(chosen2, dst_in_db)
-                        if dst_in_db.exists():
-                            final_img = dst_in_db
                     except Exception:
                         pass
-                # 将题干内的 Markdown 图片链接改写为指向仓库根的 qs_image_DB，确保渲染全部图片
+                    # also copy into qs_image_DB with doc structure
+                    try:
+                        rel_from_mineru = chosen.resolve().relative_to((out_dir / "_mineru_tmp").resolve())
+                        dst_in_db = qs_image_db / rel_from_mineru
+                        ensure_dir(dst_in_db.parent)
+                        if not dst_in_db.exists():
+                            shutil.copy2(chosen, dst_in_db)
+                    except Exception:
+                        pass
                 try:
-                    def _repl(md: re.Match) -> str:
+                    def _repl(md):
                         alt = md.group(1)
                         relp = ((md.group(2) or md.group(3) or "")).strip()
                         if relp.startswith("./"):
                             relp = relp[2:]
                         new_url = relp
                         try:
-                            mineru_root = (out_dir/"_mineru_tmp").resolve()
-                            p = (auto_dir/relp).resolve()
+                            mineru_root = (out_dir / "_mineru_tmp").resolve()
+                            p = (auto_dir / relp).resolve()
                             rel_from_mineru = p.relative_to(mineru_root)
-                            target = (qs_image_db/rel_from_mineru).resolve()
+                            target = (qs_image_db / rel_from_mineru).resolve()
                             new_url = ("../" + target.relative_to(repo_root.resolve()).as_posix())
                         except Exception:
                             pass
-                        # Wrap in angle brackets if contains spaces or non-ASCII
                         needs_brackets = any(ord(ch) > 127 for ch in new_url) or (" " in new_url)
-                        if needs_brackets:
-                            return f"![{alt}](<{new_url}>)"
-                        return f"![{alt}]({new_url})"
+                        return f"![{alt}](<{new_url}>)" if needs_brackets else f"![{alt}]({new_url})"
                     text = re.sub(r"!\[([^\]]*)\]\((?:<([^>]+)>|([^)]+))\)", _repl, text)
                 except Exception:
                     pass
-                q=parse_question(text); qs.append(q); ltx.append(None); imgs.append(None)
-        if args.format in ("md","both"):
-            md=export_markdown(qs, imgs, ltx, out_dir); print("[OK] 导出 Markdown:", md)
-            # 额外：将 Markdown 转成 LaTeX（pandoc），写入 worksheet_pandoc.tex
-            pandoc_tex = md_to_pandoc_tex(md, out_dir/"worksheet_pandoc.tex")
-            if pandoc_tex: print("[OK] Pandoc LaTeX:", pandoc_tex)
-        if args.format in ("tex","both"):
-            tex=export_latex(qs, imgs, ltx, out_dir); print("[OK] 导出 LaTeX:", tex)
+                q = parse_question(text)
+                qs.append(q)
+                ltx.append(None)
+                imgs.append(None)
+
+        if args.format in ("md", "both"):
+            md = export_markdown(qs, imgs, ltx, out_dir)
+            print("[OK] 导出 Markdown:", md)
+            pandoc_tex = md_to_pandoc_tex(md, out_dir / "worksheet_pandoc.tex")
+            if pandoc_tex:
+                print("[OK] Pandoc LaTeX:", pandoc_tex)
+        if args.format in ("tex", "both"):
+            tex = export_latex(qs, imgs, ltx, out_dir)
+            print("[OK] 导出 LaTeX:", tex)
         return
 
-    crops=process_images(images_dir, crops_dir)
-    if not crops: print("未在 images_dir 中找到可处理图片。"); return
-    qs,ltx=ocr_and_structure(crops, args.use_pix2tex)
-    if args.format in ("md","both"):
-        md=export_markdown(qs, crops, ltx, out_dir); print("[OK] 导出 Markdown:", md)
-        pandoc_tex = md_to_pandoc_tex(md, out_dir/"worksheet_pandoc.tex")
-        if pandoc_tex: print("[OK] Pandoc LaTeX:", pandoc_tex)
-    if args.format in ("tex","both"):
-        tex=export_latex(qs, crops, ltx, out_dir); print("[OK] 导出 LaTeX:", tex)
+    # Non-MinerU branch: cut, OCR, export
+    crops = process_images(images_dir, crops_dir)
+    if not crops:
+        print("未在 images_dir 找到可处理的图片")
+        return
+    qs, ltx = ocr_and_structure(crops, args.use_pix2tex)
+    if args.format in ("md", "both"):
+        md = export_markdown(qs, crops, ltx, out_dir)
+        print("[OK] 导出 Markdown:", md)
+        pandoc_tex = md_to_pandoc_tex(md, out_dir / "worksheet_pandoc.tex")
+        if pandoc_tex:
+            print("[OK] Pandoc LaTeX:", pandoc_tex)
+    if args.format in ("tex", "both"):
+        tex = export_latex(qs, crops, ltx, out_dir)
+        print("[OK] 导出 LaTeX:", tex)
 
-if __name__=="__main__": main()
+if __name__ == "__main__":
+    main()
+

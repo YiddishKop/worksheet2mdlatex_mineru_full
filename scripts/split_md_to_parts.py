@@ -4,18 +4,23 @@ import sys
 from pathlib import Path
 
 
-# 仅以顶层标签作为切分锚点：例/练习/变式/【…】/答案/解析等；不以 (n)/（n） 或 1)/1. 作为锚点
+# 顶层锚点（标题/标签类）：例/练习/变式/答案/解析/详解/参考答案
 LABEL_PATTERN = re.compile(
-    r"(?m)^\s*(?:>\s*)*(?:#+\s*)?"
-    r"("  # captured label text
+    r"(?m)^\s*(?:>\s*)*(?:#+\s*)?"  # 引用/标题前缀
     r"(?:"
-    r"【例\d+】|【练习\d+】|【变式\d*-*\d*】|"  # 【例1】/【练习1】/【变式1-1】
-    r"例\d+|练习\d+|变式\d+|"                 # 例1/练习1/变式1
-    r"【答案】|【解析】|【详解】|【参考答案】|"   # 解析/答案类段落
-    r"答案[:：]?|解析[:：]?|详解[:：]?|解法\s*(?:\d+|[一二三四五六七八九十]+)\s*[:：]?|参考答案[:：]?|"
-    r"\d+\s*(?:[\.．、\)])?\s+(?:如图|已知|设|第|题|证明|求|解|若|函数|计算|在)\S.*"  # 安全扩展：数字题头
-    r")"
+    r"【例\d+】|【练习\d+】|【变式\d+(?:-\d+)?】|"        # 【例1】/【练习1】/【变式1-2】
+    r"(?:例|练习|变式)\d+|"                             # 例1/练习1/变式1
+    r"【答案】|【解析】|【详解】|【参考答案】|"               # 明确标签
+    r"(?:答案|解析|详解|参考答案)[:：]?|"                   # 非括号形式
+    r"[0-9\uFF10-\uFF19]+\s*[\.．]\s*"                 # 数字 + 半角./全角． (+可选空格)
+    r"(?:如图|如图所示|已知|设|证明|证|求|解|若|函数|计算|求值|化简|作图|画|判断|选择|填空|列方程|解方程|解不等式|求最值|求最大值|求最小值|探究|分析|写出|求出|在|关于|如下|如右图|如上图)"
     r")\s*"
+)
+
+# 数字类锚点（回退策略）：如 1. / 1． / 1) / １． （后接至少一个非空白）
+NUM_ANCHOR_PATTERN = re.compile(
+    r"(?m)^\s*(?:>\s*)*(?:#+\s*)?"      # 引用/标题前缀
+    r"[0-9\uFF10-\uFF19]+\s*[\.．、\)）]\s*\S"
 )
 
 
@@ -29,20 +34,16 @@ def _sanitize_filename_part(s: str) -> str:
 def _rewrite_images_to_db(text: str, doc_name: str, depth_from_qs_db: int = 1) -> str:
     """Rewrite any image URL to flattened DB path:
     ../../qs_image_DB/<doc_name>/<basename>
-    depth_from_qs_db: from qs_DB/<doc>/file to repo root siblings: qs_DB and qs_image_DB are siblings.
-    For files inside qs_DB/<doc>/, depth_from_qs_db=1 -> '../../qs_image_DB/...'
 
     Robust to URLs wrapped in angle brackets and containing parentheses, e.g.:
-    ![](<../qs_image_DB/文档名(学生版)/auto/images/a.jpg>)
+    ![](<../qs_image_DB/文档/auto/images/a.jpg>)
     """
     prefix = "../" * (depth_from_qs_db + 1)
-    # Two alternatives: angle-bracket form or plain form. In angle form, allow any char until '>'.
     img_pat = re.compile(r"!\[([^\]]*)\]\((?:<([^>]+)>|([^)]+))\)")
 
     def repl(m: re.Match) -> str:
         alt = m.group(1)
         url = (m.group(2) or m.group(3) or "").strip()
-        # Keep only basename
         basename = url.split('/')[-1].strip()
         new_url = f"{prefix}qs_image_DB/{doc_name}/{basename}"
         needs_brackets = any(ord(ch) > 127 for ch in new_url) or (" " in new_url)
@@ -66,17 +67,42 @@ def _detect_doc_name(repo_root: Path) -> str:
 
 def split_md(md_path: Path, out_root: Path, doc_name: str) -> list[Path]:
     text = md_path.read_text(encoding="utf-8")
-    matches = list(LABEL_PATTERN.finditer(text))
-    if not matches:
+
+    # 规范化全角数字与标点到半角（等长替换，索引稳定）
+    trans = str.maketrans({
+        "\uFF10": "0", "\uFF11": "1", "\uFF12": "2", "\uFF13": "3", "\uFF14": "4",
+        "\uFF15": "5", "\uFF16": "6", "\uFF17": "7", "\uFF18": "8", "\uFF19": "9",
+        "\uFF0E": ".",  # ．
+        "\u3002": ".",  # 。
+        "\uFF09": ")",  # ）
+        "\uFF08": "(",  # （
+    })
+    norm = text.translate(trans)
+
+    # 收集锚点位置
+    anchors: list[tuple[int, str]] = []
+    anchors.extend((m.start(), m.group(0)) for m in LABEL_PATTERN.finditer(norm))
+    anchors.extend((m.start(), m.group(0)) for m in NUM_ANCHOR_PATTERN.finditer(norm))
+    # 兼容“巩固n/巩固n-m”作为标题
+    gg = re.compile(r"(?m)^\s*(?:>\s*)*(?:#+\s*)?(巩固\s*\d+(?:-\d+)?)\s*[\.、\)]?\s*$")
+    anchors.extend((m.start(), m.group(1)) for m in gg.finditer(norm))
+
+    if not anchors:
         return []
-    starts = [m.start() for m in matches] + [len(text)]
-    spans = [(starts[i], starts[i + 1]) for i in range(len(starts) - 1)]
+
+    # 去重与排序
+    pos_to_label: dict[int, str] = {}
+    for pos, lab in anchors:
+        if pos not in pos_to_label:
+            pos_to_label[pos] = lab
+    starts_sorted = sorted(pos_to_label.keys()) + [len(text)]
+    spans = [(starts_sorted[i], starts_sorted[i + 1]) for i in range(len(starts_sorted) - 1)]
 
     out_dir = out_root / doc_name
     out_dir.mkdir(parents=True, exist_ok=True)
     written: list[Path] = []
     for i, (a, b) in enumerate(spans):
-        label_raw = matches[i].group(1) if i < len(matches) else f"part{i+1}"
+        label_raw = pos_to_label.get(a, f"part{i+1}")
         label = _sanitize_filename_part(label_raw)
         chunk = text[a:b].lstrip("\n")
         chunk = _rewrite_images_to_db(chunk, doc_name=doc_name, depth_from_qs_db=1)

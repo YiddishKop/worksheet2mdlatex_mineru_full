@@ -1,0 +1,3684 @@
+[
+    {
+        "type": "text",
+        "text": "专题 2-2 费马点与加权费马点详细总结",
+        "text_level": 1,
+        "bbox": [
+            267,
+            84,
+            731,
+            107
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "题型·解读 ",
+        "text_level": 1,
+        "bbox": [
+            92,
+            129,
+            321,
+            161
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "知识点梳理",
+        "text_level": 1,
+        "bbox": [
+            121,
+            189,
+            216,
+            206
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "【常规费马点】",
+        "bbox": [
+            163,
+            230,
+            280,
+            247
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "【加权费马点】",
+        "bbox": [
+            163,
+            263,
+            280,
+            280
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "题型一 普通费马点最值问题",
+        "bbox": [
+            121,
+            305,
+            359,
+            324
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "题型二 加权费马点·单系数型",
+        "bbox": [
+            121,
+            355,
+            366,
+            374
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "题型三 加权费马点·多系数型",
+        "bbox": [
+            122,
+            405,
+            366,
+            424
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "满分·技巧 ",
+        "text_level": 1,
+        "bbox": [
+            90,
+            483,
+            329,
+            516
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "知识点梳理",
+        "text_level": 1,
+        "bbox": [
+            78,
+            544,
+            184,
+            563
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "【常规费马点】",
+        "text_level": 1,
+        "bbox": [
+            94,
+            585,
+            242,
+            602
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "【问题提出】如图△ABC 所有的内角都小于 120 度，在△ABC 内部有一点 P，连接 PA、PB、PC，当 $P A \\mathrm { + } P B \\mathrm { + } P C$ 的值最小时，求此时 $\\angle A P B$ 与 $\\angle A P C$ 的度数.",
+        "bbox": [
+            89,
+            624,
+            825,
+            676
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/5aadc2b91fc38d1da17ed3460bd802ab32caa31cd94e323bebeeb916e90f195b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            99,
+            697,
+            383,
+            827
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "【问题处理】如图1，将△ACP绕着点C顺时针旋转60度得到 $\\triangle A ' C P ^ { \\ast }$ ，则 $\\triangle A C P \\cong \\triangle A ^ { \\prime } C P ^ { \\prime }$ ， $C P { = } C P ^ { \\ast }$ ， $\\cdot$ ，又∵ $\\_$ ，∴△PCP’是等边三角形，∴ $P P ^ { \\ast } { = } P C$ ， $\\therefore P A + P B + P C = P ^ { \\prime } A ^ { \\prime } + P B + P P ^ { \\prime }$ ，",
+        "bbox": [
+            90,
+            852,
+            909,
+            894
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "如图2，当且仅当点B、P、 $\\cdot$ 、A’共线时， $P A + P B + P C$ 最小，最小值为A’B，此时 $\\angle B P C = \\angle A P C = \\angle A P B =$ 120°",
+        "bbox": [
+            87,
+            86,
+            909,
+            126
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/67dbad86ab368345a02665d133d2d4b75ad45dcf8347a118b56e29552cbbc39b.jpg",
+        "image_caption": [
+            "图1"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            99,
+            164,
+            478,
+            294
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/20fc1f9be56b8a1ebf24426d548066bcd3403cd46031b0ef6a22c55804ce861e.jpg",
+        "image_caption": [
+            "图2"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            502,
+            164,
+            880,
+            294
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "【问题归纳】如费马点就是到三角形的三个顶点的距离之和最小的点．费马点结论：",
+        "bbox": [
+            87,
+            328,
+            736,
+            344
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "$\\textcircled{1}$ 对于一个各角不超过 $\\cdot$ 的三角形，费马点是对各边的张角都是 $\\cdot$ 的点，所以三角形的费马点也叫三角形的等角中心；",
+        "bbox": [
+            87,
+            351,
+            910,
+            391
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "$\\cdot$ 对于有一个角超过 $\\cdot$ 的三角形，费马点就是这个内角的顶点",
+        "bbox": [
+            90,
+            399,
+            603,
+            416
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "【如何作费马点】如图3，连接AA’，我们发现△ACA’为等边三角形，点P在A’B上，同理，我们可以得到等边 $\\triangle B A B ^ { \\prime }$ ，点 $P$ 也在CB’上，因此，我们可以以 ABC三角形任意两边为边向外构造等边三角形，相应连线的交点即为费马点。（最大角小于 $1 2 0 ^ { \\circ }$ 时）",
+        "bbox": [
+            87,
+            422,
+            912,
+            486
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/6e83828732c61280a6410a551f2c81a277a9e0eed35e2490ac68f27d1c6fc8d4.jpg",
+        "image_caption": [
+            "图3 "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            100,
+            500,
+            524,
+            684
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "【例 1】如图，在△ABC 中， $\\angle A C B { = } 9 0 ^ { \\circ }$ °， $A B { = } A C { = } 1$ ， $P$ 是△ABC 内一点，求 $P A { + } P B { + } P C$ 的最小值．",
+        "bbox": [
+            90,
+            719,
+            870,
+            736
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/4c5dd29bcbb80504fecb135c2542f8ef07822e662e4053132f5dba1f80f6c824.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            104,
+            741,
+            329,
+            827
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "【答案】 6 22",
+        "bbox": [
+            94,
+            833,
+            238,
+            872
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "【分析】如图，以 $A C$ 为边构造等边 $\\triangle A C D$ ，连接 BD， $B D$ 的长即为 $\\_$ 的最小值．至于点 $P$ 的位资料整理【淘宝店铺：向阳百分百】",
+        "bbox": [
+            87,
+            895,
+            907,
+            928
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "置？这不重要！",
+        "bbox": [
+            89,
+            84,
+            206,
+            98
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/e27ba0676bae8ddb5cf7f8dfedf8d39b26fc326eb32b0186f28aec1a8b9581b9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            105,
+            107,
+            363,
+            215
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "如何求 BD？考虑到 $\\triangle$ ABC 和△ACD 都是特殊的三角形，过点 D 作 DH⊥BA 交 BA 的延长线于 H 点，根据勾股定理， $B D ^ { 2 } = B H ^ { 2 } + D H ^ { 2 }$ 即可得出结果",
+        "bbox": [
+            85,
+            219,
+            907,
+            256
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/805358f143d14c7496d1e6236fb3370041a9c12cc3b25425edd28ba42dd148b8.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            104,
+            271,
+            363,
+            414
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "【练习1】如图，已知矩形 $A B C D$ ， $A B { = } 4$ ， $B C { = } 6$ ，点 $M$ 为矩形内一点，点 $E$ 为 $B C$ 边上任意一点，则 $M A { + } M D { + } M E$ 的最小值为 ",
+        "bbox": [
+            87,
+            441,
+            912,
+            481
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/25285a1a45db6fb9a7b6bf0b423c2cfaa1bc8ecb9c9d7b80616286727f3e58dd.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            102,
+            494,
+            307,
+            600
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "【分析】依然构造 $6 0 ^ { \\circ }$ °旋转，将三条折线段转化为一条直线段分别以 $\\cdot$ 、 $A M$ 为边构造等边 $\\triangle A D F$ 、等边△AMG，连接 $F G$ ，",
+        "bbox": [
+            89,
+            614,
+            579,
+            651
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/f753f84b8f45c441cee1fe7e6a0d5d468904ac732b2660322e2c43c362fbf7dc.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            102,
+            664,
+            294,
+            862
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "易证 $\\triangle A M D \\cong \\triangle A G F$ ，∴ $M D { = } G F$ ∴ $\\cdot M E + M A + M D = M E + E G + G F$ 资料整理【淘宝店铺：向阳百分百】",
+        "bbox": [
+            87,
+            876,
+            349,
+            928
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "过 $F$ 作 $F H \\bot B C$ 交 $B C$ 于 $H$ 点，线段 $F H$ 的长即为所求的最小值 ",
+        "bbox": [
+            87,
+            83,
+            591,
+            98
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/6c4e37095e3ab37db172a86cfb5f7a2d2f31d64b95690a0d5f9760750a38b8d5.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            102,
+            114,
+            309,
+            325
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "【加权费马点】",
+        "text_level": 1,
+        "bbox": [
+            94,
+            386,
+            242,
+            404
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "如果所求最值中三条线段的系数有不为1的情况，我们把这类问题归为加权费马点问题，解决方法类似，也是通过旋转进行线段转化，只不过要根据系数的情况选择不同的旋转或放缩方法。",
+        "bbox": [
+            87,
+            424,
+            912,
+            464
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "【类型一 单系数类】",
+        "text_level": 1,
+        "bbox": [
+            92,
+            468,
+            252,
+            485
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "当只有一条线段带有不为 1 的系数时，相对较为简单，一般有两种处理手段，一种是旋转特殊角度： $\\sqrt { 2 }$ 对应旋转 $9 0 ^ { \\circ }$ ， $\\sqrt { 3 }$ 对应旋转 $1 2 0 ^ { \\circ }$ 另一种是旋转放缩，对应三角形三边之比",
+        "bbox": [
+            89,
+            498,
+            682,
+            588
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "【例3】在等边三角形ABC中，边长为4， $P$ 为三角形ABC内部一点，求 $A P + B P + { \\sqrt { 2 } } P C$ 的最小值【简析】本题有 2 种解题策略，旋转特殊角和旋转放缩【策略一：旋转特殊角】如图 1， $\\cdot$ 绕点 $C$ 逆时针旋转 $9 0 ^ { \\circ }$ ，易知 $P ^ { \\prime } P { = } \\sqrt { 2 } \\ P C$ ， $A ^ { \\prime } B$ 即为所求方法一：如图 2， $\\cdot$ ， $\\cdot$ ， $P ^ { \\star }$ ， $A ^ { \\prime }$ ’共线时取最小，此时 $-$ ，易知 $\\cdot$ ，$-$ ",
+        "bbox": [
+            90,
+            615,
+            838,
+            634
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/ac8b7b224d99674c89ce1eaba6713be09edaad33576ef0ed400a4e0d552eb298.jpg",
+        "image_caption": [
+            "原图"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            100,
+            662,
+            352,
+            816
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            94,
+            851,
+            515,
+            866
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            92,
+            872,
+            845,
+            889
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/3bd5ac7c2c98c2a06236d6d183941b2cde33383796902a4779a51b3e02dfe003.jpg",
+        "image_caption": [
+            "图1"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            100,
+            92,
+            522,
+            242
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            87,
+            271,
+            847,
+            312
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/3ab75c4957943a1b5a685a6e14f4fc7f4d8da90103676c58d1709603d23846ee.jpg",
+        "image_caption": [
+            "图2"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            100,
+            326,
+            522,
+            476
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "方法二：作 $\\cdot$ 于 $\\cdot$ ，易知 $\\angle A ^ { \\prime } C H = 3 0 ^ { \\circ }$ ，∴ $A H = 2$ ， $-$ ，由勾股可得 $\\cdot$ $\\cdot$ ",
+        "bbox": [
+            85,
+            504,
+            910,
+            545
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/b931f3a657550c5d2eab328710daf6131319acb60cdb0271f7d237d50a6a4b23.jpg",
+        "image_caption": [
+            "图3 "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            99,
+            560,
+            532,
+            717
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "【策略二：旋转放缩】可按如下方法去旋转放缩（方法不唯一）  \n如图 4，将三角形 BPC 绕点 $B$ 旋转 $\\cdot$ °，再扩大为原来的 $\\sqrt { 2 }$ 倍，得到△BP'C'  \n则 $A P + B P + \\sqrt { 2 } P C = A P + P P ^ { \\prime } + P ^ { \\prime } C \\ge A C ^ { \\prime }$   \n补充：也可以按图 5 方式旋转",
+        "bbox": [
+            87,
+            752,
+            709,
+            837
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/d7afa0f4f25b2fa04410de407f1970d49d7b267e44ea33d009abc3eaeb83ed2a.jpg",
+        "image_caption": [
+            "图4"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            102,
+            95,
+            381,
+            438
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/50920f920e8a6d30544a1808b483c8287fa0a5bce2fa6481dcd33b323657d3cc.jpg",
+        "image_caption": [
+            "原5"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            410,
+            179,
+            892,
+            351
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "【练习2】在Rt△ABC中， $A C { = } 3$ ， $B C { = } 2 \\sqrt { 3 }$ ， $P$ 为三角形ABC内部一点，求 $A P + B P + { \\sqrt { 3 } } P C$ 的最小值【策略一：旋转特殊角】如图 1， $\\triangle A P C$ 绕点 $C$ 逆时针旋转 $1 2 0 ^ { \\circ }$ ，则有 $\\cdot$ ，$A P + B P + P C = A P ^ { \\prime } + B P + P P ^ { \\prime } \\leq A ^ { \\prime } B = 2 { \\sqrt { 7 } }$ ",
+        "bbox": [
+            92,
+            476,
+            875,
+            497
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/6662e71ef7193d7075d797f09d7c90c12d320e3de3e0cc2e22f99499b62d3351.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            102,
+            521,
+            421,
+            639
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            90,
+            657,
+            734,
+            699
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/e96f15bc353b88262d86d5c9dcec609b72e50a86660f4406e773e4d9cff1cad9.jpg",
+        "image_caption": [
+            "图1"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            100,
+            711,
+            667,
+            841
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "【策略二：旋转放缩】如图 2， $\\triangle A P C$ 绕点 $A$ 逆时针旋转 $\\cdot$ ，再扩大为原来的 $\\sqrt { 3 }$ 倍，则 $A P + B P + \\sqrt { 3 } P C = P P ^ { \\prime } + B P + P ^ { \\prime } C ^ { \\prime } \\geq B C ^ { \\prime }$ ，计算略",
+        "bbox": [
+            87,
+            879,
+            756,
+            896
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            87,
+            83,
+            532,
+            103
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/4dc3356c0c8283fd82e9790bb32f2b6fc622dab0d955f260a7c763f8c6cd874f.jpg",
+        "image_caption": [
+            "图2"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            102,
+            127,
+            658,
+            244
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "【类型二 多系数类】",
+        "text_level": 1,
+        "bbox": [
+            94,
+            290,
+            253,
+            307
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "其实当三条线段的三个系数满足勾股数的关系时，都是符合加权费马点的条件的。",
+        "bbox": [
+            89,
+            323,
+            717,
+            341
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "以不同的点为旋转中心，旋转不同的三角形得到的系数是不同的，对于给定的系数，我们该如何选取旋转中心呢？我们总结了以下方法：",
+        "bbox": [
+            89,
+            356,
+            912,
+            399
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "1. 将最小系数提到括号外；",
+        "bbox": [
+            89,
+            416,
+            294,
+            432
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "2.中间大小的系数确定放缩比例；",
+        "bbox": [
+            89,
+            449,
+            347,
+            466
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "3.最大系数确定旋转中 $\\aleph$ （例如最大系数在 PA前面，就以 A 为旋转中 $\\aleph$ ），旋转系数不为 1 的两条线段所在的三角形。",
+        "bbox": [
+            87,
+            482,
+            910,
+            524
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "【例 3】如图，在△ABC 中， $\\angle A C B = 6 0 ^ { \\circ }$ ， $B C = 3$ ， $A C = 4$ ，在△ABC 内部有一点 P，连接PA，PB，PC ，则（1） ${ \\frac { 1 } { 2 } } P A + { \\frac { \\sqrt { 3 } } { 2 } } P B + P C$ 的最小值为 _；（2） ${ \\frac { \\sqrt { 3 } } { 2 } } P A + { \\frac { 1 } { 2 } } P B + P C$ 的最小值为",
+        "bbox": [
+            85,
+            541,
+            910,
+            606
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/44ba6cb9ee882c1340502279e3f527f22bb9e1fe4ef95269b5b337b8311ce61b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            102,
+            626,
+            317,
+            808
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "【简答】（1）将最小系数 $\\frac { 1 } { 2 }$ 提到括号外，得到 $\\frac { 1 } { 2 } ( P A + \\sqrt { 3 } P B + 2 P C )$ ",
+        "bbox": [
+            92,
+            831,
+            628,
+            864
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/1643bfc53f28fcdc1dba788cfe472b337aced683e741f85363e415fd79685a73.jpg",
+        "image_caption": [
+            "图1"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            89,
+            85,
+            295,
+            450
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "中间大小系数为 $\\sqrt { 3 }$ ，故放大倍数为 $\\sqrt { 3 }$ 倍，最大系数在 PC 前面，故以点 C 为旋转中心，旋转 $\\triangle$ PBC如图 1，将 $\\cdot$ PBC 绕点 C 逆时针旋转 $9 0 ^ { \\circ }$ ，并放大为 $\\sqrt { 3 }$ 倍， $B ^ { \\prime } P ^ { \\prime } = \\sqrt { 3 } B P$ ， $P P ^ { \\prime } { = } 2 P C$ ${ \\frac { 1 } { 2 } } { \\Bigl ( } P A + { \\sqrt { 3 } } P B + 2 P C { \\Bigr ) } = { \\frac { 1 } { 2 } } { \\bigl ( } P A + P P ^ { \\prime } + P ^ { \\prime } B ^ { \\prime } { \\bigr ) } \\geq { \\frac { 1 } { 2 } } A B ^ { \\prime } = { \\frac { \\sqrt { 7 9 } } { 2 } } .$ ",
+        "bbox": [
+            87,
+            487,
+            878,
+            579
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "（2）将最小系数 $\\frac { 1 } { 2 }$ 提到括号外，得到 $\\frac { 1 } { 2 } ( \\sqrt { 3 } P A + P B + 2 P C )$ ，",
+        "bbox": [
+            95,
+            585,
+            574,
+            618
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/64f1a119b3143f2ba1a200751604ebbf226003e787da45240c058fda06c77942.jpg",
+        "image_caption": [
+            "图2"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            102,
+            633,
+            684,
+            825
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "如图 2，将 $\\triangle$ APB 绕点 C 逆时针旋转 $\\cdot$ °，并放大为 $\\sqrt { 3 }$ 倍， $A ^ { \\prime } P ^ { \\prime } { = } \\sqrt { 3 } A P$ ， $P P ^ { \\prime } { = } 2 P C$ ",
+        "bbox": [
+            85,
+            871,
+            803,
+            890
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "equation",
+        "img_path": "images/30f586717395af9bfc7c84be799fe6114e34ae855cdac9504362555d7d447de5.jpg",
+        "text": "$$\n\\frac { 1 } { 2 } ( \\sqrt { 3 } P A + P B + 2 P C ) = \\frac { 1 } { 2 } \\big ( A ^ { \\prime } P ^ { \\prime } + B P + P P ^ { \\prime } \\big ) \\geq \\frac { 1 } { 2 } A ^ { \\prime } B = \\sqrt { 9 3 }\n$$",
+        "text_format": "latex",
+        "bbox": [
+            89,
+            84,
+            579,
+            118
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "【练习3】如图，在△ABC中， $A C B = 6 0 ^ { \\circ } , B C = 3 \\sqrt { 3 } , A C = 6$ ，在 $\\triangle A B C$ 内部有一点 $P$ ，连接 $P A$ ，PB，PC ，则 $2 P A + P B + { \\sqrt { 5 } } P C$ 的最小值为",
+        "bbox": [
+            85,
+            145,
+            919,
+            195
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/8ea482eea04bf19870b7a2e6042cabc22a7160029aa5f2dbc52ae24dd791940d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            104,
+            215,
+            317,
+            403
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "【简答】将 $\\cdot$ PAC绕点 C 顺时针旋转 $9 0 ^ { \\circ }$ 并放大 2 倍，得到 P AC△   ， $P ^ { ' } A ^ { ' } = 2 P A$ ， $P P ^ { ' } = \\sqrt { 5 } P C$ ",
+        "bbox": [
+            89,
+            423,
+            868,
+            442
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/ae7d1e86f058353f75709963f46db64b7a6bdc2fcb869b0c850a43836aa3ac5d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            102,
+            458,
+            754,
+            674
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "$\\therefore 2 P A + P B + \\sqrt { 5 } P C = A ^ { \\prime } P ^ { \\prime } + P ^ { \\prime } P + P B \\geq A ^ { \\prime } B , \\because A C = 2 A C = 1 2 , \\angle A ^ { \\prime } C B = 9 .$ $\\angle A ^ { \\prime } C B = 9 0 ^ { \\circ } + 6 0 ^ { \\circ } = 1 5 0 ^ { \\circ }$ ，  \n1 36 6 3AH A C CH A C     ，   ， $B H = 9 \\sqrt { 3 }$ ， 由 勾 股 定 理 可 得 $\\overset { \\prime } { A B } = 3 \\sqrt { 3 1 }$ ，2 2  \n$2 P A + P B + { \\sqrt { 5 } } P C$ 的最小值为 $3 \\sqrt { 3 1 }$ .",
+        "bbox": [
+            89,
+            688,
+            902,
+            781
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "03 核心·题型",
+        "text_level": 1,
+        "bbox": [
+            89,
+            809,
+            326,
+            843
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "题型一 普通费马点最值问题",
+        "text_level": 1,
+        "bbox": [
+            78,
+            86,
+            346,
+            105
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "1．（2021 滨州）如图，在△ABC 中， $\\angle A C B = 9 0 ^ { \\circ }$ ， $\\angle B A C = 3 0 ^ { \\circ }$ ， $A B = 2$ ，点 $P$ 是 $\\triangle A B C$ 内一点，则PA＋PB＋PC的最小值为",
+        "bbox": [
+            85,
+            127,
+            910,
+            161
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/6f3dff152fd4ea8f827982787f97da6851df83692f85ba118c30147b62199db2.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            90,
+            174,
+            220,
+            249
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "【答案】 $\\sqrt { 7 }$ ",
+        "bbox": [
+            94,
+            259,
+            188,
+            275
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "【解析】将 $\\cdot$ ABP 绕点 A 顺时针旋转 $6 0 ^ { \\circ }$ 到△AB′P′，连接 P′P，B′C",
+        "bbox": [
+            92,
+            281,
+            620,
+            297
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/11c82576539b4fab46f2fc030a3ca8cf7a866dd2adff37e827ec429b2b223029.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            90,
+            305,
+            235,
+            419
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "则 $\\_$ ， $\\cdot$ ， $\\angle \\mathrm { B A B ^ { \\prime } } { = } 6 0 ^ { \\circ }$ ， $\\cdot$ ， $\\angle \\mathrm { P A P ^ { \\prime } { = } } 6 0 ^ { \\circ }$ ，  \n∴ $\\triangle$ P′PA是等边三角形，∴PA $\\cdot$   \n∵ $\\angle \\mathrm { B A C } = 3 0 ^ { \\circ }$ ，∴ $\\_$ ，  \n$\\because \\angle \\mathrm { A C B } = 9 0 ^ { \\circ } , \\therefore \\mathrm { A C } = { \\frac { \\sqrt { 3 } } { 2 } } { \\cal A } { \\cal B } = \\sqrt { 3 } ,$ ，  \n$\\therefore \\mathrm { B ^ { \\prime } C } = \\sqrt { A C ^ { 2 } + B ^ { \\prime } A ^ { 2 } } = \\sqrt { 7 }$ $-$ ，  \n$\\_$ 的最小值为 $\\sqrt { 7 }$ ",
+        "bbox": [
+            87,
+            425,
+            616,
+            589
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "2．问题背景：如图 1，将△ABC 绕点 $A$ 逆时针旋转 $6 0 ^ { \\circ }$ 得到△ADE， $D E$ 与 $B C$ 交于点 $P$ ，可推出结论：PA$+ P C = P E .$ ",
+        "bbox": [
+            87,
+            615,
+            907,
+            656
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "问题解决：如图 2，在 $\\triangle M N G$ 中， $M N { = } 6$ ， $\\angle M = 7 5 ^ { \\circ }$ ， $\\scriptstyle M G = 4 { \\sqrt { 2 } }$ ，点 $o$ 是△MNG 内一点，则点 $o$ 到 $\\triangle$ MNG 三个顶点的距离和的最小值是",
+        "bbox": [
+            87,
+            663,
+            910,
+            705
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/b0eb17ddef43b321f8e0e59a3d805c61f522b82793429d4334a3695ea85bf9fd.jpg",
+        "image_caption": [
+            "图1"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            263,
+            713,
+            470,
+            832
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/adfe2e892fa1d687afe727bed7a50efd054875dd8998b969fbcdeacff573d25f.jpg",
+        "image_caption": [
+            "图2"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            544,
+            736,
+            734,
+            827
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "【解析】过点 $\\cdot$ 作 $H Q \\perp N M$ 交 NM 延长线于 $\\cdot$ 点，根据 $\\_$ ， $\\_$ ，可得 $\\cdot$ ，∴△MHQ 是等腰直角三角形， ∴MQ＝HQ＝4， ∴NH＝ 2 2NQ  HQ  100 16  2 29",
+        "bbox": [
+            92,
+            882,
+            892,
+            900
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            89,
+            83,
+            811,
+            110
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/0fc770b7501a7c54de057d6ff1c051ee65f1b1e5729d6c679598b26800b8db34.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            102,
+            152,
+            341,
+            244
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/b3a9a6c3c1c76adb80dfa260b20610e7e4239be974113df22dda4a4d8012747e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            371,
+            126,
+            608,
+            260
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "4．如图，在△ABC 中， $\\angle C A B { = } 9 0 ^ { \\circ }$ ， $A B { = } A C { = } 2$ ， $P$ 是 $\\triangle A B C$ 内一点，求 $P A + P B + P C$ 的最小值【解析】如图 1，以 AD 为边构造等边 $\\cdot$ ，连接 BD，BD的长即为 $P A + P B + P C$ 的最小值考虑到 $\\triangle A B C$ 和 $\\cdot$ 都是特殊的三角形，所以构造特殊直角三角形如图 2，过点 D 作 DH⊥BA 交 BA 的延长线于 H 点，根据勾股定理， 2 2 2BD  BH  DH = 6+ 2",
+        "bbox": [
+            87,
+            86,
+            850,
+            103
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/d1ec1072fb8c037fb9fac0511846d6bc53798fae460cc0a597778898115fde6e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            665,
+            131,
+            890,
+            221
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            87,
+            248,
+            801,
+            265
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            94,
+            269,
+            626,
+            285
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            85,
+            290,
+            853,
+            311
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/59729c4279b19e491e72b733733666442d3428ca986b410cdc7e4814e0244e72.jpg",
+        "image_caption": [
+            "图 1"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            102,
+            341,
+            364,
+            453
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/14473e0d2811942742b24b7b76cda90f109a99bd7c57e4663eb426e15d3d1034.jpg",
+        "image_caption": [
+            "图 2"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            527,
+            328,
+            788,
+            470
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "5．已知，在△ABC 中， $\\angle A C B = 3 0 ^ { \\circ }$ ， $A C { = } 4$ ， $A B { = } \\sqrt { 7 } ( C B > C A )$ 点 $P$ 是 $\\triangle A B C$ 内一动点，则 $P A + P B + P C$ 的最小值为",
+        "bbox": [
+            85,
+            508,
+            909,
+            560
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/85761705c463ff0711e01c01102312136e418e03c146762bb90aac57e4cc7859.jpg",
+        "image_caption": [
+            "原图"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            99,
+            655,
+            421,
+            756
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/729277330f737f0c63f32fab8ad28f9322fdb1111a1790276b3111594bdda0fd.jpg",
+        "image_caption": [
+            "图 1"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            514,
+            574,
+            840,
+            757
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "【解析】如图1，将 $\\triangle A P C$ 逆时针旋转 $\\cdot$ ，得 $\\triangle A P ^ { \\circ } C$ ， $B C '$ 即 $P A + P B + P C$ 最小值，考虑到$\\cdot$ ，∴ $\\angle B C C = 9 0 ^ { \\circ }$ ，作 $A H \\bot B C$ ，可得 $\\cdot$ ， $\\therefore B C ^ { \\ast } = \\sqrt { 4 3 }$ ",
+        "bbox": [
+            94,
+            820,
+            744,
+            869
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "6．如图，已知矩形 ABCD， $A B { = } 4$ ， $B C { = } 6$ ，点 $M$ 为矩形内一点，点 $E$ 为 $B C$ 边上任意一点，则 $M A + M D +$ 资料整理【淘宝店铺：向阳百分百】",
+        "bbox": [
+            87,
+            881,
+            909,
+            928
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "ME 的最小值为",
+        "bbox": [
+            122,
+            86,
+            302,
+            104
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/ff5bf224ed5a24600dcd962ed1c5262e14c599dca34614e514ef5f50a3066785.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            393,
+            130,
+            600,
+            237
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "【解析】如图 1，依然构造 $\\cdot$ 旋转，将三条折线段转化为一条直线段．分别以 AD、AM 为边构造等边△ADF、等边 $\\cdot$ ，连接 FG，易证 $\\triangle A M D { \\cong } \\triangle A G F ,$ ，∴ $\\cdot M D { = } G F \\cdot \\dot { \\cdot } M E + M A + M D { = } M E + E G + G F$ 如图 2，过 F 作 FH⊥BC 交 BC 于 H 点，线段 FH 的长即为所求的最小值．FG＝4＋ 2 3",
+        "bbox": [
+            89,
+            274,
+            909,
+            335
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/275665857c72e862a2c27e1bd225c20b06021ed52cf581b94c73120ba7339bf9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            100,
+            360,
+            295,
+            557
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/6eeeff8b73ea3bd12569536ba93ad2346bbc83c1219acf6eb00a98ea204a016a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            478,
+            354,
+            687,
+            564
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "7． A、B、C、 $D$ 四个城市恰好为一个边长为 $2 a$ 正方形的四个顶点，要建立一个公路系统使得每两个城市之间都有公路相通，并使整个公路系统的总长度（ $\\langle A P + B P + P Q + D Q + C Q \\rangle$ ）最小，则应当如何修建？最小长度是多少？",
+        "bbox": [
+            87,
+            582,
+            912,
+            648
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/7c22ac22ddf7442675318e2821cac7935319b7c9e583ff1af24f37f050e51b0a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            665,
+            661,
+            895,
+            819
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "【解析】如图 1， $\\cdot$ ABP 绕点 $B$ 逆时针旋转 $6 0 ^ { \\circ }$ ，得到 $\\triangle A ^ { \\prime } P ^ { \\prime } B$ ；同样，将△DCQ 绕点 $\\cdot$ 顺时针旋转 $6 0 ^ { \\circ }$ ，得到 $\\triangle D ' C Q '$ ，连结 $A ^ { \\prime } A$ 、 $D ' D$ ，则 $\\cdot$ 、 $\\cdot$ 均为等边三角形，连结 $P P ^ { \\ast }$ 、 $\\cdot$ ，则 $\\triangle B P P ^ { \\prime }$ ，△QCQ’均为等边三角形， $-$ ",
+        "bbox": [
+            89,
+            846,
+            910,
+            904
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "资料整理【淘宝店铺：向阳百分百】",
+        "bbox": [
+            87,
+            913,
+            329,
+            927
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/c259eb0d0acfdbfbbea6703c46f9fbe2058211aefb77510df54d786753dfc3dc.jpg",
+        "image_caption": [
+            "图1"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            100,
+            91,
+            668,
+            254
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "如图 2，当点 $A ^ { \\prime }$ ， $\\cdot$ ， $P$ ， $Q$ ， $\\cdot$ ， $\\cdot$ 共线时，整个公路系统的总长取到最小值，为线段 $\\cdot$ 的长，此时点 $\\cdot$ ，$Q$ 在 $\\cdot$ ’上，最小值为 $\\left( 2 + 2 { \\sqrt { 3 } } \\right) \\mathrm { a }$ ",
+        "bbox": [
+            87,
+            291,
+            910,
+            341
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/d0552c64013131fd62d979004365593e049b2e708f6197d929d9babb612935cb.jpg",
+        "image_caption": [
+            "图2"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            100,
+            355,
+            678,
+            519
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "2023·随州中考真题",
+        "text_level": 1,
+        "bbox": [
+            87,
+            590,
+            280,
+            607
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "8．1643 年，法国数学家费马曾提出一个著名的几何问题：给定不在同一条直线上的三个点 A，B，C，求平面上到这三个点的距离之和最小的点的位置，意大利数学家和物理学家托里拆利给出了分析和证明，该点也被称为“费马点”或“托里拆利点”，该问题也被称为“将军巡营”问题．",
+        "bbox": [
+            87,
+            631,
+            910,
+            705
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "(1)下面是该问题的一种常见的解决方法，请补充以下推理过程：（其中 $\\textcircled{1}$ 处从“直角”和“等边”中选择填空，  \n$\\textcircled{2}$ 处从“两点之间线段最短”和“三角形两边之和大于第三边”中选择填空， $\\textcircled{3}$ 处填写角度数， $\\textcircled{4}$ 处填写该三角  \n形的某个顶点）  \n当 ${ \\triangle A B C }$ 的三个内角均小于 $1 2 0 ^ { \\circ }$ 时，  \n如图 1，将 $\\triangle A P C$ 绕，点 $C$ 顺时针旋转 $6 0 ^ { \\circ }$ 得到 $\\triangle A ^ { \\prime } P ^ { \\prime } C$ ，连接 $P P ^ { \\prime }$ ，",
+        "bbox": [
+            85,
+            715,
+            912,
+            847
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/0a9f2224340283f5f9e1e22dc99ded500a5048a22313bfa6d857f373481998ee.jpg",
+        "image_caption": [
+            "图1"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            105,
+            92,
+            304,
+            189
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/f720f725d875fcdf1a885ea0fc810cd8b363ee8b6b16a2c5f7fb4050893713a7.jpg",
+        "image_caption": [
+            "图2"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            312,
+            92,
+            507,
+            189
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/f1a12f50bec1b21742b6b24100d26fafab5fe4edb2025c65fba417b2936b94b2.jpg",
+        "image_caption": [
+            "图3 "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            515,
+            95,
+            741,
+            185
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "由 $P C = P ^ { \\prime } C$ ， $\\angle P C P ^ { \\prime } = 6 0 ^ { \\circ }$ ，可知 $\\triangle P C P ^ { \\prime }$ 为 $\\textcircled{1}$ 三角形，故 $P P ^ { \\prime } = P C$ ，又 $P ^ { \\prime } A ^ { \\prime } = P A$ ，故",
+        "bbox": [
+            89,
+            221,
+            771,
+            239
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "img_path": "images/3073d11632396dfdf5f08f6f144392705b1255c1d148de2f76d5abfa11656601.jpg",
+        "text": "$$\nP A + P B + P C = P A ^ { \\prime } + P B + P P ^ { \\prime } \\geq A ^ { \\prime } B ,\n$$",
+        "text_format": "latex",
+        "bbox": [
+            89,
+            250,
+            368,
+            265
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "由 $\\textcircled{2}$ 可知，当 $B$ ， $P$ ， $P ^ { \\prime }$ ， $A$ 在同一条直线上时， $P A + P B + P C$ 取最小值，如图 2，最小值为 $A ^ { \\prime } B$ ，此时的 $P$ 点为该三角形的“费马点”，且有 $\\angle A P C = \\angle B P C = \\angle A P B = 3 0 ^ { \\circ }$ ；",
+        "bbox": [
+            87,
+            278,
+            907,
+            324
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "已知当 ${ \\triangle A B C }$ 有一个内角大于或等于 $1 2 0 ^ { \\circ }$ 时，“费马点”为该三角形的某个顶点．如图 3，若 $\\angle B A C \\ge 1 2 0 ^ { \\circ }$ ，则该三角形的“费马点”为 $\\textcircled{4}$ 点",
+        "bbox": [
+            87,
+            334,
+            907,
+            380
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "(2)如图 4，在 ${ \\triangle A B C }$ 中，三个内角均小于 $1 2 0 ^ { \\circ }$ ，且 $A C = 3$ ， $B C = 4 ,$ ， $\\angle A C B = 3 0 ^ { \\circ }$ ，已知点 $P$ 为 ${ \\triangle A B C }$ 的“费马点”，求 $P A + P B + P C$ 的值；",
+        "bbox": [
+            87,
+            391,
+            907,
+            437
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/f5a15816ec57bff58680164e5d1310942ecba868f1a8da1ed199f74886f7a4a4.jpg",
+        "image_caption": [
+            "图4"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            99,
+            478,
+            364,
+            569
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/d4c18daaf646737acb1640fb176c28293d5ec1f211bd08e8f5252165def23bab.jpg",
+        "image_caption": [
+            "图5"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            379,
+            457,
+            549,
+            569
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/01aaba107e0cfffae4b8b8e402a6189f1ff1a51ff17fcc06454888dd30bbb028.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            569,
+            457,
+            742,
+            571
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "(3)如图 5，设村庄 $A$ ， $B$ ， $C$ 的连线构成一个三角形，且已知 $A C = 4 \\mathrm { k m }$ ， $B C = 2 \\sqrt { 3 } \\mathrm { k m }$ ， $\\angle A C B = 6 0 ^ { \\circ }$ ．现欲建一中转站 $P$ 沿直线向 $A$ ， $B$ ， $C$ 三个村庄铺设电缆，已知由中转站 $P$ 到村庄 $A$ ， $B$ ， $C$ 的铺设成本分别为 $a$ 元/ $\\mathrm { k m }$ ， $a$ 元/ $\\mathrm { k m }$ ， $\\sqrt { 2 } a$ 元/ $\\mathrm { k m }$ ，选取合适的 $P$ 的位置，可以使总的铺设成本最低为 _元．（结果用含 $a$ 的式子表示）",
+        "bbox": [
+            85,
+            602,
+            910,
+            711
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "【答案】 $\\cdot$ 等边； $\\textcircled{2}$ 两点之间线段最短； $\\textcircled{3}$ $1 2 0 ^ { \\circ }$ ； $\\textcircled{4} \\textcircled{4}$ (2) 5  \n(3) $2 \\sqrt { 1 3 } a$ ",
+        "bbox": [
+            87,
+            717,
+            539,
+            776
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "【解题思路】（1）根据旋转的性质和两点之间线段最短进行推理分析即可得出结论；",
+        "bbox": [
+            87,
+            781,
+            737,
+            796
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "（2）根据（1）的方法将 $\\triangle A P C$ 绕，点 $C$ 顺时针旋转 $6 0 ^ { \\circ }$ 得到 $\\triangle A ^ { \\prime } P ^ { \\prime } C$ ，即可得出可知当 $\\cdot$ ， $P$ ， $P ^ { \\prime }$ ， $\\cdot$ 在同一 条 直 线 上 时 ， $P A + P B + P C$ 取 最 小 值 ， 最 小 值 为 $A ^ { \\prime } B$ ， 在 根 据 $\\angle A C B = 3 0 ^ { \\circ }$ 可 证 明$\\angle A C A ^ { \\prime } = \\angle A ^ { \\prime } C P ^ { \\prime } + \\angle B C P + \\angle P C P ^ { \\prime } = 9 0 ^ { \\circ }$ ，由勾股定理求 $A ^ { \\prime } B$ 即可，",
+        "bbox": [
+            87,
+            801,
+            912,
+            858
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "（3）由总的铺设成本 $= a ( P A + P B + { \\sqrt { 2 } } P C )$ ，通过将△APC绕，点 $\\cdot$ 顺时针旋转 $9 0 ^ { \\circ }$ 得到 $\\triangle A ^ { \\prime } P ^ { \\prime } C$ ，得到等腰直角 $\\triangle P P ^ { \\prime } C$ ，得到 $\\sqrt { 2 } P C = P P ^ { \\prime }$ ，即可得出当 $B$ ， $P$ ， $P ^ { \\prime }$ ， $\\cdot$ 在同一条直线上时， $P ^ { \\prime } A ^ { \\prime } + P B + P P ^ { \\prime }$ 取最小值，即 $P A + P B + \\sqrt { 2 } P C$ 取最小值为 $A ^ { \\prime } B$ ，然后根据已知和旋转性质求出 $A ^ { \\prime } B$ 即可．",
+        "bbox": [
+            85,
+            863,
+            912,
+            929
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            87,
+            83,
+            680,
+            99
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "【详解】（1）解：∵ $P C = P ^ { \\prime } C$ ， $\\angle P C P ^ { \\prime } = 6 0 ^ { \\circ }$ ，  \n∴ $\\triangle P C P ^ { \\prime }$ 为等边三角形；  \n∴ $. P P ^ { \\prime } { = } P C$ ， $\\angle P ^ { \\prime } P C = \\angle P P ^ { \\prime } C = 6 0 ^ { \\circ }$ ，  \n又 $P ^ { \\prime } A ^ { \\prime } = P A$ ，故 $P A + P B + P C = P A ^ { \\prime } + P B + P P ^ { \\prime } \\geq A ^ { \\prime } B \\ ,$ ，  \n由两点之间线段最短可知，当 $B$ ， $P$ ， $P ^ { \\prime }$ ， $A$ 在同一条直线上时， $P A + P B + P C$ 取最小值，最小值为 $A ^ { \\prime } B$ ，此时的 $\\cdot$ 点为该三角形的“费马点”，  \n$\\therefore \\angle B P C + \\angle P ^ { \\prime } P C = 1 8 0 ^ { \\circ } , \\angle A ^ { \\prime } P ^ { \\prime } C + \\angle P P ^ { \\prime } C = 1 8 0 ^ { \\circ } ,$ ，  \n∴ $\\angle B P C = 1 2 0 ^ { \\circ }$ ， $\\angle A ^ { \\prime } P ^ { \\prime } C = 1 2 0 ^ { \\circ }$ ，  \n又∵ $\\triangle A P C \\cong \\triangle A ^ { \\prime } P ^ { \\prime } C$ ，  \n$\\angle A P C = \\angle A P ^ { \\prime } C = 1 2 0 ^ { \\circ }$ ，  \n$\\angle A P B = 3 6 0 ^ { \\circ } - \\angle A P C - \\angle B P C = 1 2 0 ^ { \\circ }$   \n$\\therefore \\angle A P C = \\angle B P C = \\angle A P B = 1 2 0 ^ { \\circ }$ ；  \n∵ $\\cdot \\angle B A C \\geq 1 2 0 ^ { \\circ }$ ，  \n$B C > A C B C > A B$ ，  \n$\\therefore B C + A B > A C + A B , B C + A C > A B + A C ,$   \n∴三个顶点中，顶点 $\\cdot$ 到另外两个顶点的距离和最小  \n又∵已知当 ${ \\triangle A B C }$ 有一个内角大于或等于 $1 2 0 ^ { \\circ }$ 时，“费马点”为该三角形的某个顶点∴该三角形的“费马点”为点 A，  \n故答案为： $\\textcircled{1}$ 等边； $\\textcircled{2}$ 两点之间线段最短； $\\textcircled { 3 } 1 2 0 ^ { \\circ } : \\textcircled { 4 } \\mathbf { A }$   \n（2）将 $\\triangle A P C$ 绕，点 $C$ 顺时针旋转 $6 0 ^ { \\circ }$ 得到 $\\triangle A ^ { \\prime } P ^ { \\prime } C$ ，连接 $P P ^ { \\prime }$ ，  \n由（1）可知当 $B$ ， $\\cdot$ ， $P ^ { \\prime }$ ， $A$ 在同一条直线上时， $P A + P B + P C$ 取最小值，最小值为 $A ^ { \\prime } B$ ，  \n∵ $\\angle A C P = \\angle A ^ { \\prime } C P ^ { \\prime }$ ，$\\angle A C P + \\angle B C P = \\angle A ^ { \\prime } C P ^ { \\prime } + \\angle B C P = \\angle A C B = 3 0 ^ { \\circ }$   \n又∵ $\\angle P C P ^ { \\prime } = 6 0 ^ { \\circ }$   \n∴ $\\angle B C A ^ { \\prime } = \\angle A ^ { \\prime } C P ^ { \\prime } + \\angle B C P + \\angle P C P ^ { \\prime } = 9 0 ^ { \\circ }$ ，  \n由旋转性质可知： $A C = A ^ { \\prime } C = 3$ ，  \n$A ^ { \\prime } B = \\sqrt { B C ^ { 2 } + A ^ { \\prime } C ^ { 2 } } = \\sqrt { 4 ^ { 2 } + 3 ^ { 2 } } = 5$ ，$P A + P B + P C$ 最小值为5，  \n（3）∵总的铺设成本 $\\mathbf { \\nabla } = P A \\bullet a + P B \\bullet a + P C \\bullet { \\sqrt { 2 } } a = a ( P A + P B + { \\sqrt { 2 } } P C )$   \n∴当 $P A + P B + \\sqrt { 2 } P C$ 最小时，总的铺设成本最低，  \n将 $\\triangle A P C$ 绕，点 $\\cdot$ 顺时针旋转 $9 0 ^ { \\circ }$ 得到 $\\triangle A ^ { \\prime } P ^ { \\prime } C$ ，连接 $P P ^ { \\prime }$ ， $A ^ { \\prime } B$   \n由旋转性质可知： $P ^ { \\prime } C = P C$ ， $\\angle P C P ^ { \\prime } = \\angle A C A ^ { \\prime } = 9 0 ^ { \\circ } , P ^ { \\prime } A ^ { \\prime } = P A , A ^ { \\prime } C = A C = 4 \\mathrm { k m } ,$ ，  \n资料整理【淘宝店铺：向阳百分百】",
+        "bbox": [
+            87,
+            103,
+            784,
+            531
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/4c8a160240d361ec62e0485df71b977236556ee1a3283ff49de97e2eaa9980eb.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            94,
+            535,
+            347,
+            668
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            87,
+            677,
+            742,
+            928
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "$\\begin{array} { l } { { P P ^ { \\prime } = \\sqrt 2 P C } } \\\\ { { P A + P B + \\sqrt 2 P C = P A + P B + P P } } \\end{array}$ 当 $\\cdot$ ， $P$ ， $P ^ { \\prime }$ ， $A$ 在同一条直线上时， $P ^ { \\prime } A ^ { \\prime } + P B + P P ^ { \\prime }$ 取最小值，即 $P A + P B + \\sqrt { 2 } P C$ 取最小值为 $A ^ { \\prime } B$ ，",
+        "bbox": [
+            89,
+            82,
+            867,
+            145
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "image",
+        "img_path": "images/3ebc3aecfdaf295ea93b67a2b89636f8718d3754c6cb6d9bbf245b133a5ca968.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            104,
+            154,
+            431,
+            280
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "过点 $A ^ { \\prime }$ 作 $A ^ { \\prime } H \\bot B C$ ，垂足为 $H$ ，$\\cdot \\angle A C B = 6 0 ^ { \\circ } \\ , \\angle A C A ^ { \\prime } = 9 0 ^ { \\circ }$ ，  \n$: \\angle A ^ { \\prime } C H = 3 0 ^ { \\circ }$ ，  \n∴ $. A ^ { \\prime } H = \\frac { 1 } { 2 } A ^ { \\prime } C = 2 { \\bf k m } _ { \\perp }$ ，  \n$H C = { \\sqrt { A C ^ { 2 } - A H ^ { 2 } } } = { \\sqrt { 4 ^ { 2 } - 2 ^ { 2 } } } = 2 { \\sqrt { 3 } } ( { \\mathrm { k m } } )$ ，  \n$\\therefore B H = B C + C H = 2 \\sqrt { 3 } + 2 \\sqrt { 3 } = 4 \\sqrt { 3 } ( \\mathrm { k m } ) ,$   \n$A ^ { \\prime } B = \\sqrt { A H ^ { 2 } + B H ^ { 2 } } = \\sqrt { ( 4 \\sqrt { 3 } ) ^ { 2 } + 2 ^ { 2 } } = 2 \\sqrt { 1 3 } ( \\mathrm { k m } )$   \n$P A + P B + \\sqrt { 2 } P C$ 的最小值为 $2 \\sqrt { 1 3 } \\mathrm { k m }$   \n总的铺设成本 $= P A \\bullet a + P B \\bullet a + P C \\bullet \\sqrt { 2 } a = a ( P A + P B + \\sqrt { 2 } P C ) = 2 \\sqrt { 1 3 } a$ （元）",
+        "bbox": [
+            89,
+            284,
+            652,
+            504
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "广东省江门市一模",
+        "text_level": 1,
+        "bbox": [
+            89,
+            533,
+            272,
+            550
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "9．如图，在 ${ \\triangle A B C }$ 中， $\\angle B A C = 9 0 ^ { \\circ } , A B = 5 , A C = 2 { \\sqrt { 3 } }$ ，点 $P$ 为 ${ \\triangle A B C }$ 内部一点，则点 $P$ 到 ${ \\triangle A B C }$ 三个顶点之和的最小值是",
+        "bbox": [
+            85,
+            577,
+            907,
+            629
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "image",
+        "img_path": "images/9ea67cbbaeae75617ee0281e54ab8247bb521b14beb5d342c1b66e7cb4c3cbab.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            97,
+            640,
+            351,
+            739
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "【答案】 $\\sqrt { 6 7 }$ ",
+        "bbox": [
+            94,
+            749,
+            198,
+            765
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "【分析】将 $\\triangle A B P$ 绕着点 $A$ 顺时针旋转 $6 0 ^ { \\circ }$ ，得到 $\\triangle A E H$ ，连接 $E P$ ， $C H$ ，过点 $\\cdot$ 作 $C N \\bot A H$ ，交 $H A$ 的延长线于 $\\cdot$ ，由旋转的性质可得 $\\angle B A P = \\angle H A E$ ， $A E = A P$ ， $A H = A B = 5$ ， $\\angle B A H = 6 0 ^ { \\circ }$ ， $B P = H E$ ，易得$\\triangle A E P$ 是等边三角形，可得 $A E = A P = E P$ ，进而得到 $A P + B P + P C = E P + E H + P C$ ，当点 H、E、 $P$ 、 $C$ 共线时， $A P + B P + P C$ 有最小值 $H C$ ，再求出 $C N$ 和 $H N$ 的长度，由勾股定理可求解",
+        "bbox": [
+            89,
+            771,
+            912,
+            847
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "【详解】解：将 $\\triangle A B P$ 绕着点 $A$ 顺时针旋转 $6 0 ^ { \\circ }$ ，得到 $\\triangle A E H$ ，连接 $E P$ ， $C H$ ，过点 $C$ 作 $C N \\perp A H$ ，交 $H A$ 的延长线于 $N$ ，",
+        "bbox": [
+            89,
+            852,
+            909,
+            889
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "image",
+        "img_path": "images/d1c7fcc4501e9e9d0102960ff66ee095df1de609968aa3cca7f742f70aea7573.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            89,
+            82,
+            408,
+            235
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "∴BAP  HAE ， $A E = A P$ ， $A H = A B = 5$ ， $\\angle B A H = 6 0 ^ { \\circ }$ ， $B P = H E$ $\\therefore \\angle H A B = \\angle E A P = 6 0 ^ { \\circ }$ ，  \n∴ $\\triangle A E P$ 是等边三角形，$\\mathbf { \\partial } \\cdot { \\mathcal { A } } E = { \\mathcal { A } } P = E P$ ，  \n$\\therefore A P + B P + P C = E P + E H + P C$   \n∴当点 $\\cdot$ 、E、 $P$ 、 $C$ 共线时， $A P + B P + P C$ 有最小值 $H C$   \n∵ $' \\angle N A C = 1 8 0 ^ { \\circ } - \\angle B A H - \\angle B A C = 1 8 0 ^ { \\circ } - 6 0 ^ { \\circ } - 9 0 ^ { \\circ } = 3 0 ^ { \\circ } , A C = 2 \\sqrt { 3 } ,$ ，$\\therefore C N = \\frac { 1 } { 2 } A C = \\sqrt { 3 }$ ，  \n$\\therefore A N = { \\sqrt { A C ^ { 2 } - C N ^ { 2 } } } = { \\sqrt { \\left( 2 { \\sqrt { 3 } } \\right) ^ { 2 } - \\left( { \\sqrt { 3 } } \\right) ^ { 2 } } } = 3 ,$ ，$H N = A H + A N = 5 + 3 = 8$   \n在 $\\mathrm { R t } \\triangle C N H$ 中， $C H = { \\sqrt { H N ^ { 2 } + C N ^ { 2 } } } = { \\sqrt { 8 ^ { 2 } + \\left( { \\sqrt { 3 } } \\right) ^ { 2 } } } = { \\sqrt { 6 7 } }$ ，  \n即点 $\\cdot$ 到 ${ \\triangle A B C }$ 三个顶点之和的最小值是 $\\sqrt { 6 7 }$ ",
+        "bbox": [
+            89,
+            241,
+            635,
+            536
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "武汉中考",
+        "text_level": 1,
+        "bbox": [
+            90,
+            571,
+            179,
+            588
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "10．问题背景：如图 1，将△ABC 绕点 $A$ 逆时针旋转 $6 0 ^ { \\circ }$ 得到 $\\triangle A D E$ ， $D E$ 与 $B C$ 交于点 $P$ ，可推出结论：$P A { + } P C { = } P E$ ",
+        "bbox": [
+            89,
+            607,
+            904,
+            646
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "问题解决：如图 2，在△MNG 中， $M N { = } 6$ ， $\\angle M = 7 5 ^ { \\circ }$ °， $\\scriptstyle { M G = 4 { \\sqrt { 2 } } }$ ，点 $O$ 是△MNG 内一点，则点 $O$ 到△MNG三个顶点的距离和的最小值是 ",
+        "bbox": [
+            85,
+            651,
+            909,
+            690
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "image",
+        "img_path": "images/01d2ee2713a38362665fa9a054598be99ca8919dbb9219e9724dc2509c13693c.jpg",
+        "image_caption": [
+            "图1"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            263,
+            697,
+            470,
+            818
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "image",
+        "img_path": "images/4ecaaa607c5bf491a4d1d4939c81a3f0e84384a9956486efc07b8ba0d0b3aa66.jpg",
+        "image_caption": [
+            "图2"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            544,
+            720,
+            734,
+            812
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "【答案】 $2 \\sqrt { 2 9 }$ ",
+        "bbox": [
+            94,
+            845,
+            205,
+            862
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "【分析】本题的问题背景实际上是提示了解题思路，构造 $\\cdot$ 的旋转，当然如果已经了解了费马点问题，直接来解决就好了！",
+        "bbox": [
+            87,
+            866,
+            897,
+            902
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "资料整理【淘宝店铺：向阳百分百】",
+        "bbox": [
+            87,
+            912,
+            329,
+            928
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "如图，以 MG 为边作等边△MGH，连接 NH，则 NH 的值即为所求的点 O 到△MNG 三个顶点的距离和的最小值．（此处不再证明）",
+        "bbox": [
+            89,
+            83,
+            907,
+            120
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "image",
+        "img_path": "images/1ced001969cef7d1f145809e746ca0b5a823c608bf335215c45b89a848964c0d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            104,
+            134,
+            339,
+            224
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "过点 H 作 $_ \\mathrm { H Q \\perp N M }$ 交 NM 延长线于 Q 点，  \n根据 $\\angle N M G { = } 7 5 ^ { \\circ }$ ， $\\angle { \\mathrm { G M H } } { = } 6 0 ^ { \\circ }$ ，可得 $\\cdot$   \n∴ ${ \\bigtriangleup } \\mathrm { M H Q }$ 是等腰直角三角形，  \n$\\therefore \\mathrm { M Q } = \\mathrm { H Q } = 4$ ，  \n$\\therefore \\mathrm { N H } = \\sqrt { N Q ^ { 2 } + H Q ^ { 2 } } = \\sqrt { 1 0 0 + 1 6 } = 2 \\sqrt { 2 9 } \\ .$ ",
+        "bbox": [
+            87,
+            229,
+            515,
+            332
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "image",
+        "img_path": "images/3ec3b0d8a02a5ba12423944438179c7ea84e7c495c369d433fad9a7098020e2e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            104,
+            349,
+            341,
+            483
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "2023·四川宜宾·中考真题",
+        "text_level": 1,
+        "bbox": [
+            87,
+            529,
+            334,
+            546
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "11．如图，抛物线 $y = a x ^ { 2 } + b x + c$ 经过点 $A \\left( - 3 , 0 \\right)$ ，顶点为 $M \\left( - 1 , m \\right)$ ，且抛物线与 $y$ 轴的交点 $B$ 在 $\\left( 0 , - 2 \\right)$ 和$\\left( 0 , - 3 \\right)$ 之间（不含端点），则下列结论：",
+        "bbox": [
+            87,
+            573,
+            912,
+            629
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "image",
+        "img_path": "images/b1e3b9039ea6b3ed754a884d448a6d55cd949e7b96df85126cc63dad75632fdc.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            87,
+            643,
+            299,
+            808
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "$\\textcircled{1}$ 当 $- 3 \\leq x \\leq 1$ 时， $y \\le 0$ ；  \n$\\textcircled{2}$ 当 $\\triangle A B M$ 的面积为 $\\frac { 3 { \\sqrt { 3 } } } { 2 }$ 时， $a = { \\frac { \\sqrt { 3 } } { 2 } }$   \n$\\textcircled{3}$ 当 $\\triangle A B M$ 为直角三角形时，在 $\\triangle A O B$ 内存在唯一点 $P$ ，使得 $P A + P O + P B$ 的值最小，最小值的平方为资料整理【淘宝店铺：向阳百分百】",
+        "bbox": [
+            85,
+            814,
+            887,
+            929
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "$1 8 + 9 \\sqrt { 3 }$ ． ",
+        "bbox": [
+            89,
+            92,
+            164,
+            110
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "其中正确的结论是 ．（填写所有正确结论的序号）",
+        "bbox": [
+            87,
+            127,
+            561,
+            143
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "【答案】 $\\textcircled{1} \\textcircled{2}$ ",
+        "bbox": [
+            94,
+            149,
+            198,
+            165
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "【解题思路】根据条件可求抛物线与 $X$ 轴的另一交点坐标，结合图象即可判断 $\\cdot$ ；设抛物线为$y = a ( x - 1 ) ( x + 3 )$ ，即可求出点 $\\cdot$ 的坐标，根据割补法求面积，判断 $\\textcircled{2}$ ；分三种情况讨论，然后以点 $o$ 为旋转中心，将 $\\triangle A O B$ 顺时针旋转 $6 0 ^ { \\circ }$ 至 $\\triangle A O A$ ，连接 $A A ^ { ' } , P P ^ { ' } , A ^ { ' } B$ ，得到 $P A + P O + P B = P ^ { \\prime } A + P P ^ { \\prime } + P B \\geq A ^ { \\prime } B$ ，判断 $\\textcircled{3}$ ",
+        "bbox": [
+            89,
+            170,
+            912,
+            250
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "【详解】解：∵抛物线 $y = a x ^ { 2 } + b x + c$ 经过点 $A { \\big ( } { - } 3 , 0 { \\big ) }$ ，顶点为 $M \\left( - 1 , m \\right)$ ，∴对称轴 $x { = } - 1$ ，  \n∴抛物线与 $\\chi$ 轴的另一交点坐标为 $\\left( 1 , 0 \\right)$ ，  \n由图象可得：当 $- 3 \\leq x \\leq 1$ 时， $y \\le 0$ ；  \n∴ $\\textcircled{1}$ 正确，符合题意；  \n∵抛物线与 $\\chi$ 轴的另一交点坐标为 $\\left( 1 , 0 \\right)$ ，  \n∴设抛物线为 $y = a ( x - 1 ) ( x + 3 )$ ，  \n当 $x { = } - 1$ 时， $y = - 4 a$ ，当 $\\scriptstyle x = 0$ 时， $y = - 3 a$ ，  \n$\\begin{array} { l l } { { M \\left( - 1 , - 4 a \\right) } } & { { { B \\left( 0 , - 3 a \\right) } } } \\end{array}$ ，  \n如图所示，过点 $M$ 作平行于 $y$ 轴的直线 $l$ ，过点 $\\cdot$ 作 $A E \\bot l$ ，过点 $\\cdot$ 作 $B N \\perp l$   \n$S _ { \\ v \\ / { A B M } } = S _ { \\ v \\ / { A M F } } + S _ { \\ v B M F } = \\frac { 1 } { 2 } \\times M F \\times \\it { A O } = \\frac { 3 \\sqrt { 3 } } { 2 }$   \n设直线 $A B$ 的解析式为 $y = k ^ { ' } x + b ^ { ' }$ ，  \n把 $B \\mathopen { } \\mathclose \\bgroup \\left( 0 , - 3 a \\aftergroup \\egroup \\right)$ ， $A \\left( - 3 , 0 \\right)$ 代入得： $\\left\\{ \\begin{array} { c } { { - 3 k ^ { \\prime } + b ^ { \\prime } = 0 } } \\\\ { { b ^ { \\prime } = - 3 a } } \\end{array} \\right. ,$   \n解得： $\\left\\{ \\begin{array} { l } { { k ^ { \\prime } = - a } } \\\\ { { b ^ { \\prime } = - 3 a } } \\end{array} \\right. ,$ ，  \n∴直线 $A B$ 的解析式为 $y = - a x - 3 a$   \n当 $x { = } - 1$ 是， $y = - 2 a$ ，  \n$F \\left( - 1 , - 2 a \\right)$ ，  \n∴ $M F = 2 a$ ，${ \\frac { 1 } { 2 } } \\times 2 a \\times 3 = { \\frac { 3 { \\sqrt { 3 } } } { 2 } }$   \n解得： $a = { \\frac { \\sqrt { 3 } } { 2 } }$ 故 $\\cdot$ 正确；  \n∵点 $B$ 是抛物线与 $\\cdot$ 轴的交点，  \n∴当 $x = 0$ 时， $y = - 3 a$ ，  \n$\\therefore B ( 0 , - 3 a )$ ，  \n$\\therefore \\triangle A B M$ 为直角三角形，  \n当 $\\angle A M B = 9 0 ^ { \\circ }$ 时，  \n$\\therefore A M ^ { 2 } + B M ^ { 2 } = A B ^ { 2 }$ ，  \n∵ $A M = { \\sqrt { \\left( - 2 \\right) ^ { 2 } + \\left( - 4 a \\right) ^ { 2 } } } = { \\sqrt { 4 + 1 6 a ^ { 2 } } } \\ , B M = { \\sqrt { \\left( - 1 \\right) ^ { 2 } + \\left( - a \\right) ^ { 2 } } } = { \\sqrt { 1 + a ^ { 2 } } } \\ , A B = { \\sqrt { \\left( - 3 \\right) ^ { 2 } + \\left( - 3 a \\right) ^ { 2 } } } = { \\sqrt { 1 + a ^ { 2 } } } \\ .$ 29  9a ，$4 + 1 6 a ^ { 2 } + 1 + a ^ { 2 } = 9 + 9 a ^ { 2 }$ ，整理得： $8 a ^ { 2 } = 4$ ，  \n解得： $a = { \\frac { \\sqrt { 2 } } { 2 } }$ 或 $- { \\frac { \\sqrt { 2 } } { 2 } }$ （舍）  \n$B \\left( 0 , - { \\frac { 3 { \\sqrt { 2 } } } { 2 } } \\right)$   \n当 $\\angle A B M = 9 0 ^ { \\circ }$ 时，  \n$A B ^ { 2 } + B M ^ { 2 } = A M ^ { 2 }$ ，  \n$4 + 1 6 a ^ { 2 } = 9 + 9 a ^ { 2 } + 1 + a ^ { 2 }$ ，整理得： $6 a ^ { 2 } = 6$   \n解得： $a = 1$ 或 $^ { - 1 }$ （舍）  \n$B ( 0 , - 3 )$ ，  \n当 $\\angle M A B = 9 0 ^ { \\circ }$ 时，  \n$\\therefore A B ^ { 2 } + A M ^ { 2 } = B M ^ { 2 } ,$ ，  \n$4 + 1 6 a ^ { 2 } + 1 + a ^ { 2 } = 9 + 9 a ^ { 2 }$ ，无解；  \n以点 $\\cdot$ 为旋转中心，将 $\\triangle A O B$ 顺时针旋转 $6 0 ^ { \\circ }$ 至 $\\triangle A O A$ ，连接 $A A ^ { ' }$ ， $P P$ ， ' AB ，如图所示，",
+        "bbox": [
+            89,
+            256,
+            697,
+            480
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/fb1ece4710fde2dcdf070e1095a76efa4e9745677fa330eb144452d6f8016aa7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            87,
+            486,
+            322,
+            653
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            87,
+            658,
+            440,
+            889
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            84,
+            82,
+            887,
+            621
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "image",
+        "img_path": "images/7dc8bfa671bdf60475a974325bb77e3a01b08da269216f2573fc0978f0b41e3d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            87,
+            621,
+            321,
+            803
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "则 $\\triangle A O A$ ， ${ \\triangle } P O P$ 为等边三角形，$\\therefore O P = P P ^ { \\prime } , A P = A P ^ { \\prime }$ ，$P A + P O + P B = P ^ { \\prime } A ^ { \\prime } + P P ^ { \\prime } + P B \\geq A ^ { \\prime } B$ ，∵ $\\triangle A O A$ 为等边三角形， $A \\left( - 3 , 0 \\right)$ ",
+        "bbox": [
+            87,
+            807,
+            389,
+            889
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "$\\begin{array} { l } { { \\displaystyle x _ { _ { \\perp } } = - \\frac { 3 } { 2 } ~ y _ { _ { \\perp } } = \\frac { 3 } { 2 } \\times \\tan 6 0 ^ { \\circ } = \\frac { 3 \\sqrt { 3 } } { 2 } } } \\\\ { { \\displaystyle A _ { \\perp } ^ { \\perp \\perp } \\frac { 3 } { 2 } \\frac { 3 \\sqrt { 3 } } { 2 } } } \\end{array}$   \n当 $B \\Bigg ( 0 , - \\frac { 3 \\sqrt { 2 } } { 2 } \\Bigg )$ 时，  \n$A ^ { ' } B ^ { 2 } = { \\frac { \\sqrt [ { 4 } ] { 2 } } { 1 6 } } ^ { 2 } + { \\frac { \\sqrt [ { 4 } ] { 6 } } { 1 6 } } ^ { 2 } + { \\frac { 3 \\sqrt { 2 } } { 2 } } ^ { 2 } = { \\frac { 5 4 } { 4 } } + { \\frac { 9 \\sqrt { 6 } } { 2 } }$   \n当 $B ( 0 , - 3 )$ 时，  \n$A ^ { ' } B ^ { 2 } = \\frac { 1 1 \\Xi } { 1 2 } ^ { 2 } + \\frac { 1 1 \\Xi } { 1 2 } + 3 = 1 8 + 9 \\sqrt { 3 }$ ，此时不符合题意，故 $\\textcircled{3}$ 错误；故答案为： $\\textcircled{1} \\textcircled{2}$ ",
+        "bbox": [
+            87,
+            82,
+            603,
+            355
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "一题四问，从特殊到一般",
+        "text_level": 1,
+        "bbox": [
+            90,
+            424,
+            341,
+            441
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "12．背景资料：在已知 ${ \\triangle A B C }$ 所在平面上求一点 $P$ ，使它到三角形的三个顶点的距离之和最小.这个问题是法国数学家费马 1640年前后向意大利物理学家托里拆利提出的，所求的点被人们称为“费马点”．如图1，当 ${ \\triangle A B C }$ 三个内角均小于 $1 2 0 ^ { \\circ }$ 时，费马点 $P$ 在 ${ \\triangle A B C }$ 内部，当 $\\angle A P B = \\angle A P C = \\angle C P B = 1 2 0 ^ { \\circ }$ 时，则$P A + P B + P C$ 取得最小值",
+        "bbox": [
+            89,
+            462,
+            912,
+            567
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/e7470fd47ddb49cf09748e76d82887f0bcf2fc95e5ce806ebfd424c678c1b6b3.jpg",
+        "image_caption": [
+            "图1"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            99,
+            590,
+            342,
+            703
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/22c0febbe36628d93c15d4ff2b6da9a9c4503863f3162628b5eb4b4985fa8f59.jpg",
+        "image_caption": [
+            "图2"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            371,
+            588,
+            552,
+            706
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/c4fe0f1b3c0860b5db1f598cc7a27523a1f3904582d396f28569910648a4a3d6.jpg",
+        "image_caption": [
+            "图3 "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            578,
+            594,
+            805,
+            701
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/a5692b5546a674fbecda4fb3a9e5dc0dfabcdc8e44955c004ae8224f87d5b183.jpg",
+        "image_caption": [
+            "图4"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            100,
+            759,
+            396,
+            878
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/d3dbeb8218e92d488278caaaed781bac53c7f74a0b24be749f5977a6e7b3d46d.jpg",
+        "image_caption": [
+            "图5"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            420,
+            759,
+            589,
+            876
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "(1)如图 2，等边 ${ \\triangle A B C }$ 内有一点 $P$ ，若点 $P$ 到顶点 $A$ 、 $B$ 、 $C$ 的距离分别为 3，4，5，求 $\\angle A P B$ 的度数，为了解决本题，我们可以将 $\\triangle A B P$ 绕顶点 $A$ 旋转到 $\\triangle A C P ^ { \\prime }$ 处，此时 $\\triangle A C P ^ { \\prime } \\cong \\triangle A B P$ 这样就可以利用旋转变换，将三条线段 $P A$ 、 $P B$ 、 $P C$ 转化到一个三角形中，从而求出 $\\angle A P B =$ ；",
+        "bbox": [
+            87,
+            89,
+            909,
+            164
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "知识生成：怎样找三个内角均小于 $1 2 0 ^ { \\circ }$ 的三角形的费马点呢？为此我们只要以三角形一边在外侧作等边三角形并连接等边三角形的顶点与 ${ \\triangle A B C }$ 的另一顶点，则连线通过三角形内部的费马点．请同学们探索以下问题．",
+        "bbox": [
+            85,
+            173,
+            910,
+            247
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "(2)如图 3， ${ \\triangle A B C }$ 三个内角均小于 $1 2 0 ^ { \\circ }$ ，在 ${ \\triangle A B C }$ 外侧作等边三角形 $\\triangle A B B ^ { \\prime }$ ，连接 $C B ^ { \\prime }$ ，求证： $C B ^ { \\prime }$ 过 ${ \\triangle A B C }$ 的费马点．",
+        "bbox": [
+            85,
+            259,
+            909,
+            304
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "(3)如图 4，在 $R T { \\triangle } A B C$ 中， $\\angle C = 9 0 ^ { \\circ }$ ， $A C = 1$ ， $\\angle A B C = 3 0 ^ { \\circ }$ ，点 $P$ 为 ${ \\triangle A B C }$ 的费马点，连接 $A P \\ 、 B P \\ 、 C P$ ，求 $P A + P B + P C$ 的值",
+        "bbox": [
+            87,
+            316,
+            909,
+            361
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "(4)如图 5，在正方形ABCD中，点 $E$ 为内部任意一点，连接 $A E$ 、 $B E$ 、 $C E$ ，且边长 $A B = 2$ ；求 $A E + B E + C E$ 的最小值",
+        "bbox": [
+            85,
+            372,
+            910,
+            417
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "【答案】 $\\cdot$ ；(2)见详解； $( 3 ) \\sqrt { 7 } \\ ; \\ ( 4 ) \\sqrt { 6 } + \\sqrt { 2 }$ ．",
+        "bbox": [
+            92,
+            423,
+            482,
+            442
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "【分析】（1）根据旋转性质得出 $\\triangle A B P \\triangle A C P ^ { \\prime }$ ，得出 $\\angle B A P { = } \\angle C A P ^ { \\prime }$ ， $-$ ， $\\_$ ，根据 $\\cdot$ 为等边三角形，得出 $\\angle B A C { = } 6 0 { ^ \\circ }$ ，可证 $\\cdot$ 为等边三角形， $\\cdot$ ， $\\angle A P ^ { \\prime } P { = } 6 0 ^ { \\circ }$ ，根据勾股定理逆定理 $P P ^ { \\prime 2 } + P ^ { \\prime } C ^ { 2 } = 3 ^ { 2 } + 4 ^ { 2 } = 2 5 = P C ^ { 2 }$ ，得出 $\\triangle P P ^ { \\prime } C$ 是直角三角形， $\\_$ ，可求 $-$ $-$ 即可；",
+        "bbox": [
+            87,
+            447,
+            910,
+            524
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "（2）将 $\\triangle A P B$ 逆时针旋转 $6 0 ^ { \\circ }$ ，得到 $\\triangle A B ^ { \\prime } P ^ { \\prime }$ ，连结 $\\cdot$ ，根据 $-$ ， $\\cdot$ ， $\\cdot$ ， $A B { = } A B ^ { \\prime }$ ，根 据 $\\angle \\ P A P ^ { \\prime } = \\ \\angle \\ B A B ^ { \\prime } { = } 6 0 ^ { \\circ }$ ， $\\triangle A P P ^ { \\prime }$ 和 $\\triangle A B B ^ { \\prime }$ 均 为 等 边 三 角 形 ， 得 出 $\\cdot$ ， 根 据$P A + P B + P C = P P ^ { \\prime } + P ^ { \\prime } B ^ { \\prime } + P C$ ，根据两点之间线段最短得出点 $\\cdot$ ，点 $\\cdot$ ，点 $\\cdot$ ，点 $B$ ′四点共线时， $P A + P B + P C$ $\\cdot$ ，点 $P$ 在 $C B ^ { \\prime }$ 上即可；",
+        "bbox": [
+            87,
+            527,
+            914,
+            605
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "（3）将 $\\cdot$ 逆时针旋转 $6 0 ^ { \\circ }$ ，得到 $\\cdot$ ，连结 $B B ^ { \\prime }$ ， $\\cdot$ ，得出 $-$ ，可证△APP′和 $\\triangle A B B ^ { \\prime }$ 均为等边三角形，得出 $\\cdot$ ， $\\cdot$ ， $\\angle A B B ^ { \\prime } { = } 6 0 ^ { \\circ }$ ，根据 $P A + P B + P C = P P ^ { \\prime } + P ^ { \\prime } B ^ { \\prime } + P C$ ，可得点 $C$ ，点 $\\cdot$ ，点 $P ^ { \\prime }$ ，点 $B ^ { \\prime } \\boxdot$ 点共线时， $P A + P B + P C$ ，利用 $\\cdot$ 直角三角形性质得出 $A B { = } 2 A C { = } 2$ ，根据勾股定理 ${ \\sqrt { A B ^ { 2 } - A C ^ { 2 } } } = { \\sqrt { 2 ^ { 2 } - 1 ^ { 2 } } } = { \\sqrt { 3 } }$ ，可求 $B B ^ { \\prime } { = } A B { = } 2$ ，根据 $\\angle C B B ^ { \\prime } = \\angle A B C + \\angle A B \\mathrm { B ^ { \\prime } } = 3 0 ^ { \\circ } + 6 0 ^ { \\circ } = 9 0 ^ { \\circ }$ ，在$\\cdot$ ′中， $B ^ { \\prime } C { = } \\sqrt { B C ^ { 2 } + B B ^ { \\prime } { } ^ { 2 } } = \\sqrt { \\left( \\sqrt { 3 } \\right) ^ { 2 } + 2 ^ { 2 } } { = } \\sqrt { 7 }$ 即可；",
+        "bbox": [
+            87,
+            608,
+            912,
+            724
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "（4）将 $\\triangle B C E$ 逆时针旋转 $6 0 ^ { \\circ }$ 得到 $\\cdot$ ，连结 $\\cdot$ ， $B B ^ { \\prime }$ ，过点 $\\cdot$ ′作 $B ^ { \\prime } F \\bot A B$ ，交 $\\cdot$ 延长线于 $F$ ，得出$\\triangle B C E \\cong \\triangle C E ^ { \\prime } B ^ { \\prime }$ ， $B E { = } B ^ { \\prime } E ^ { \\prime }$ ， $C E { = } C E ^ { \\prime }$ ， $\\cdot$ ， 可证 $\\cdot$ 与 $\\triangle B C B$ ′均为等边三角形，得出 $E E { ' } { = } E C$ ， $\\cdot$ ，$\\angle B ^ { \\prime } B C = 6 0 ^ { \\circ }$ ， $A E + B E + C E = A E + E E ^ { \\prime } + E ^ { \\prime } B ^ { \\prime }$ ， 得 出 点 $C$ ， 点 $E$ ， 点 $E ^ { \\prime }$ ， 点 $\\cdot$ 四 点 共 线 时 ，$A E + B E + C E = A E + E E ^ { \\prime } + E ^ { \\prime } B ^ { \\prime }$ ，根据四边形 $A B C D$ 为正方形，得出 $\\cdot$ ， $\\angle A B C { = } 9 0 ^ { \\circ }$ ，可求 $\\cdot$ $F B B ^ { \\prime } = 1 8 0 ^ { \\circ } - \\angle A B C - \\angle C B B ^ { \\prime } = 1 8 0 ^ { \\circ } - 9 0 ^ { \\circ } - 6 0 ^ { \\circ } = 3 0 ^ { \\circ }$ ，根据 $3 0 ^ { \\circ }$ 直角三角形性质得出 ${ \\frac { 1 } { 2 } } B B ^ { \\prime } = { \\frac { 1 } { 2 } } \\times 2 = 1$ ，勾股定理BF ${ \\sqrt { B B ^ { \\prime 2 } - B ^ { \\prime } F ^ { 2 } } } = { \\sqrt { 2 ^ { 2 } - 1 ^ { 2 } } } = { \\sqrt { 3 } }$ 可 求 $-$ $\\sqrt { 3 }$ ， 再 根 据 勾 股 定 理${ \\sqrt { A F ^ { 2 } + B ^ { \\prime } F ^ { 2 } } } = { \\sqrt { \\left( 2 + { \\sqrt { 3 } } \\right) ^ { 2 } + 1 ^ { 2 } } } = { \\sqrt { 6 } } + { \\sqrt { 2 } }$ 即可．",
+        "bbox": [
+            85,
+            730,
+            912,
+            901
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "【详解】（1）解：连结 $P P ^ { \\prime }$ ，  \n$\\triangle A B P \\quad \\triangle A C P ^ { \\prime }$   \n∴ $-$ ， $-$ ， $\\cdot$ ，BP=CP′=4，∵ $\\cdot$ 为等边三角形，  \n$\\_$   \n$\\therefore \\angle P A P ^ { \\prime } = \\angle P A C + \\angle C A P ^ { \\prime } = \\angle P A C + \\angle B A P = 6 0 ^ { \\circ } ,$ ，  \n∴ $\\cdot$ 为等边三角形，  \n, $\\therefore P P ^ { \\prime } { = } A P { = } 3$ ， $\\_$ ，  \n在 $\\cdot$ 中， $P C { = } 5$ ，  \n$P P ^ { \\prime 2 } + P ^ { \\prime } C ^ { 2 } = 3 ^ { 2 } + 4 ^ { 2 } = 2 5 = P C ^ { 2 }$   \n∴ $\\cdot$ 是直角三角形， $\\angle P P ^ { \\prime } C { = } 9 0 ^ { \\circ }$ ，  \n$\\therefore \\angle A P ^ { \\prime } C = \\angle A P P + \\angle P P C = 6 0 ^ { \\circ } + 9 0 ^ { \\circ } = 1 5 0 ^ { \\circ } ,$ ，  \n$\\cdot \\angle A P B { = } \\angle A P ^ { \\prime } C { = } 1 5 0 ^ { \\circ }$ ，  \n故答案为 $1 5 0 ^ { \\circ }$ ；  \n（2）证明：将 $\\cdot$ 逆时针旋转 $6 0 ^ { \\circ }$ ，得到 $\\cdot$ ，连结 $P P ^ { \\prime }$ ，$-$ ，  \n∴ $. A P { = } A P ^ { \\prime }$ ， $P B { = } P B ^ { \\prime }$ ， $\\cdot$ ，  \n∵ $\\cdot \\angle P A P ^ { \\prime } { = } \\angle B A B ^ { \\prime } { = } 6 0 ^ { \\circ } .$ ，  \n∴ $\\triangle A P P$ ′和 $\\triangle A B B$ ′均为等边三角形，$. P P { = } A P$ ，  \n$P A + P B + P C = P P ^ { \\prime } + P ^ { \\prime } B ^ { \\prime } + P C$ ，  \n∴点 $\\cdot$ ，点 $P$ ，点 $P ^ { \\prime }$ ，点 $\\cdot$ ′四点共线时， $P A + P B + P C _ { i \\bar { \\imath } \\cdot \\jmath } = C B ^ { \\prime }$ ，  \n∴点 $\\cdot$ 在 $\\cdot$ 上，  \n∴ $C B ^ { \\prime }$ 过 ${ \\triangle A B C }$ 的费马点  \n（3）解：将 $\\cdot$ 逆时针旋转 $\\cdot$ ，得到 $\\cdot$ ，连结 $\\cdot$ ， $\\cdot$ ，  \n∴△APB≌△AP′B′，  \n∴ $. A P { ^ { \\prime } = } A P$ ， $\\cdot$ ，",
+        "bbox": [
+            89,
+            83,
+            551,
+            363
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "image",
+        "img_path": "images/d6a580809c419dc7dd2a37c48c816b61154f13dcf7f8a139ba7cec6d28e3f556.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            99,
+            376,
+            289,
+            498
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            89,
+            512,
+            574,
+            711
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "image",
+        "img_path": "images/ae4c38e77783e50c5a6be196e2b1c73cc4926c4758b9e33c0639ce07f215875d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            99,
+            724,
+            326,
+            833
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            89,
+            846,
+            598,
+            903
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "资料整理【淘宝店铺：向阳百分百】",
+        "bbox": [
+            87,
+            913,
+            329,
+            927
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "∵ $\\cdot \\angle P A P ^ { \\prime } = \\angle B A B ^ { \\prime } = 6 0 ^ { \\circ } ,$ ，  \n∴ $\\cdot$ ′和 $\\cdot$ ′均为等边三角形，  \n$-$ ，$P A + P B + P C = P P ^ { \\prime } + P ^ { \\prime } B ^ { \\prime } + P C$   \n∴点 $\\cdot$ ，点 $P$ ，点 $\\cdot$ ，点 $B$ ′四点共线时， $P A + P B + P C _ { i \\bar { \\imath } \\cdot \\jmath } = C B ^ { \\prime }$ ，  \n∵ $\\angle C = 9 0 ^ { \\circ } \\quad A C = 1 \\quad \\angle A B C = 3 0 ^ { \\circ }$ $\\scriptstyle \\cdot { \\mathcal { A } } B = 2 A C = 2$ ，根据勾股定理 ${ \\sqrt { A B ^ { 2 } - A C ^ { 2 } } } = { \\sqrt { 2 ^ { 2 } - 1 ^ { 2 } } } = { \\sqrt { 3 } }$ $\\cdot B B ^ { \\prime } { = } A B { = } 2$ ，$\\cdot \\angle C B B ^ { \\prime } = \\angle A B C + \\angle A B \\mathrm { B } ^ { \\prime } = 3 0 ^ { \\circ } + 6 0 ^ { \\circ } = 9 0 ^ { \\circ }$ ，  \n∴在 Rt△CBB′中， ${ \\sqrt { B C ^ { 2 } + B B ^ { \\prime 2 } } } = { \\sqrt { \\left( { \\sqrt { 3 } } \\right) ^ { 2 } + 2 ^ { 2 } } } = { \\sqrt { 7 } }$   \n$P A + P B + P C \\sqrt { 7 }$ ；  \n（4）解：将 $\\cdot$ 逆时针旋转 $\\cdot$ 得到 $\\cdot$ ，连结 $E E ^ { \\prime }$ ， $B B ^ { \\prime }$ ，过点 $B$ ′作 $\\cdot$   \n∴ $\\cdot \\triangle B C E \\cong \\triangle C E ^ { \\prime } B ^ { \\prime }$ ，$\\cdot$ ， $\\cdot$ ， $\\cdot$   \n∵ $-$ ，  \n∴ $\\triangle E C E ^ { \\prime }$ 与 $\\cdot$ ′均为等边三角形，  \n$\\therefore E E ^ { \\prime } = E C , B B ^ { \\prime } = B C , \\angle B ^ { \\prime } B C = 6 0 ^ { \\circ }$ ，  \n$A E + B E + C E = A E + E E ^ { \\prime } + E ^ { \\prime } B ^ { \\prime }$ ，  \n∴点 $\\cdot$ ，点 $\\cdot$ ，点 $E ^ { \\prime }$ ，点 $\\cdot$ ′四点共线时， $A E + B E + C E = A E + E E ^ { \\prime } + E ^ { \\prime } B ^ { \\prime }$ ，  \n∵四边形 $A B C D$ 为正方形，  \n$\\_$ ， $\\angle A B C { = } 9 0 ^ { \\circ }$ ，  \n∴∠FBB $\\cdot$ -∠ABC-∠CBB′=180°-90°-60°=30°，  \n∵ $\\cdot$ ，  \n${ \\frac { 1 } { 2 } } B B ^ { \\prime } = { \\frac { 1 } { 2 } } \\times 2 = 1 \\qquad { \\sqrt { B B ^ { \\prime } { } ^ { 2 } - B ^ { \\prime } { \\cal F } ^ { 2 } } } = \\sqrt { 2 ^ { 2 } - 1 ^ { 2 } } = \\sqrt { 3 }$   \n$\\therefore A F = A B + B F = 2 + \\sqrt { 3 }$ ，",
+        "bbox": [
+            89,
+            83,
+            576,
+            323
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "image",
+        "img_path": "images/32d7377fe055a1744bfa2a221bab30141f62e5e08a70eb6c4e51aa8122a446c4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            97,
+            337,
+            398,
+            571
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            89,
+            586,
+            710,
+            883
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "$\\therefore A B ^ { \\prime } = { \\sqrt { A F ^ { 2 } + B ^ { \\prime } F ^ { 2 } } } = { \\sqrt { \\left( 2 + { \\sqrt { 3 } } \\right) ^ { 2 } + 1 ^ { 2 } } } = { \\sqrt { 6 } } + { \\sqrt { 2 } } \\ ,$ $\\therefore A E + B E + C E = A B ^ { \\prime } = { \\sqrt { 6 } } + { \\sqrt { 2 } } .$ ． ",
+        "bbox": [
+            87,
+            83,
+            458,
+            137
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/c9bbdcbf3184613862747945f1735c239288edbfe611b9cadc52508fd29b528e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            95,
+            151,
+            270,
+            346
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "题型二 加权费马点·单系数型",
+        "text_level": 1,
+        "bbox": [
+            78,
+            423,
+            354,
+            443
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "2023·武汉·慧泉中学校月考",
+        "text_level": 1,
+        "bbox": [
+            87,
+            463,
+            356,
+            482
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "13．如图，Rt△ABC 中， $\\angle C A B = 3 0 ^ { \\circ }$ ， $B C = \\frac { 3 } { 2 }$ ，点 $P$ 为 ${ \\triangle A B C }$ 内一点，连接 $P A , P B , P C$ ，则 $P C + P B + { \\sqrt { 3 } } P A$ 的最小值为",
+        "bbox": [
+            87,
+            504,
+            910,
+            560
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/2ea4469e14245306039e4c887284f95e4746c2fa62a8291faad7113c725e274b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            97,
+            580,
+            351,
+            680
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "【答案】 ${ \\frac { 3 } { 2 } } { \\sqrt { 1 3 } }$ ",
+        "bbox": [
+            94,
+            699,
+            208,
+            728
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "【分析】作辅助线如详解图，根据等腰三角形的性质和勾股定理可求得 $D P = { \\sqrt { 3 } } A P$ ，于是所求$P C + P B + { \\sqrt { 3 } } P A$ 的最小值转化为求 $D E + P D + P B$ 的最小值，根据两点之间线段最短可得 $D E + P D + P B$ 的最小值即为线段 $E B$ 的长，然后求出 $E B$ 的长即可解决问题.",
+        "bbox": [
+            90,
+            734,
+            910,
+            795
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "【详解】解：将 $\\triangle A C P$ 绕点 $\\cdot$ 逆时针旋转 $1 2 0 ^ { \\circ }$ ，得到 $\\triangle A E D$ ，连接 $D P , E B$ ，过点 $E$ 作 $E F \\perp B A$ 交 $B A$ 的延长线于点 $\\cdot$ ，过点 $\\cdot$ 作 $A M \\perp D P$ 于点 $M$ ，如图，",
+        "bbox": [
+            90,
+            799,
+            910,
+            838
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/03dcd3986a2992ac5bb96e1b003faa3b0c9fcfcd86c92ab3c40996138282cf64.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            94,
+            89,
+            420,
+            172
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "则 $A D = A P , D E = C P , \\angle D A P = 1 2 0 ^ { \\circ } , \\angle E A C = 1 2 0 ^ { \\circ }$ ，  \n$A M \\perp D P$ ，$D M = P M , \\angle A D M = \\angle A P M = 3 0 ^ { \\circ }$ ，$A M = { \\frac { 1 } { 2 } } A P$   \n$\\therefore P M = \\sqrt { A P ^ { 2 } - A M ^ { 2 } } = \\frac { \\sqrt { 3 } } { 2 } A P ,$   \n$D P = 2 P M = { \\sqrt { 3 } } A P$ ，  \n$\\therefore P C + P B + { \\sqrt { 3 } } P A = D E + P D + P B \\geq E B$ ，即 $P C + P B + { \\sqrt { 3 } } P A$ 的最小值为 $E B$ 的长（当点 $\\cdot$ 、 $\\cdot$ 、 $P$ 、 $B$ 四点  \n共线时取最小值），  \n∵ $\\mathbf { R t } \\triangle A B C$ 中， $\\angle C A B = 3 0 ^ { \\circ } , B C = \\frac { 3 } { 2 } ,$   \n$A B = 2 B C = 3 , A C = \\sqrt { 3 ^ { 2 } - \\left( \\frac { 3 } { 2 } \\right) ^ { 2 } } = \\frac { 3 } { 2 } \\sqrt { 3 }$ ，$\\therefore A E = A C = { \\frac { 3 { \\sqrt { 3 } } } { 2 } } ,$ $\\angle C A B = 3 0 ^ { \\circ } , \\angle E A C = 1 2 0 ^ { \\circ }$   \n∴ $\\angle E A F = 3 0 ^ { \\circ }$ ，  \n则在直角三角形 $A E F$ 中， $E F = \\frac { 1 } { 2 } A E = \\frac { 3 \\sqrt { 3 } } { 4 } , A F = \\sqrt { 3 } E F = \\frac { 9 } { 4 } ,$   \n$\\therefore B F = 3 + { \\frac { 9 } { 4 } } = { \\frac { 2 1 } { 4 } } \\ , \\therefore B E = { \\sqrt { B F ^ { 2 } + E F ^ { 2 } } } = { \\sqrt { \\left( { \\frac { 3 { \\sqrt { 3 } } } { 4 } } \\right) ^ { 2 } + \\left( { \\frac { 2 1 } { 4 } } \\right) ^ { 2 } } } = { \\frac { 3 } { 2 } } { \\sqrt { 1 3 } }$   \n西安市铁一中二模",
+        "bbox": [
+            85,
+            179,
+            910,
+            668
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "14．已知，如图在 ${ \\triangle A B C }$ 中， $\\angle A C B = 3 0 ^ { \\circ }$ ， $B C = 5$ ， $A C = 6$ ，在 ${ \\triangle A B C }$ 内部有一点 $D$ ，连接 DA、DB、DC．则$D A + D B + \\sqrt { 2 } D C$ 的最小值是 ",
+        "bbox": [
+            87,
+            686,
+            912,
+            733
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "image",
+        "img_path": "images/51982f40340016655b941004af460d7b411a0712920932e2bd03ff6468316787.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            90,
+            741,
+            357,
+            829
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "【答案】 $\\sqrt { 9 1 }$ ",
+        "bbox": [
+            94,
+            833,
+            200,
+            848
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "【分析】把 $\\triangle C D B$ 顺时针旋转 $\\cdot$ 到 $\\triangle C D ^ { \\prime } B ^ { \\prime }$ ，过 $\\cdot$ 作 $B ^ { \\prime } E \\bot A C$ ，交 $\\cdot$ 延长于 $E$ ，则 $C D { = } C D ^ { \\prime }$ ， $\\cdot$ ，$\\angle C D D ^ { \\prime } = \\angle C D ^ { \\prime } D = 4 5 ^ { \\circ }$ ，可求 $\\begin{array} { r l } { \\sqrt { 2 } C D } \\end{array}$ ，在 $R t \\triangle C E B ^ { \\prime }$ 中，可求 $C E = \\frac { 5 } { 2 }$ ， $\\frac { 1 7 } { 2 }$ ， $\\frac { 5 { \\sqrt { 3 } } } { 2 }$ 当点 $A$ 、 $\\cdot$ 、$\\cdot$ 、 $\\cdot$ 四点在一直线时， $A B ^ { \\prime }$ 最短，可求 $\\sqrt { 2 } C D \\sqrt { 9 1 }$ ",
+        "bbox": [
+            87,
+            856,
+            909,
+            929
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            87,
+            83,
+            606,
+            101
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "【详解】解：把 $\\triangle C D B$ 顺时针旋转 $9 0 ^ { \\circ }$ 到 $\\triangle C D ^ { \\prime } B ^ { \\prime }$ ，过 $B ^ { \\prime }$ 作 $B ^ { \\prime } E \\bot A C$ ，交 $A C$ 延长于 $\\cdot$ ，  \n则 $\\cdot$ ， $B D { = } B ^ { \\prime } D ^ { \\prime }$ ， $-$ ，  \n$\\sqrt { 2 } C D$ ，  \n∵ $\\cdot \\angle A C B = 3 0 ^ { \\circ } , \\angle B ^ { \\prime } C B = 9 0 ^ { \\circ } ,$ ，  \n∴ $\\angle B ^ { \\prime } C E = 1 8 0 ^ { \\circ } - \\angle A C B - \\angle B C B ^ { \\prime } = 1 8 0 ^ { \\circ } - 3 0 ^ { \\circ } - 9 0 ^ { \\circ } = 6 0 ^ { \\circ }$   \n在 $\\cdot$ 中，  \n$\\times \\frac { 1 } { 2 } = \\frac { 5 } { 2 }$   \n$\\therefore A E = A C + C E = 6 + \\frac { 5 } { 2 } = \\frac { 1 7 } { 2 } ,$   \n$\\times \\frac { \\sqrt { 3 } } { 2 } = \\frac { 5 \\sqrt { 3 } } { 2 }$   \n当点 $A$ 、 $\\cdot$ 、 $D ^ { \\prime }$ 、 $\\cdot$ 四点在一直线时， $\\cdot$ 最短，  \n$\\therefore A B ^ { \\prime } _ { \\mathit { \\Pi } } = { \\sqrt { A E ^ { 2 } + B ^ { \\prime } E ^ { 2 } } } = { \\sqrt { \\left( { \\frac { 1 7 } { 2 } } \\right) ^ { 2 } + \\left( { \\frac { 5 { \\sqrt { 3 } } } { 2 } } \\right) ^ { 2 } } } = { \\frac { \\sqrt { 3 6 4 } } { 2 } } = { \\sqrt { 9 1 } } ,$ ，  \n$A B ^ { \\prime } { = } B ^ { \\prime } D ^ { \\prime } { + } D ^ { \\prime } D { + } A D { = } B D { + } \\sqrt { 2 } C D { + } A D { = } \\sqrt { 9 1 } .$   \n故答案为： $\\sqrt { 9 1 }$ ",
+        "bbox": [
+            85,
+            105,
+            746,
+            456
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "image",
+        "img_path": "images/6d44337a9948bf22911e6c6e062f33de10c850ce7483647bd06d69f1b6ebae08.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            92,
+            466,
+            359,
+            676
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "15．如图，矩形 $A B C D$ 中， $A B = 2$ ， $B C = 3$ ，点 $E$ 是 $A B$ 的中点，点 $F$ 是 $B C$ 边上一动点．将 ABEF 沿着 $E F$ 翻折，使得点 $B$ 落在点 $B ^ { \\prime }$ 处，若点 $P$ 是矩形内一动点，连接 $P B ^ { \\prime }$ 、 $P C$ 、 $P D$ ，则 $P B ^ { \\prime } + \\sqrt { 2 } P C + P D$ 的最小值为",
+        "bbox": [
+            89,
+            829,
+            910,
+            902
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "资料整理【淘宝店铺：向阳百分百】【答案】 $\\sqrt { 2 6 } - 1$ ",
+        "bbox": [
+            87,
+            912,
+            329,
+            928
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "image",
+        "img_path": "images/8ab98a9921eb9222a04d0435af81ef4f79db9d47a7403721594e1842593f74db.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            85,
+            87,
+            337,
+            209
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            94,
+            216,
+            220,
+            234
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "【分析】将 $\\triangle C D P$ 绕点 $C$ 顺时针旋转 $9 0 ^ { \\circ }$ 得到 $\\triangle C D P ^ { \\prime }$ ，连接 $P P ^ { \\prime }$ ，连接 $E D$ '，由等腰三角形 $C P P ^ { \\prime }$ 得出$P P ^ { \\prime } = { \\sqrt { 2 } } P C$ ，再由折叠得出点 $B ^ { \\prime }$ 的轨迹在点 $E$ 为圆心， $E B$ 为半径的圆周上，所以 $E B ^ { \\prime } + P B ^ { \\prime } + P P ^ { \\prime } + P ^ { \\prime } D ^ { \\prime }$ 的最小值为 $E D ^ { \\prime }$ ，即 $P B ^ { \\prime } + \\sqrt { 2 } P C + P D$ 的最小值为 $E D ^ { \\prime } - E B$ '，经计算答出答案即可",
+        "bbox": [
+            87,
+            239,
+            912,
+            299
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "【详解】解：将 $\\triangle C D P$ 绕点 $C$ 顺时针旋转 $9 0 ^ { \\circ }$   \n连接 $P P ^ { \\prime }$ '，连接 $E D ^ { \\prime }$ ，  \n则 $B$ ， $C$ ， $D$ '共线， $P D = P ^ { \\prime } D ^ { \\prime }$ ，$\\therefore C D ^ { \\prime } = C D = A B = 2$ ，  \n$\\therefore P P ^ { \\prime } = { \\sqrt { 2 } } P C$ ，  \n 点 $E$ 是 $A B$ 的中点，  \n$\\therefore E B = { \\frac { 1 } { 2 } } A B = { \\frac { 1 } { 2 } } \\times 2 = 1$ ，  \n$\\therefore B D ^ { \\prime } = B C + C D ^ { \\prime } = 3 + 2 = 5$ ，  \n$\\therefore E D ^ { \\prime } = \\sqrt { B E ^ { 2 } + D ^ { \\prime } B ^ { 2 } }$   \n2 2 1  5  \n$= \\sqrt { 2 6 }$ ，  \n由 $\\triangle B E F$ 折叠成 $\\triangle B ^ { \\prime } E F$ ，  \n $. E B = E B ^ { \\prime } = E A$ ，  \n点 $B$ 在以点 $E$ 为圆 $\\cdot$ ， $E B$ 为半径的圆上，  \n $E B ^ { \\prime } = 1$ ，  \n 两点间线段最短，  \n$\\begin{array} { r } { \\therefore E D ^ { \\prime } \\leq E B ^ { \\prime } + P B ^ { \\prime } + P P ^ { \\prime } + P ^ { \\prime } D ^ { \\prime } , } \\end{array}$   \n即 $E D ^ { \\prime } { \\leq } E B ^ { \\prime } { + } P B ^ { \\prime } { + } \\sqrt { 2 } P C + P D$   \n$\\therefore \\sqrt { 2 6 } \\leq 1 + P B ^ { \\prime } + \\sqrt { 2 } P C + P D$ ，  \n$\\therefore P B ^ { \\prime } + \\sqrt { 2 } P C + P D \\geq \\sqrt { 2 6 } - 1 ,$ ，  \n则 $P B ^ { \\prime } + \\sqrt { 2 } P C + P D$ 的最小值为 $\\sqrt { 2 6 } - 1$   \n故答案为： $\\sqrt { 2 6 } - 1$ ",
+        "bbox": [
+            87,
+            305,
+            431,
+            783
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "image",
+        "img_path": "images/d238de593bc0103927c115e9ec2e555146e4ac4d47f2b50c2d973836ec5688e2.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            85,
+            788,
+            510,
+            909
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "题型三 加权费马点·多系数型",
+        "text_level": 1,
+        "bbox": [
+            78,
+            117,
+            354,
+            136
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "16．在边长为4的正△ABC中有一点P，连接PA、PB、 $P C$ ，求（ ${ } - { \\frac { 1 } { 2 } } A P + B P + { \\frac { \\sqrt { 5 } } { 2 } } P C { } )$ ²的最小值",
+        "bbox": [
+            85,
+            159,
+            813,
+            196
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "image",
+        "img_path": "images/09971386ae5a73106d58ce2bf2d2f175caf774558d363ec4ea49b71fe6aed117.jpg",
+        "image_caption": [
+            "原图"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            100,
+            215,
+            352,
+            369
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "【解析】如图 1， $\\cdot$ 绕点 $C$ 逆时针旋转 $9 0 ^ { \\circ }$ ，取 $P ^ { \\ast } C$ ， $A ^ { \\prime } C$ 的中点 M，N易知 $\\cdot$ ，",
+        "bbox": [
+            90,
+            404,
+            663,
+            460
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "image",
+        "img_path": "images/e22ce0e737972aa23a618dd5556166bba033f5e1f6c51eb628cc0f4473baadeb.jpg",
+        "image_caption": [
+            "图1"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            100,
+            475,
+            544,
+            631
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "则 AP＋BP＋ 5 PC＝MN＋BP＋PM≤BN， $B N ^ { 2 } { = } 2 0 + 8 { \\sqrt { 3 } }$ 即为所求2 2",
+        "bbox": [
+            87,
+            659,
+            625,
+            695
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "17．在等边三角形 ABC 中，边长为 4， $P$ 为三角形 ABC 内部一点，求 $3 A P + 4 B P + 5 ~ P C$ 的最小值",
+        "bbox": [
+            85,
+            703,
+            909,
+            722
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "image",
+        "img_path": "images/7a6bc86fd446f686441ff7e66c287dad52023e7d40d6ebc1b9fa768d68678212.jpg",
+        "image_caption": [
+            "原图"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            136,
+            102,
+            388,
+            256
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "【解析】如图 1， $\\triangle A P C$ 绕点 $\\cdot$ 逆时针旋转 $\\cdot$ ，在 $P ^ { \\ast } C$ ， $A ^ { \\prime } C$ 上取 $M$ ， $N$ ，使 $\\cdot$ ， $C N { = } \\frac 3 4 C A ^ { , }$ ，易知 ${ } ^ { \\circ } \\ P M = { \\frac { 5 } { 4 } } \\ P C , ~ M N = { \\frac { 3 } { 4 } } \\ P ^ { \\prime } A ^ { \\prime } = { \\frac { 3 } { 4 } } P A , ~ 3 A P + 4 B P + 5 P C = 4 ~ ( M N + B P + P M ) ~ \\leqslant B N$ ",
+        "bbox": [
+            89,
+            294,
+            877,
+            363
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/08fbe7c40f80739ea2f2fac74f81316bc4e3e1ffcd4099847d4ce56e743c4c9d.jpg",
+        "image_caption": [
+            "图1"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            102,
+            380,
+            598,
+            551
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "成都七中育才学校月考",
+        "text_level": 1,
+        "bbox": [
+            90,
+            615,
+            317,
+            633
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "18．在 $\\triangle A B C$ 中， $A B = 3$ ， $A C = 4$ ， $\\angle B A C$ 的角平分线交 $B C$ 于 $E$ ，过 $C$ 作射线 $A E$ 的垂线，垂足为 $D$ ，连接 $B D$ ，当 $S _ { \\triangle A C E } - S _ { \\triangle B E D }$ 取大值时，在 $\\triangle A C D$ 内部取点 $P$ ，则 $\\frac { 3 P C + 4 P D + 5 P A } { 4 }$ 的最小值是",
+        "bbox": [
+            87,
+            655,
+            910,
+            712
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/e472d4ee8869e064f10d9206424c515b49cebfeb978beda262ad017bfe7cd17d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            89,
+            721,
+            265,
+            862
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "【答案】 $\\sqrt { 2 9 }$ ",
+        "bbox": [
+            94,
+            869,
+            196,
+            884
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "【分析】延长 $C D$ 交 $A B$ 于点 $F$ ，过点A作 $B C$ 边上的高 $A H$ ，得出 $\\triangle A D F { \\cong } \\triangle A D C$ ，则 $B F = 1$ ，根据 $A D$ 是资料整理【淘宝店铺：向阳百分百】",
+        "bbox": [
+            89,
+            890,
+            910,
+            928
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "$\\angle B A C$ $\\frac { B E } { E C } = \\frac { 3 } { 4 }$ ，设 $S _ { \\triangle B D E } = 3 S$ ，则 $S _ { \\_ E D C } = 4 S$ ，过点 $D$ 分别 作 $A F , A C$ 的垂线，垂足为 $M , N$ ，得出 $S = \\frac { 1 } { 4 2 } S _ { \\triangle A B C }$ ， $S _ { \\triangle A C E } - S _ { \\triangle B E D } = 2 1 S$ ，则当 $S _ { \\_ A B C }$ 最大时， $S _ { \\triangle A C E } - S _ { \\triangle B E D }$ 取得最大值，进而可得当$\\angle C A B = 9 0 ^ { \\circ }$ 时， ABCS 取得最大值，则 $\\angle C A D = 4 5 ^ { \\circ }$ ，延长 $B A$ 至 $C ^ { \\prime }$ ，使得 $A C ^ { \\prime } = { \\frac { 3 } { 4 } } A C = 3$ ，作 $P ^ { \\prime } A \\bot P A$ ，$A P ^ { \\prime } { = } \\frac { 3 } { 4 } A P$ ，连接 $P ^ { \\prime } P , C ^ { \\prime } P ^ { \\prime }$ ，构造 $\\triangle C ^ { \\prime } A P ^ { \\prime } \\sim _ { \\triangle } C A P$ ，可得 ${ \\frac { 3 P C + 4 P D + 5 P A } { 4 } } = P ^ { \\prime } C ^ { \\prime } + P P ^ { \\prime } + P D \\ge C ^ { \\prime } D$ ， 进 而 勾股定理，即可求解",
+        "bbox": [
+            87,
+            83,
+            915,
+            246
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "【详解】解：如图所示，延长 $C D$ 交 $A B$ 于点 $F$ ，过点A作 $B C$ 边上的高 $A H$ ，",
+        "bbox": [
+            92,
+            249,
+            685,
+            267
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "image",
+        "img_path": "images/1f435db1b9fc043d2d8cb19de7fe8f2341d7c5353aa8dc213e0082f2e681722c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            87,
+            271,
+            268,
+            425
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "∵ $\\angle B A C$ 的角平分线交 $B C$ 于 $E$ ， $A D \\perp C F$ $\\therefore \\angle F A D = \\angle C A D , \\angle A D C = \\angle A D F$   \n又 $A D = A D$   \n$\\triangle A D F { \\cong } \\triangle A D C$ ，  \n∴ $. A F = A C = 4 , D C = D F$   \n则 $B F = 1$   \n∵ $A D$ 是 $\\angle B A C$ 的角平分线，设 $E$ 到 $A B$ 的距离为 $d$ ，则 $E$ 到 $A C$ 的距离也为 $d$ ，  \n$\\frac { S _ { \\triangle A B E } } { S _ { \\triangle A E C } } = \\frac { \\displaystyle \\frac { 1 } { 2 } B E \\times A H } { \\displaystyle \\frac { 1 } { 2 } E C \\times A H } = \\frac { \\displaystyle \\frac { 1 } { 2 } A B \\times d } { \\displaystyle \\frac { 1 } { 2 } A C \\times d }$   \n$\\therefore { \\frac { B E } { E C } } = { \\frac { 3 } { 4 } } ,$   \n设 $S _ { \\triangle B D E } = 3 S$ ，则 $S _ { \\_ E D C } = 4 S$   \n$\\begin{array} { l } { \\because D C = D F } \\\\ { \\therefore S _ { \\triangle B D F } = S _ { \\triangle B D C } = 7 S , } \\end{array}$ ，  \n过点 $D$ 分别作 $A F , A C$ 的垂线，垂足为 $M , N$   \n∴ DM  DN 2 7 14S S  ，1ABDS 1 3 14 21 , ADC   S  S S 1 4 14 28   S  S2 2  \n∴ 28 4 24AEC ADC AECS  S  S  S  S  S   ， $S _ { \\scriptscriptstyle \\Delta A B C } = 2 S _ { \\scriptscriptstyle \\Delta A D C } - S _ { \\scriptscriptstyle \\Delta F B C } = 2 \\times 2 8 S - 2 \\times 7 S = 4 2 S$   \n∴ 24 3 21ACE BEDS△  S△  S  S  S1S  S42 ABC  \n∴当 $S _ { \\scriptscriptstyle \\triangle A B C }$ 最大时， $S _ { \\triangle A C E } - S _ { \\triangle B E D }$ 取得最大值，  \n设 $A B$ 边上的高为 $C G$ $C G = A C \\times \\sin \\angle C A B$ $S _ { _ { \\triangle A B C } } = \\frac { 1 } { 2 } A B \\times A C \\times \\sin \\angle C A B$ ∴当 $\\angle C A B = 9 0 ^ { \\circ }$ 时， $S _ { \\_ A B C }$ 取得最大值，  \n则 $\\angle C A D = 4 5 ^ { \\circ }$ ，则 $\\triangle A D C$ 是等腰直角三角形，则 $A D = { \\frac { \\sqrt { 2 } } { 2 } } A C = 2 { \\sqrt { 2 } }$ ，  \n如图所示，延长 $B A$ 至 $C ^ { \\prime }$ ，使得 $A C ^ { \\prime } = { \\frac { 3 } { 4 } } A C = 3$ ，作 $P ^ { \\prime } A \\bot P A$ ， $A P ^ { \\prime } { = } \\frac { 3 } { 4 } A P$ ，连 接 $P ^ { \\prime } P , C ^ { \\prime } P ^ { \\prime }$   \n$\\begin{array} { l } { { \\angle C ^ { \\prime } A P ^ { \\prime } = \\angle C A P } } \\\\ { { \\triangle C ^ { \\prime } A P ^ { \\prime } \\backsim \\triangle C A P } } \\\\ { { P ^ { \\prime } C ^ { \\prime } = \\displaystyle \\frac { 3 } { 4 } P C } } \\end{array}$   \n在 $\\mathrm { R t } \\triangle A P P ^ { \\prime }$ 中， $P P ^ { \\prime } = \\sqrt { A P ^ { \\prime 2 } + A P ^ { 2 } } = \\frac { 5 } { 4 } A P$   \n${ \\frac { 3 P C + 4 P D + 5 P A } { 4 } } = P ^ { \\prime } C ^ { \\prime } + P P ^ { \\prime } + P D \\ge C ^ { \\prime } D$   \n当 $P , P ^ { \\prime } , C ^ { \\prime }$ 三点共线时， $C D$ 最小，此时如图所示，过点 $C ^ { \\prime }$ 作 $C ^ { \\prime } Q \\bot D A$ 于点 $\\boldsymbol { Q }$ ，  \n∵ $\\angle C A Q = \\angle B A D = 4 5 ^ { \\circ } \\angle A C = 3$   \n$A Q = C ^ { \\prime } Q = { \\frac { 3 } { 2 } } { \\sqrt { 2 } }$   \n$D Q = A D + A Q = 2 { \\sqrt { 2 } } + { \\frac { 3 } { 2 } } { \\sqrt { 2 } } = { \\frac { 7 } { 2 } } { \\sqrt { 2 } }$ ${ \\mathrm { R t } } _ { \\Delta Q D C ^ { \\prime } }$ 中， $D C ^ { \\prime } = { \\sqrt { Q C ^ { \\prime } { } ^ { 2 } + Q D ^ { 2 } } } = { \\sqrt { \\left( { \\frac { 3 } { 2 } } { \\sqrt { 2 } } \\right) ^ { 2 } + \\left( { \\frac { 7 } { 2 } } { \\sqrt { 2 } } \\right) ^ { 2 } } } = { \\sqrt { 2 9 } }$ ",
+        "bbox": [
+            87,
+            428,
+            714,
+            759
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "image",
+        "img_path": "images/514e82883a17ba3afa4a19f19107485b210933996fb1ba0ee5ecac3da5cae42b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            89,
+            82,
+            278,
+            239
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            89,
+            244,
+            751,
+            437
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "image",
+        "img_path": "images/4f70370bc759b660d0872a5f732e7986dca61ab5c6a0ac1e1a54272d8451cec3.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            89,
+            443,
+            277,
+            596
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            87,
+            600,
+            789,
+            751
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "image",
+        "img_path": "images/fcacc8582519c8e79f6295662e114eaae018af3324c3538d791375b16a2a012d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            87,
+            755,
+            278,
+            900
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            87,
+            80,
+            702,
+            249
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "image",
+        "img_path": "images/21ff351de9b8d28fbd6d12630261e06c9bcb97d9aef5c266f74f5b84acc65055.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            87,
+            252,
+            278,
+            395
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            87,
+            398,
+            593,
+            532
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "一题八问，练到位",
+        "text_level": 1,
+        "bbox": [
+            90,
+            570,
+            272,
+            587
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "19．如图，在 $\\triangle A B C$ 中， $\\angle A C B = 3 0 ^ { \\circ } , B C = 6 , A C = 5$ ，在 ${ \\triangle A B C }$ 内部有一点 $P$ ，连接 $P A$ 、 $P B$ 、 $P C$ ．（加权费马点）求：",
+        "bbox": [
+            87,
+            609,
+            912,
+            656
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "（1） $P A + P B + P C$ 的最小值；",
+        "bbox": [
+            95,
+            667,
+            321,
+            683
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "image",
+        "img_path": "images/76405b0446dfa5c5efae0239240af3abc95d9c756a3393abbc9c89b3fc535c1e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            89,
+            694,
+            336,
+            780
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "（2） $P A + P B + \\sqrt { 2 } P C$ 的最小值资料整理【淘宝店铺：向阳百分百】（3） $P A + P B + \\sqrt { 3 } P C$ 的最小值；",
+        "bbox": [
+            95,
+            789,
+            336,
+            807
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "image",
+        "img_path": "images/5c707826ca68be9cfd4d4a385abb2f7cf536eed77f68e245aaf47ac67ef9959b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            89,
+            818,
+            336,
+            902
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            87,
+            913,
+            329,
+            928
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            95,
+            89,
+            341,
+            107
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "image",
+        "img_path": "images/04f7e38154bee96c496df18b2216ebc19ae9c97a4a42886b475ad34fd42ea18b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            89,
+            116,
+            337,
+            202
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "（4） $2 P A + P B + \\sqrt { 3 } P C$ 的最小值（5） $\\frac { 1 } { 2 } P A + P B + \\frac { \\sqrt { 3 } } { 2 } P C$ 的最小值；",
+        "bbox": [
+            95,
+            211,
+            342,
+            229
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "image",
+        "img_path": "images/e42d5ed435095f81f706b040fbcb75587ca6adfa2303d0904a2e9594836fd787.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            89,
+            240,
+            337,
+            324
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            94,
+            331,
+            361,
+            365
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "image",
+        "img_path": "images/44d33990e6aebb6f8c323cdde892570dcdb305517e7ab4c084ef1b3b9bea992d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            89,
+            373,
+            337,
+            457
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "（6） $2 P A + 4 P B + 2 { \\sqrt { 3 } } P C$ 的最小值（7） $4 P A + 2 P B + 2 \\sqrt { 3 } P C$ 的最小值；",
+        "bbox": [
+            97,
+            467,
+            359,
+            485
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "image",
+        "img_path": "images/d2ae6dc380bdc3432abe715cfe72fb65fcfbba47f0a965da37eca4e2bf028cb9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            89,
+            494,
+            337,
+            580
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            97,
+            589,
+            366,
+            607
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "image",
+        "img_path": "images/2c63a0a7a4db6f14e4e3a2b8896b214e87b67121f0b6c9bc9a80dc9510ba4403.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            89,
+            618,
+            337,
+            703
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "（8） $3 P A + 4 P B + 5 P C$ 的最小值",
+        "bbox": [
+            95,
+            713,
+            337,
+            730
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "image",
+        "img_path": "images/7aecbbb41cdc2d00ce0c684d242e31b27b116e9c52746724b6586926fa6f4c75.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            89,
+            741,
+            337,
+            826
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "【答案】（1） $\\sqrt { 6 1 }$ ；（2） $\\sqrt { 9 1 }$ ；（3） $\\sqrt { 6 1 + 3 0 { \\sqrt { 3 } } }$ ；（4） $2 { \\sqrt { 3 4 } } \\qquad { \\frac { 1 3 } { 2 } }$ （6）26；（7） $4 { \\sqrt { 3 4 } }$ ；（8） 21【分析】（1）将 $\\triangle B P C$ 绕点 $B$ 顺时针旋转 $6 0 ^ { \\circ }$ 得到 $\\triangle B P ^ { \\prime } C ^ { \\prime }$ ，则 $B P ^ { \\prime } = B P$ ， $P ^ { \\prime } C = P C$ ， $\\angle P B P ^ { \\prime } = 6 0 ^ { \\circ }$ ，可以推出 $\\triangle B P P ^ { \\prime }$ 为等边三角形，得到 $B P = P P ^ { \\prime }$ ，则 $P A + P B + P C = P A + P P ^ { \\prime } + P C ^ { \\prime }$ ，即可得到 $\\cdot$ 、 $\\cdot$ 、 $P ^ { \\prime }$ 、 $C ^ { \\prime }$ 四点资料整理【淘宝店铺：向阳百分百】",
+        "bbox": [
+            89,
+            831,
+            885,
+            860
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            87,
+            866,
+            910,
+            928
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "共线时， $P A + P B + P C$ 最小，最小值为 $A C ^ { \\prime }$ ，然后证明 $\\angle A C C ^ { \\prime } = \\angle A C B + \\angle B C C ^ { \\prime } = 9 0 ^ { \\circ }$ ，由此利用勾股定理求解即可；",
+        "bbox": [
+            89,
+            83,
+            909,
+            121
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "（ 2 ） 将 $\\triangle B P C$ 绕 点 $\\cdot$ 逆 时 针 旋 转 $9 0 ^ { \\circ }$ 得 到 $\\triangle C P ^ { \\prime } B ^ { \\prime }$ ， 则 可 证 明 $P P ^ { \\prime } = \\sqrt { 2 } P C$ ， 从 而 得 到$P A + P B + \\sqrt { 2 } P C = P A + P P + P B$ ，则当 $\\cdot$ 、 $\\cdot$ 、 $P ^ { \\prime }$ 、 $B ^ { \\prime }$ 四点共线时 $P A + P B + P C$ 最小，最小值为 $A B ^ { \\prime }$ ，过点 A 再作 BC 的垂线，垂足为 E，利用勾股定理求出 2 2 5 3AE  AC CE  ， $B ^ { \\prime } E = B ^ { \\prime } C + E C = \\frac { 1 7 } { 2 }$ 由此即可得到答案；",
+        "bbox": [
+            87,
+            124,
+            912,
+            224
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "（ 3 ） 将 $\\triangle B P C$ 绕 点 $\\cdot$ 逆 时 针 旋 转 $1 2 0 ^ { \\circ }$ 得 到 $\\triangle B ^ { \\prime } P C ^ { \\prime }$ 则 可 证 明 $P P ^ { \\prime } = \\sqrt { 3 } C P$ 则$P A + P B + \\sqrt { 3 } P C = P A + P P ^ { \\prime } + P ^ { \\prime } B ^ { \\prime }$ ，故当 $\\cdot$ 、 $\\cdot$ 、 $P ^ { \\prime }$ 、 $B ^ { \\prime }$ 四点共线时 $P A + P B + \\sqrt { 3 } P C$ 最小，最小值为 $A B ^ { \\prime }$ ，过点 $A$ 再作 $B ^ { \\prime } C$ 的垂线，垂足为 $E$ ，利用勾股定理求出 $C E = { \\sqrt { A C ^ { 2 } - A E ^ { 2 } } } = { \\frac { 5 { \\sqrt { 3 } } } { 2 } }$ ， $B ^ { \\prime } E = C E + C B ^ { \\prime } = { \\frac { 1 2 + 5 { \\sqrt { 3 } } } { 2 } } ,$ 由此即可得到答案；",
+        "bbox": [
+            87,
+            229,
+            912,
+            329
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "（4）将 $\\triangle B P C$ 绕点 $\\cdot$ 顺时针旋转 $6 0 ^ { \\circ }$ ，得到 $\\mathrm { V } C P ^ { \\prime } A ^ { \\prime }$ ，再将 $\\mathrm { V } C P ^ { \\prime } A ^ { \\prime }$ 以点 $\\cdot$ 为位似中心放大 2倍，得到 $\\mathrm { V } C P ^ { \\prime \\prime } A ^ { \\prime \\prime }$ ，连接 $P P ^ { \\prime }$ ，先证明 $P ^ { \\prime } P = { \\sqrt { 3 } } C P$ ，则可以得到 $2 P A + P B + { \\sqrt { 3 } } P C = A ^ { \\prime \\prime } P ^ { \\prime \\prime } + P ^ { \\prime \\prime } P + P B$ ，故当 $A ^ { \\prime \\prime }$ ， $P ^ { \\prime \\prime }$ ， $P$ ， $B$ 共线时 $2 P A + P B + \\sqrt { 3 } P C$ 最小，最小为 $A \" B$ ，然后证明 $\\angle B C A ^ { \\prime \\prime } = \\angle A C B + \\angle A C A ^ { \\prime \\prime } = 9 0 ^ { \\circ }$ ，即可利用勾股定理求解；",
+        "bbox": [
+            82,
+            334,
+            910,
+            398
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "同（4）原理可证得当 $A ^ { \\prime \\prime }$ ， $P ^ { \\prime \\prime }$ ， $P$ ， $B$ 共线时 ${ \\frac { 1 } { 2 } } P A + P B + { \\frac { \\sqrt { 3 } } { 2 } } P C$ 最小，最小为 $A \" B$ ，然后证明$\\angle B C A ^ { \\prime \\prime } = \\angle A C B + \\angle A C A ^ { \\prime \\prime } = 9 0 ^ { \\circ }$ ，由此求解即可；",
+        "bbox": [
+            85,
+            423,
+            905,
+            479
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "（6）由 $2 P A + 4 P B + 2 \\sqrt { 3 } P C = 4 \\Bigg ( \\frac { 1 } { 2 } ~ P A + P B + \\frac { \\sqrt { 3 } } { 2 } ~ P C \\Bigg )$ 可由 （5 ）得 ： $2 P A + 4 P B + 2 { \\sqrt { 3 } } P C$ 的最小值为 26；（7）由 $4 P A + 2 P B + 2 \\sqrt { 3 } P C = 2 ( 2 P A + P B + \\sqrt { 3 } P C )$ 可由（4）得 $4 P A + 2 P B + 2 \\sqrt { 3 } P C$ 的最小值为 $4 { \\sqrt { 3 4 } }$ ；（8）将 $\\triangle B P C$ 绕点 $C$ 顺时针旋转 $9 0 ^ { \\circ }$ ，得到 $\\mathrm { V } C P ^ { \\prime } A ^ { \\prime }$ ，再将 $\\mathrm { V } C P ^ { \\prime } A ^ { \\prime }$ 以点 $C$ 为位似中心缩小 $\\frac 3 4$ 倍，得到V ${ } ^ { \\prime } C P ^ { \\prime \\prime } A ^ { \\prime \\prime }$ ，同 理 可 以 证 得 当 $A$ 、 $\\cdot$ 、 $P ^ { \\prime \\prime }$ 、 $A ^ { \\prime \\prime }$ ， 共 线 时 $3 P A + 4 P B + 5 P C$ 的 值 最 小 ． 在 $\\triangle B C A ^ { \\prime \\prime }$ 中 ，BCA  ACB  ACA  120∠ ∠ o， 34AC  C $A ^ { \\prime \\prime } C = \\frac { 3 } { 4 } C A = \\frac { 1 5 } { 4 }$ , 过点 $A ^ { \\prime \\prime }$ 作 $A ^ { \\prime \\prime } E \\bot B C$ 交 $\\cdot$ 延长线于 $\\cdot$ ，然后 求出 $E A \"$ ，$B E$ 的长，由此即可求解",
+        "bbox": [
+            90,
+            482,
+            912,
+            659
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "【详解】解：（1）如图 3-2，将 $\\triangle B P C$ 绕点 $B$ 顺时针旋转 $6 0 ^ { \\circ }$ 得到 $\\triangle B P ^ { \\prime } C ^ { \\prime }$ ∴ $B P ^ { \\prime } = B P$ $\\begin{array} { r l } { P } & { { } \\ P ^ { \\prime } C = P C \\quad \\angle P B P ^ { \\prime } = 6 0 ^ { \\circ } } \\end{array}$ ，  \n$_ { \\triangle B P P ^ { \\prime } }$ 为等边三角形，  \n$B P = P P ^ { \\prime }$ ，  \n$P A + P B + P C = P A + P P ^ { \\prime } + P C ^ { \\prime }$   \n∴A、 $\\cdot$ 、 $P ^ { \\prime }$ 、 $C ^ { \\prime }$ 四点共线时， $P A + P B + P C$ 最小，最小值为 $A C ^ { \\prime }$ 同理可证 $\\triangle B C C ^ { \\prime }$ 为等边三角形，  \n$\\therefore C C ^ { \\prime } = B C = 6 , \\angle B C C ^ { \\prime } = 6 0 ^ { \\circ } ,$ ，  \n$\\therefore \\angle A C C ^ { \\prime } = \\angle A C B + \\angle B C C ^ { \\prime } = 9 0 ^ { \\circ } ,$ ，  \n$\\therefore A C ^ { \\prime } = \\sqrt { A C ^ { 2 } + C C ^ { \\prime 2 } } = \\sqrt { 6 1 } \\ ;$ ；  \n$P A + P B + P C$ 的最小值为 $\\sqrt { 6 1 }$ ；（2）如图 3-4，将 $\\triangle B P C$ 绕点 $\\cdot$ 逆时针旋转 $9 0 ^ { \\circ }$ 得到 $\\triangle C P ^ { \\prime } B ^ { \\prime }$ ，  \n$B ^ { \\prime } P ^ { \\prime } = B P \\quad P ^ { \\prime } C = P C \\quad \\angle P C P ^ { \\prime } = 9 0 ^ { \\circ } \\quad \\angle P ^ { \\prime } C B ^ { \\prime } = \\angle P C B \\quad C B ^ { \\prime } = C B = 6 $ $\\therefore P P ^ { \\prime } = \\sqrt { P C ^ { 2 } + P ^ { \\prime } C ^ { 2 } } = \\sqrt { 2 } P C ,$   \n$P A + P B + { \\sqrt { 2 } } P C = P A + P P + P B$ ，  \n∴当 $A$ 、 $\\cdot$ 、 $P ^ { \\prime }$ 、 $B ^ { \\prime }$ 四点共线时， $P A + P B + P C$ 最小，最小值为 $A B ^ { \\prime }$ ∵ $\\_$ ，  \n$\\angle A C P + \\angle P C B = \\angle A C P + \\angle P ^ { \\prime } C B ^ { \\prime } = 3 0 ^ { \\circ }$   \n$\\angle A C B ^ { \\prime } = \\angle P C P ^ { \\prime } + \\angle A C P + \\angle P ^ { \\prime } C B ^ { \\prime } = 1 2 0 ^ { \\circ }$   \n过点 $\\cdot$ 再作 $B ^ { \\prime } C$ 的垂线，垂足为 $E$ ，  \n$\\cdot \\angle A E C { = } 9 0 ^ { \\circ }$ ， $\\_$ ，  \n$\\_$ ，  \n$\\mathbf { \\partial } \\cdot C E = { \\frac { 1 } { 2 } } A C = { \\frac { 5 } { 2 } }$   \n$A E = { \\sqrt { A C ^ { 2 } - C E ^ { 2 } } } = { \\frac { 5 { \\sqrt { 3 } } } { 2 } } B ^ { \\prime } E = B ^ { \\prime } C + E C = { \\frac { 1 7 } { 2 } }$   \n$\\therefore A B ^ { \\prime } = \\sqrt { A E ^ { 2 } + B ^ { \\prime } E ^ { 2 } } = \\sqrt { 9 1 } \\ ,$ ，  \n$P A + P B + \\sqrt { 2 } P C$ 的最小值为 $\\sqrt { 9 1 }$ ；（3）如图 3-6，将 $\\triangle B P C$ 绕点 $\\cdot$ 逆时针旋转 $1 2 0 ^ { \\circ }$ 得到 $\\triangle B ^ { \\prime } P C ^ { \\prime }$ ，  \n∴ BP  BP ， $P ^ { \\prime } C = P C$ ， $\\angle P C P ^ { \\prime } = 1 2 0 ^ { \\circ }$ ， $\\angle P ^ { \\prime } C B ^ { \\prime } = \\angle P C B \\ , C B ^ { \\prime } = C B = 6 \\ ,$ ，$\\angle C P P ^ { \\prime } = \\angle C P ^ { \\prime } P = 3 0 ^ { \\circ }$ ，  \n过点 $C$ 作 $C E \\bot P P ^ { \\prime }$ 于 $\\cdot$ ，  \n$\\begin{array} { r c l } { { } } & { { } } & { { : C E = \\displaystyle \\frac { 1 } { 2 } C P ~ , ~ P E = P ^ { \\prime } E ~ , } } \\\\ { { } } & { { } } & { { } } \\\\ { { } } & { { } } & { { : ~ P E = \\sqrt { P C ^ { 2 } - C E ^ { 2 } } = \\displaystyle \\frac { \\sqrt { 3 } } { 2 } C P ~ , } } \\\\ { { } } & { { } } & { { } } \\\\ { { } } & { { } } & { { : ~ P P ^ { \\prime } = \\sqrt { 3 } C P ~ , } } \\\\ { { } } & { { } } & { { } } \\\\ { { } } & { { } } & { { : ~ P A + P B + \\sqrt { 3 } P C = P A + P P ^ { \\prime } + P ^ { \\prime } B ^ { \\prime } ~ , } } \\end{array}$   \n∴当 $\\cdot$ 、 $\\cdot$ 、 $P ^ { \\prime }$ 、 $B ^ { \\prime }$ 四点共线时， $P A + P B + \\sqrt { 3 } P C$ 最小，最小值为 $A B ^ { \\prime }$ $\\_$ ，$\\angle A C P + \\angle P C B = \\angle A C P + \\angle P ^ { \\prime } C B ^ { \\prime } = 3 0 ^ { \\circ }$ $\\angle A C B ^ { \\prime } = \\angle P C P ^ { \\prime } + \\angle A C P + \\angle P ^ { \\prime } C B ^ { \\prime } = 1 5 0 ^ { \\circ }$ ，  \n过点 $\\cdot$ 再作 $B ^ { \\prime } C$ 的垂线，垂足为 $\\cdot$ ，  \n∴ $. \\angle A E C { = } 9 0 ^ { \\circ }$ ， $\\angle A C E { = } 3 ^ { \\circ }$ ，$\\ A E = { \\frac { 1 } { 2 } } A C = { \\frac { 5 } { 2 } }$   \n∴ 2 2 5 3CE  AC  AE  ，  \n$\\therefore B ^ { \\prime } E = C E + C B ^ { \\prime } = { \\frac { 1 2 + 5 { \\sqrt { 3 } } } { 2 } }$ $\\therefore A B ^ { \\prime } = \\sqrt { A E ^ { 2 } + B ^ { \\prime } E ^ { 2 } } = \\sqrt { 6 1 + 3 0 \\sqrt { 3 } }$ ，$\\cdot P A + P B + \\sqrt { 3 } P C$ 的最小值为 $\\sqrt { 6 1 + 3 0 { \\sqrt { 3 } } }$ ；",
+        "bbox": [
+            89,
+            664,
+            648,
+            891
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "image",
+        "img_path": "images/5d3b39098579ea23372261be7027cd29c0505f668590a8b54c7808ab1d442ba4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            95,
+            90,
+            349,
+            294
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            87,
+            302,
+            665,
+            653
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "image",
+        "img_path": "images/1bea1ccb976a4343480795644c5e77c2608ede039f3daf23303cdbb12712135b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            95,
+            663,
+            347,
+            904
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "image",
+        "img_path": "images/910ad23b38b138d60565b8d617851b83c74f5854b27ef8d1dfae9fcd9deb61f1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            361,
+            663,
+            613,
+            903
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            87,
+            78,
+            670,
+            581
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "image",
+        "img_path": "images/519ddc7e9f005afec7043bcc11b52be04f440f55795560f9c0561975aa87d22b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            94,
+            611,
+            463,
+            838
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "image",
+        "img_path": "images/a539a60bc8bbab605c03a8f9cc35c0e088741a262b33721de11fbe2b60ea4d74.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            472,
+            587,
+            845,
+            853
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "（4）如图 3-8，将 $\\triangle B P C$ 绕点 $\\cdot$ 顺时针旋转 $6 0 ^ { \\circ }$ ，得到V CPA，再将V CPA以点 $C$ 为位似中心放大 2 倍，得到 $\\mathrm { V } C P ^ { \\prime \\prime } A ^ { \\prime \\prime }$ ，连接 $P P ^ { \\prime }$ ",
+        "bbox": [
+            89,
+            859,
+            902,
+            896
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "由旋转的性质得 $C A ^ { \\prime } = C A = 5$ ， $C P ^ { \\prime } { = } C P$ ， $P A = P ^ { \\prime } A ^ { \\prime }$ ， $\\angle P C P ^ { \\prime } { = } \\angle A C A ^ { \\prime } { = } 6 0 ^ { \\circ }$ ，$. C A ^ { \\prime \\prime } { = } 1 0$ ， $C P ^ { \\prime \\prime } = 2 C P$ ， $P ^ { \\prime \\prime } A ^ { \\prime \\prime } { = } 2 A ^ { \\prime } P ^ { \\prime } { = } 2 A P$ ， $\\triangle P C P ^ { \\prime }$ 是等边三角形，$P P ^ { \\prime } = P ^ { \\prime } C = P ^ { \\prime } P ^ { \\prime }$ ， $\\angle P P C = 6 0 ^ { \\circ }$ ，  \n$\\angle P P ^ { \\prime \\prime } P { = } \\angle P ^ { \\prime \\prime } P P ^ { \\prime } { = } 3 0 ^ { \\mathrm { { o } } }$ ，  \n$\\angle P ^ { \\prime \\prime } P C { = } 9 0 ^ { \\circ }$ ，  \n$\\therefore P ^ { \\prime \\prime } P = \\sqrt { C P ^ { \\prime \\prime } - C P ^ { 2 } } = \\sqrt { 3 } C P ,$ ，  \n$2 P A + P B + { \\sqrt { 3 } } P C = A ^ { \\prime \\prime } P ^ { \\prime \\prime } + P ^ { \\prime \\prime } P + P B$ ，  \n∴当 $A ^ { \\prime \\prime }$ ， $P ^ { \\prime \\prime }$ ， $P$ ， $B$ 共线时 $2 P A + P B + { \\sqrt { 3 } } P C$ 最小，最小为 $A \" B$ ，  \n$\\therefore \\angle B C A ^ { \\prime \\prime } = \\angle A C B + \\angle A C A ^ { \\prime \\prime } = 9 0 ^ { \\circ } \\ ,$   \n$\\therefore A ^ { \\prime \\prime } B = \\sqrt { B C ^ { 2 } + A ^ { \\prime \\prime } C ^ { 2 } } = 2 \\sqrt { 3 4 } \\ ,$ ，  \n$\\dot { \\cdot } 2 P A + P B + \\sqrt { 3 } P C$ 的最小值为 $2 \\sqrt { 3 4 }$ ；",
+        "bbox": [
+            87,
+            83,
+            677,
+            324
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "image",
+        "img_path": "images/0b9a63fad07f0ecc6173dac8383a0a6091f47867b89d5b1c18b554658d0bdb5d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            369,
+            338,
+            628,
+            621
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "image",
+        "img_path": "images/bf8a0526f006a67be8512d6d407dbe0f4c9024d656a53b5cd788cb097a333d7d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            99,
+            330,
+            337,
+            631
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "（5）如图 3-10，将 $\\triangle B P C$ 绕点 $C$ 顺时针旋转 $6 0 ^ { \\circ }$ ，得到 $\\mathrm { V } C P ^ { \\prime } A ^ { \\prime }$ ，再将 $/ \\ C P ^ { \\prime } A ^ { \\prime }$ 以点 $\\cdot$ 为位似中心缩小 2 倍，得到 $\\mathrm { V } C P ^ { \\prime \\prime } A ^ { \\prime \\prime }$ ，",
+        "bbox": [
+            87,
+            643,
+            905,
+            680
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "同（4）原理可证得当 $A ^ { \\prime \\prime }$ ， $P ^ { \\prime \\prime }$ ， $P$ ， $B$ 共线时 $\\frac { 1 } { 2 } P A + P B + \\frac { \\sqrt { 3 } } { 2 } P C$ 最小，最小为 $A \" B$ ，∵ BCA  ACB  ACA=90∠ ∠ ∠ o ，在 RtBCA中， BC  6， 1=CA C $C A \" = \\frac { 1 } { 2 } C A = \\frac { 5 } { 2 }$ ",
+        "bbox": [
+            85,
+            686,
+            737,
+            719
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "image",
+        "img_path": "images/7a56a1aec381f2de03d18fcb9a80416610a3f3e76c4b43b1c0635b32bfaf8e5d.jpg",
+        "image_caption": [
+            "图3-10"
+        ],
+        "image_footnote": [],
+        "bbox": [
+            97,
+            743,
+            332,
+            856
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "image",
+        "img_path": "images/57f86657a3c19856d600648f51389fedc01c28e7205546fdeee25801ddd93178.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            354,
+            724,
+            606,
+            859
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            92,
+            871,
+            670,
+            901
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "$B A ^ { \\prime \\prime } { = } \\sqrt { B C ^ { 2 } + A ^ { \\prime \\prime } C ^ { 2 } } = \\frac { 1 3 } { 2 }$   \n$\\frac { 1 } { 2 } P A + P B + \\frac { \\sqrt { 3 } } { 2 } P C$ 最小为 $\\frac { 1 3 } { 2 }$ ；  \n（6） $2 P A + 4 P B + 2 \\sqrt { 3 } P C = 4 \\mathrm { \\Bigg ( } \\frac { 1 } { 2 } P A + P B + \\frac { \\sqrt { 3 } } { 2 } P C \\mathrm { \\Bigg ) }$ ∴由（5）得： $2 P A + 4 P B + 2 { \\sqrt { 3 } } P C$ 的最小值为 26；（7） $4 P A + 2 P B + 2 \\sqrt { 3 } P C = 2 ( 2 P A + P B + \\sqrt { 3 } P C )$ ∴由（4）得 $4 P A + 2 P B + 2 \\sqrt { 3 } P C$ 的最小值为 $4 { \\sqrt { 3 4 } }$ ；  \n（8）如图 3-12，将 $\\triangle B P C$ 绕点 $C$ 顺时针旋转 $9 0 ^ { \\circ }$ ，得到 $\\mathrm { V } C P ^ { \\prime } A ^ { \\prime }$ ，再将 $\\mathrm { V } C P ^ { \\prime } A ^ { \\prime }$ 以点 $\\cdot$ 为位似中  \n得到 $\\mathrm { V } C P ^ { \\prime \\prime } A ^ { \\prime \\prime }$ ，  \n同理可以证得当 $A$ 、 $P$ 、 $P ^ { \\prime \\prime }$ 、 $A ^ { \\prime \\prime }$ ，共线时 $3 P A + 4 P B + 5 P C$ 的值最小  \n在 $\\triangle B C A ^ { \\prime \\prime }$ 中， $\\angle B C A ^ { \\prime \\prime } = \\angle A C B + \\angle A C A ^ { \\prime \\prime } = 1 2 0 ^ { \\circ } A ^ { \\prime \\prime } C = \\frac { 3 } { 4 } C A = \\frac { 1 5 } { 4 }$   \n过点 $A ^ { \\prime \\prime }$ 作 $A ^ { \\prime \\prime } E \\bot B C$ 交 $\\cdot$ 延长线于 $E$ ，  \n∴ $\\cdot \\angle A ^ { \\prime \\prime } C E = 6 0 ^ { \\circ }$ ，$\\angle C A ^ { \\prime \\prime } E = 3 0 ^ { \\circ }$ ，$C E = \\frac { 1 } { 2 } C A \" = \\frac { 1 5 } { 8 }$   \n$E A ^ { \\prime \\prime } = { \\sqrt { A ^ { \\prime } C ^ { 2 } - C E ^ { 2 } } } = { \\frac { 1 5 { \\sqrt { 3 } } } { 8 } } B E = B C + C E = 6 + { \\frac { 1 5 } { 8 } }$   \n$\\therefore B A ^ { \\prime } = { \\sqrt { A ^ { \\prime } E ^ { 2 } + B E ^ { 2 } } } = { \\sqrt { \\left( 6 + { \\frac { 1 5 } { 8 } } \\right) ^ { 2 } + \\left( { \\frac { 1 5 { \\sqrt { 3 } } } { 8 } } \\right) ^ { 2 } } } = { \\frac { 2 1 } { 4 } } , 3 P A + 4 P B +$ 的最小值为 21",
+        "bbox": [
+            87,
+            83,
+            495,
+            268
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "image",
+        "img_path": "images/dd0935865f37834ff1ab86b172f8f5ab4595007204d72a9c916787aeda0b2b79.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            95,
+            281,
+            467,
+            445
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "image",
+        "img_path": "images/ad655e45bc96118bb0b0f03f7b67ccf7f1ab1df63e60201b6e84e72d2e505121.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            473,
+            272,
+            855,
+            455
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            89,
+            473,
+            813,
+            769
+        ],
+        "page_idx": 39
+    }
+]
