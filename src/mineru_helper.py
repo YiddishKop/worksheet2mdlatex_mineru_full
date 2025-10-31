@@ -10,7 +10,7 @@ mineru_helper.py
 
 from pathlib import Path
 from typing import Dict, Any, Optional, List
-import subprocess, json, re, sys
+import subprocess, json, re, sys, os
 
 # ----------------------------------------------------------
 # 兼容 PyTorch 2.6+ 模型反序列化安全机制
@@ -98,6 +98,28 @@ class MinerUHelper:
         - dict 或 None：解析后的结构化结果或空值。
         """
         output_dir.mkdir(parents=True, exist_ok=True)
+
+        # Allow skipping local MinerU when using a remote Ubuntu worker.
+        # If outputs already exist under output_dir, return them directly.
+        mineru_mode = (os.getenv("MINERU_MODE") or "").strip().lower()
+        skip_local = mineru_mode in {"external", "remote", "readonly", "skip"} or os.getenv("MINERU_SKIP_LOCAL") in {"1", "true", "True"}
+
+        pre_json = sorted(output_dir.glob("*.json"))
+        if pre_json:
+            try:
+                return json.loads(pre_json[0].read_text(encoding="utf-8"))
+            except Exception:
+                pass
+        pre_md = sorted(output_dir.glob("*.md"))
+        if pre_md:
+            try:
+                return {"blocks": [{"type": "markdown", "text": pre_md[0].read_text(encoding="utf-8")}]} 
+            except Exception:
+                pass
+
+        if skip_local:
+            print("[INFO] MINERU_MODE=external: skip local MinerU, expecting pre-generated outputs under:", output_dir)
+            return None
         is_new = cls.is_new_cli()
         ver = cls._cached_version or "unknown"
         print(f"[INFO] MinerU 版本检测：{ver} | {'新CLI(-p)' if is_new else '旧CLI'}")

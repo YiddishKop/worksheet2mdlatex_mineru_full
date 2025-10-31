@@ -41,4 +41,4 @@ transformers
 huggingface_hub
 hf_xet
 rich
-certifi-win32
+certifi-win32; sys_platform == 'win32'
